@@ -38,10 +38,11 @@ function getEngine(): ChatEngine {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { clientId, conversationId, message } = body as {
+    const { clientId, conversationId, message, history } = body as {
       clientId: string;
       conversationId?: string;
       message: string;
+      history?: Array<{ role: "user" | "assistant"; content: string }>;
     };
 
     if (!clientId || !message) {
@@ -68,6 +69,21 @@ export async function POST(request: NextRequest) {
     let activeConversationId = conversationId;
     if (!activeConversationId || !chatEngine.getConversation(activeConversationId)) {
       activeConversationId = chatEngine.startConversation(clientId);
+
+      // Replay history so Claude has full context even on a fresh instance
+      if (history && history.length > 0) {
+        const conv = chatEngine.getConversation(activeConversationId);
+        if (conv) {
+          // Add all previous messages except the current one (which sendMessage will add)
+          for (const msg of history.slice(0, -1)) {
+            conv.messages.push({
+              role: msg.role,
+              content: msg.content,
+              timestamp: Date.now(),
+            });
+          }
+        }
+      }
     }
 
     // Send the message and get a response

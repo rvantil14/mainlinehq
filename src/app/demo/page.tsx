@@ -152,6 +152,11 @@ export default function DemoPage() {
     setLoading(true);
 
     try {
+      // Send message history so serverless can rebuild context
+      const history = [...messages, userMsg]
+        .filter((m) => m.id !== "greeting")
+        .map((m) => ({ role: m.role, content: m.content }));
+
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -159,6 +164,7 @@ export default function DemoPage() {
           clientId: activeBusiness.clientId,
           conversationId,
           message: text.trim(),
+          history,
         }),
       });
 

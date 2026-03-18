@@ -56,6 +56,10 @@ export default function SiteChat() {
     setIsLoading(true);
 
     try {
+      const history = [...messages, userMessage]
+        .slice(1) // skip initial greeting
+        .map((m) => ({ role: m.role, content: m.content }));
+
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -63,6 +67,7 @@ export default function SiteChat() {
           clientId: "mainline-sales",
           conversationId,
           message: trimmed,
+          history,
         }),
       });
 
