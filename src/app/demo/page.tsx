@@ -204,6 +204,19 @@ export default function DemoPage() {
     return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
   };
 
+  if (!mounted) {
+    return (
+      <div className="bg-light-bg min-h-screen">
+        <div className="bg-dark text-white">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-14 text-center">
+            <h1 className="text-3xl sm:text-5xl font-bold tracking-tight">See Mainline In Action</h1>
+            <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto leading-relaxed">Loading demo...</p>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="bg-light-bg min-h-screen">
       {/* Hero Header */}
