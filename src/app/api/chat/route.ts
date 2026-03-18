@@ -63,8 +63,10 @@ export async function POST(request: NextRequest) {
     }
 
     // Start a new conversation or use existing one
+    // On serverless, conversations may be lost between invocations,
+    // so always start fresh if the conversation can't be found
     let activeConversationId = conversationId;
-    if (!activeConversationId) {
+    if (!activeConversationId || !chatEngine.getConversation(activeConversationId)) {
       activeConversationId = chatEngine.startConversation(clientId);
     }
 
