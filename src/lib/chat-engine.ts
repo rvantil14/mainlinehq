@@ -267,7 +267,7 @@ export class ChatEngine {
       // Using claude-sonnet-4-5-20250514 for good quality at reasonable cost.
       // For high volume clients, switch to claude-haiku-4-5-20251001 to save ~80%.
       let response = await this.anthropic.messages.create({
-        model: "claude-sonnet-4-5-20250514",
+        model: "claude-haiku-4-5-20251001",
         max_tokens: 1024,
         system: systemPrompt,
         messages,
@@ -315,7 +315,7 @@ export class ChatEngine {
         });
 
         response = await this.anthropic.messages.create({
-          model: "claude-sonnet-4-5-20250514",
+          model: "claude-haiku-4-5-20251001",
           max_tokens: 1024,
           system: systemPrompt,
           messages,

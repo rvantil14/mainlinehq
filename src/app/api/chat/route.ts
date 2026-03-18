@@ -21,6 +21,8 @@ function getEngine(): ChatEngine {
   const apiKey = process.env.ANTHROPIC_API_KEY;
   const demoMode = !apiKey || apiKey === "sk-ant-your-key-here";
 
+  console.log("[ChatEngine] API key present:", !!apiKey, "Demo mode:", demoMode);
+
   engine = new ChatEngine(apiKey || "", demoMode);
 
   // Register all demo client configs
