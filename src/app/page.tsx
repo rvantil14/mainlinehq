@@ -98,13 +98,13 @@ const steps = [
 ];
 
 const trades = [
-  { name: "Plumbing", image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" },
-  { name: "HVAC", image: "https://images.unsplash.com/photo-1621460248083-6271cc4437a8?w=600&q=80" },
+  { name: "Plumbing", image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&q=80" },
+  { name: "HVAC", image: "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?w=600&q=80" },
   { name: "Electrical", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" },
-  { name: "Painting", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80" },
-  { name: "Landscaping", image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80" },
+  { name: "Painting", image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80" },
+  { name: "Landscaping", image: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80" },
   { name: "General Contracting", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" },
-  { name: "Roofing", image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&q=80" },
+  { name: "Roofing", image: "https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?w=600&q=80" },
   { name: "Cleaning", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" },
 ];
 
