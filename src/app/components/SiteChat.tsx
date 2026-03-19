@@ -190,13 +190,13 @@ export default function SiteChat() {
                   }
                 }}
                 placeholder="Type a message..."
-                className="flex-1 px-3 py-2 text-sm rounded-lg border border-gray-300 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-foreground placeholder:text-text-light"
+                className="flex-1 px-3 py-2.5 text-sm rounded-lg border border-gray-300 focus:border-primary focus:ring-1 focus:ring-primary outline-none text-foreground placeholder:text-text-light"
                 disabled={isLoading}
               />
               <button
                 onClick={sendMessage}
                 disabled={isLoading || !input.trim()}
-                className="flex items-center justify-center w-9 h-9 rounded-lg bg-accent hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed text-primary transition-colors"
+                className="flex items-center justify-center w-11 h-11 rounded-lg bg-accent hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed text-primary transition-colors"
                 aria-label="Send message"
               >
                 <svg

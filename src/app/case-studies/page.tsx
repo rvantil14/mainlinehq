@@ -86,15 +86,15 @@ const caseStudies = [
 
 function StatBar({ before, after, label, note }: { before: string; after: string; label: string; note: string }) {
   return (
-    <div className="flex items-center gap-4 py-3 border-b border-gray-100 last:border-0">
-      <div className="w-36 sm:w-44 shrink-0">
-        <p className="text-sm font-medium text-dark">{label}</p>
-        {note && <p className="text-xs text-text-light">{note}</p>}
+    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-4 py-4 border-b border-gray-100 last:border-0">
+      <div className="sm:w-44 sm:shrink-0">
+        <p className="text-sm font-semibold text-dark">{label}</p>
+        {note && <p className="text-xs text-text-light mt-0.5">{note}</p>}
       </div>
       <div className="flex flex-1 items-center gap-3">
         {before !== "-" && (
           <>
-            <span className="inline-block rounded bg-red-50 px-2.5 py-1 text-sm font-medium text-red-600">
+            <span className="inline-block rounded-lg bg-red-50 px-3 py-1.5 text-sm font-semibold text-red-600">
               {before}
             </span>
             <svg className="h-4 w-4 shrink-0 text-gray-300" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -102,7 +102,7 @@ function StatBar({ before, after, label, note }: { before: string; after: string
             </svg>
           </>
         )}
-        <span className="inline-block rounded bg-green-50 px-2.5 py-1 text-sm font-semibold text-green-700">
+        <span className="inline-block rounded-lg bg-green-50 px-3 py-1.5 text-base font-bold text-green-700">
           {after}
         </span>
       </div>
@@ -126,7 +126,7 @@ export default function CaseStudies() {
               <span className="text-accent">Trade Businesses</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
-              See how AI automation transforms operations for plumbing, HVAC, and electrical companies across the country.
+              Real numbers from plumbing, HVAC, and electrical companies that stopped leaving money on the table.
             </p>
           </div>
         </div>
@@ -144,7 +144,11 @@ export default function CaseStudies() {
               >
                 {/* Divider between studies */}
                 {idx > 0 && (
-                  <div className="mb-20 border-t border-gray-200" />
+                  <div className="mb-20 flex items-center gap-4">
+                    <div className="flex-1 border-t border-gray-200" />
+                    <div className="h-2 w-2 rounded-full bg-accent/30" />
+                    <div className="flex-1 border-t border-gray-200" />
+                  </div>
                 )}
 
                 {/* Header */}
@@ -190,12 +194,13 @@ export default function CaseStudies() {
                     </div>
 
                     {/* Quote */}
-                    <div className="rounded-2xl border border-accent/20 bg-accent/5 p-6">
-                      <blockquote className="text-dark leading-relaxed italic">
+                    <div className="relative rounded-2xl border-l-4 border-l-accent bg-accent/5 p-8">
+                      <span className="absolute top-3 right-5 text-5xl font-serif leading-none text-accent/15 select-none">&ldquo;</span>
+                      <blockquote className="relative text-dark leading-relaxed italic text-lg">
                         &ldquo;{study.quote}&rdquo;
                       </blockquote>
-                      <p className="mt-3 text-sm font-semibold text-accent">
-                        - {study.quoteName}
+                      <p className="mt-4 text-sm font-bold text-accent">
+                        {study.quoteName}
                       </p>
                     </div>
                   </div>
@@ -232,8 +237,7 @@ export default function CaseStudies() {
               See What This Could Look Like for You
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-lg text-gray-400">
-              Schedule a free 15-minute call. We&apos;ll show you exactly how
-              AI automation can transform your trade business.
+              15 minutes. We&apos;ll show you exactly where you&apos;re losing leads and what the fix looks like.
             </p>
             <div className="mt-10">
               <Link

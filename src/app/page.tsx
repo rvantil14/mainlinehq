@@ -46,31 +46,37 @@ const painPoints = [
 const services = [
   {
     title: "We Answer Your Phone 24/7",
+    emoji: "📞",
     description:
       "Our AI receptionist picks up every call. Nights, weekends, holidays. Every lead gets captured, every customer gets a real conversation.",
   },
   {
     title: "We Book Your Appointments",
+    emoji: "📅",
     description:
       "Customers self-schedule based on your real availability. They get instant SMS confirmations. You just show up.",
   },
   {
     title: "We Send Your Invoices",
+    emoji: "💸",
     description:
       "Invoices go out automatically at job completion with text-to-pay links. Most customers pay the same day.",
   },
   {
     title: "We Get You 5-Star Reviews",
+    emoji: "⭐",
     description:
       "Automated review requests go out after every completed job. You build your Google reputation without lifting a finger.",
   },
   {
     title: "We Generate Your Estimates",
+    emoji: "📝",
     description:
       "Customer describes the job, AI creates a rough estimate based on your pricing. You review and approve before it goes out. No more spending an hour on every quote.",
   },
   {
     title: "We Draft Your Contracts",
+    emoji: "📋",
     description:
       "Job details go in, a professional proposal comes out. Service scope, pricing, terms, all formatted and ready for your signature. Edit or approve in one click.",
   },
@@ -156,7 +162,7 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-dark pt-16 pb-20 sm:pt-24 sm:pb-28">
+      <section className="relative overflow-hidden bg-dark pt-20 pb-28 sm:pt-32 sm:pb-36">
         <div className="pointer-events-none absolute inset-0">
           <div className="absolute top-20 right-[-10%] h-[500px] w-[500px] rounded-full bg-accent/8 blur-3xl" />
           <div className="absolute bottom-0 left-[-5%] h-[400px] w-[400px] rounded-full bg-primary-light/8 blur-3xl" />
@@ -164,13 +170,13 @@ export default function Home() {
         </div>
 
         <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-gray-300">
+          <div className="mx-auto max-w-4xl text-center">
+            <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-gray-300">
               <span className="inline-block h-2 w-2 rounded-full bg-accent" />
               Your AI Front Office, Built and Run For You
             </div>
 
-            <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl">
               Every Missed Call Is a Job{" "}
               <span className="relative">
                 <span className="relative z-10 text-accent">You&apos;ll Never Get Back</span>
@@ -178,7 +184,7 @@ export default function Home() {
               </span>
             </h1>
 
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
+            <p className="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-300 sm:text-xl">
               We answer your phone, book your jobs, send your invoices, and
               follow up with every customer, 24/7. You just do the work.
             </p>
@@ -225,7 +231,7 @@ export default function Home() {
             {painPoints.map((point, i) => (
               <div
                 key={i}
-                className="group rounded-2xl border border-gray-100 bg-light-bg p-8 transition-all hover:border-accent/20 hover:shadow-lg hover:shadow-accent/5"
+                className="group rounded-2xl border border-gray-100 bg-light-bg p-8 transition-all duration-300 hover:border-accent/20 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1 hover:scale-[1.02]"
               >
                 <h3 className="text-lg font-bold text-dark">
                   {point.title}
@@ -256,8 +262,11 @@ export default function Home() {
             {services.map((service, i) => (
               <div
                 key={i}
-                className="group rounded-2xl border border-gray-100 bg-white p-8 transition-all hover:border-primary/10 hover:shadow-lg hover:shadow-primary/5"
+                className="group rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:border-primary/10 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1"
               >
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-primary/5 text-2xl">
+                  {service.emoji}
+                </div>
                 <h3 className="text-lg font-bold text-dark">
                   {service.title}
                 </h3>
@@ -319,7 +328,7 @@ export default function Home() {
               How It Works
             </h2>
             <p className="mt-4 text-lg text-gray-400">
-              From first call to fully live in under a week.
+              Up and running in under a week. No kidding.
             </p>
           </div>
 
@@ -358,8 +367,7 @@ export default function Home() {
               Built for Every Trade
             </h2>
             <p className="mt-4 text-lg text-text-light">
-              Wherever you are. If your business runs on appointments and
-              job sites, we built this for you.
+              If your business runs on appointments and job sites, we built this for you.
             </p>
           </div>
 
@@ -395,10 +403,11 @@ export default function Home() {
             {testimonials.map((testimonial, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-gray-100 bg-white p-10"
+                className="relative rounded-2xl border border-gray-100 bg-white p-10 transition-all duration-300 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1"
               >
+                <span className="absolute top-4 right-6 text-6xl font-serif leading-none text-accent/10 select-none">&ldquo;</span>
                 <StarRating count={testimonial.stars} />
-                <blockquote className="mt-5 text-lg leading-relaxed text-dark">
+                <blockquote className="relative mt-5 text-lg leading-relaxed text-dark">
                   &ldquo;{testimonial.quote}&rdquo;
                 </blockquote>
                 <div className="mt-6 border-t border-gray-100 pt-4">
@@ -426,12 +435,12 @@ export default function Home() {
       </section>
 
       {/* Trust Badges */}
-      <section className="bg-gray-50 py-16">
+      <section className="bg-white py-20 sm:py-24">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-          <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-8">
+          <p className="text-center text-xs font-semibold uppercase tracking-widest text-gray-400 mb-10">
             Powered By
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-3">
+          <div className="flex flex-wrap items-center justify-center gap-4">
             <span className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-5 py-2.5 text-sm font-medium text-gray-500 shadow-sm">
               <svg className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z" /></svg>
               Claude AI
@@ -453,7 +462,7 @@ export default function Home() {
               Pipedrive
             </span>
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
             <span className="inline-flex items-center gap-1.5 rounded-full bg-success/10 px-4 py-2 text-xs font-semibold text-success">
               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z" /></svg>
               SSL Encrypted
@@ -471,20 +480,24 @@ export default function Home() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-dark py-24 sm:py-32">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="relative overflow-hidden bg-dark py-28 sm:py-36">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute top-0 left-1/4 h-[400px] w-[400px] rounded-full bg-accent/5 blur-3xl" />
+          <div className="absolute bottom-0 right-1/4 h-[300px] w-[300px] rounded-full bg-primary-light/5 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl">
               Let&apos;s Talk About Your Business
             </h2>
-            <p className="mx-auto mt-4 max-w-lg text-lg text-gray-400">
+            <p className="mx-auto mt-6 max-w-lg text-lg text-gray-300">
               Schedule a free 15-minute call. We&apos;ll show you exactly how
               many calls you&apos;re missing and what we can do about it.
             </p>
             <div className="mt-10">
               <Link
                 href="/contact"
-                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-10 py-4 text-base font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-hover"
+                className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-10 py-4 text-base font-semibold text-white shadow-lg shadow-accent/25 transition-all hover:bg-accent-hover hover:shadow-xl hover:shadow-accent/30"
               >
                 Book Your Free Consultation
                 <span className="inline-block transition-transform group-hover:translate-x-1">

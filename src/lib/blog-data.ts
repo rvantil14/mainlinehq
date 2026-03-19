@@ -30,13 +30,13 @@ export const blogArticles: BlogArticle[] = [
 
 <p>Let's walk through what a missed call looks like from the customer's side.</p>
 
-<p>Someone's got a leaking water heater at 7 PM on a Tuesday. They pull out their phone, search "plumber near me," and start calling. The first number they try, yours, rings five times and goes to voicemail. They don't leave a message. Nobody does anymore.</p>
+<p>Someone's got a leaking water heater at 7 PM on a Tuesday. They search "plumber near me" and start calling. Your number rings five times and goes to voicemail. They don't leave a message. Nobody does anymore.</p>
 
 <p>They call the next listing. That guy picks up. He books the job. He shows up the next morning and charges $450.</p>
 
 <p>You lost that job. Not because you're a worse plumber. Not because your prices are too high. Because you didn't answer the phone.</p>
 
-<p>And here's the thing: you were probably on a job. Or driving between jobs. Or under a house with both hands full of PVC. You weren't ignoring the call. You were doing your actual work.</p>
+<p>You were probably on a job. Under a house with both hands full of PVC. You weren't ignoring the call. You were doing your actual work.</p>
 
 <p>But the customer doesn't care why you didn't answer. They just need someone who will.</p>
 
@@ -209,9 +209,9 @@ export const blogArticles: BlogArticle[] = [
 
 <h2>The HVAC Companies That Adapt Will Win</h2>
 
-<p>This isn't about being "tech forward" or "innovative." It's about math. The companies that answer every call, book every lead, and follow up with every customer are going to outgrow the ones that don't. That's true in any market, but it's especially true in HVAC where seasonal demand makes phone coverage a make-or-break issue.</p>
+<p>This isn't about being "tech forward." It's about math. The companies that answer every call, book every lead, and follow up with every customer are going to outgrow the ones that don't. In HVAC, where seasonal demand makes phone coverage a make-or-break issue, it matters even more.</p>
 
-<p>The switch to AI receptionists isn't a trend. It's the same thing that happened when contractors went from paper invoices to QuickBooks, or from a whiteboard schedule to dispatching software. The tools get better. The businesses that use them win.</p>
+<p>The switch to AI receptionists isn't a trend. It's the same thing that happened when contractors went from paper invoices to QuickBooks. The tools get better. The businesses that use them win.</p>
 
 <p><strong>Want to see what an AI receptionist would look like for your HVAC company? Schedule a free consultation and we'll walk you through it.</strong></p>
 `,
@@ -228,7 +228,7 @@ export const blogArticles: BlogArticle[] = [
     content: `
 <h2>The DIY Automation Trap</h2>
 
-<p>You've probably seen the ads. "Automate your business with Jobber!" "Housecall Pro does it all!" And to be fair, these are decent tools. But here's what the ads don't tell you: you're going to spend a LOT of time setting them up, connecting them together, and maintaining them.</p>
+<p>You've probably seen the ads. "Automate your business with Jobber!" "Housecall Pro does it all!" These are decent tools. But here's what the ads don't tell you: you're going to spend a LOT of time setting them up, connecting them together, and maintaining them.</p>
 
 <p>Here's what a typical DIY automation stack looks like for a contractor:</p>
 
@@ -242,23 +242,23 @@ export const blogArticles: BlogArticle[] = [
 
 <p>Total: <strong>$400-$950 per month</strong>. And that's before you count the real cost: your time.</p>
 
-<p>You're going to spend 5-10 hours per month managing these tools. Updating schedules. Fixing broken automations. Figuring out why Zapier stopped syncing your invoices. Reading help docs at 10 PM because a customer complained the booking link is broken.</p>
+<p>You're going to spend 5-10 hours per month managing these tools. Updating schedules. Fixing broken automations. Reading help docs at 10 PM because a customer complained the booking link is broken.</p>
 
 <p>You didn't start a contracting business to become an IT department.</p>
 
 <h2>What "Done-For-You" Actually Means</h2>
 
-<p>When we say done-for-you, we mean it literally. You tell us about your business. We build the entire system. We run it. We fix it when something breaks. We optimize it when we see an opportunity.</p>
+<p>When we say done-for-you, we mean it literally. You tell us about your business. We build the entire system, run it, and fix it when something breaks.</p>
 
 <p>Here's what that looks like in practice:</p>
 
-<p><strong>Week 1:</strong> We have a 30-minute call about your business. Your services, your pricing, your service area, how you like to work. We also look at your existing tools and data to understand what's working and what's not.</p>
+<p><strong>Week 1:</strong> We have a 30-minute call about your business. Your services, your pricing, your service area, how you like to work. We look at your existing tools to understand what's working and what's not.</p>
 
 <p><strong>Week 1-2:</strong> We build your AI front office. Phone answering, appointment booking, invoicing, review requests, follow-up sequences, all configured to your specific business. Not a template. Your actual services, your actual pricing, your actual availability.</p>
 
-<p><strong>Week 2:</strong> We go live. You start getting booked appointments and captured leads from day one. We monitor everything for the first 30 days and make adjustments as we learn how your customers interact with the system.</p>
+<p><strong>Week 2:</strong> We go live. You start getting booked appointments and captured leads from day one. We monitor everything for the first 30 days and adjust as we learn.</p>
 
-<p><strong>Ongoing:</strong> We handle all maintenance, updates, and optimization. When you add a new service, we update the AI. When you hire a new tech, we add them to the scheduling. When we notice a drop in booking rates, we dig in and fix it.</p>
+<p><strong>Ongoing:</strong> We handle all maintenance, updates, and optimization. New service? We update the AI. New tech? Added to scheduling. Booking rates dip? We dig in and fix it.</p>
 
 <p>You never log into a dashboard to configure something. You never troubleshoot a broken integration. You just run your business.</p>
 
@@ -283,7 +283,7 @@ export const blogArticles: BlogArticle[] = [
 </tbody>
 </table>
 
-<p>The monthly cost for done-for-you is higher on the surface. But when you factor in the 5-10 hours per month you spend managing DIY tools, and what your time is actually worth, the math flips fast.</p>
+<p>The monthly cost for done-for-you is higher on the surface. But factor in the 5-10 hours per month managing DIY tools, and what your time is actually worth. The math flips fast.</p>
 
 <p>If your time is worth $75/hour (conservative for a business owner), 10 hours of tool management costs you $750/month in opportunity cost. Add that to your $600 DIY stack and you're at $1,350/month. For worse results.</p>
 

@@ -73,21 +73,21 @@ const features: {
     id: "estimates",
     title: "Instant Estimates, Your Way",
     description:
-      "Customer describes the job through chat or phone. AI generates a rough estimate based on YOUR pricing matrix. You review on your phone, adjust if needed, approve with one tap. Professional PDF sent to the customer automatically. No more spending an hour writing up every quote. No more customers waiting 3 days for a number.",
+      "Customer describes the job through chat or phone. AI generates a rough estimate based on YOUR pricing matrix. You review on your phone, adjust if needed, approve with one tap. Customers get a professional PDF in minutes, not days.",
     mockup: "estimate",
   },
   {
     id: "contracts",
     title: "Contracts & Proposals in Seconds",
     description:
-      "AI drafts a professional proposal from the job details: scope of work, materials, timeline, payment terms. You review and edit before sending. Customer signs digitally. No more chasing paper. Turn a 45-minute task into a 2-minute review.",
+      "AI drafts a professional proposal from the job details: scope of work, materials, timeline, payment terms. You review and edit before sending. Customer signs digitally. A 45-minute task becomes a 2-minute review.",
     mockup: "contract",
   },
   {
     id: "codes",
     title: "Building Code & Spec Assistant",
     description:
-      "Ask questions about building codes in plain English. Upload spec books, get instant summaries of what matters. \"What size waterline do I need for this?\" Answered in seconds. Jurisdiction-specific answers for your area. No more digging through thousands of pages of legal jargon.",
+      "Ask building code questions in plain English. Upload spec books and get instant summaries. Jurisdiction-specific answers for your area, in seconds.",
     mockup: "codes",
     comingSoon: true,
   },
@@ -460,7 +460,7 @@ export default function FeaturesPage() {
             (But Isn&apos;t)
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            From answering calls to generating estimates to drafting contracts.
+            Calls answered. Jobs booked. Invoices sent. Estimates drafted.
             You focus on the work, we handle the rest.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
@@ -481,19 +481,19 @@ export default function FeaturesPage() {
       </section>
 
       {/* Feature Sections */}
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+      <div>
         {features.map((feature, index) => {
           const isReversed = index % 2 === 1;
+          const bgClass = index % 2 === 0 ? "bg-light-bg" : "bg-white";
           return (
             <section
               key={feature.id}
               id={feature.id}
-              className={`flex flex-col ${
-                isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
-              } items-center gap-10 lg:gap-16 ${
-                index > 0 ? "mt-20 sm:mt-28 pt-12 border-t border-gray-200" : ""
-              }`}
+              className={`${bgClass} py-20 sm:py-28`}
             >
+              <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col ${
+                isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
+              } items-center gap-10 lg:gap-16`}>
               {/* Text */}
               <div className="flex-1">
                 <div className="flex items-center gap-3 mb-3">
@@ -517,8 +517,11 @@ export default function FeaturesPage() {
               {/* Mockup */}
               <div className="flex-1 w-full flex justify-center">
                 <div className="w-full max-w-sm">
-                  <FeatureMockup type={feature.mockup} />
+                  <div className="rounded-2xl shadow-xl border border-gray-200/60 overflow-hidden">
+                    <FeatureMockup type={feature.mockup} />
+                  </div>
                 </div>
+              </div>
               </div>
             </section>
           );
@@ -526,13 +529,13 @@ export default function FeaturesPage() {
       </div>
 
       {/* How We're Different */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-24 sm:py-32 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
               How We&apos;re Different
             </h2>
-            <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
+            <p className="mt-4 text-lg text-gray-500 max-w-2xl mx-auto">
               Other companies sell you software and wish you luck. We build
               your system, run it, and make sure it works.
             </p>
@@ -542,9 +545,9 @@ export default function FeaturesPage() {
             {differentiators.map((item) => (
               <div
                 key={item.title}
-                className="rounded-xl border border-gray-200 p-6 hover:border-accent/40 hover:shadow-md transition-all"
+                className="rounded-2xl border border-gray-200 border-t-4 border-t-accent bg-white p-8 hover:border-accent/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
-                <h3 className="text-lg font-bold text-primary mb-2">
+                <h3 className="text-lg font-bold text-primary mb-3">
                   {item.title}
                 </h3>
                 <p className="text-sm text-gray-600 leading-relaxed">

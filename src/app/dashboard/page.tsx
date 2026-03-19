@@ -128,18 +128,18 @@ export default function DashboardPage() {
           {/* Left Column - Conversations + Tabs */}
           <div className="lg:col-span-2">
             {/* Tab Switcher */}
-            <div className="flex gap-1 bg-white rounded-t-xl border border-b-0 border-gray-200 p-1">
+            <div className="flex gap-1 bg-white rounded-t-xl border border-b-0 border-gray-200 p-1 overflow-x-auto">
               {(["conversations", "appointments", "invoices"] as const).map((tab) => (
                 <button
                   key={tab}
                   onClick={() => setActiveTab(tab)}
-                  className={`flex-1 py-2 px-3 rounded-lg text-sm font-medium transition ${
+                  className={`flex-1 min-w-0 py-2.5 px-3 rounded-lg text-xs sm:text-sm font-medium transition whitespace-nowrap ${
                     activeTab === tab
                       ? "bg-primary text-white"
                       : "text-text-light hover:text-primary hover:bg-gray-50"
                   }`}
                 >
-                  {tab === "conversations" ? "Recent Conversations" : tab === "appointments" ? "Upcoming Appointments" : "Recent Invoices"}
+                  {tab === "conversations" ? "Conversations" : tab === "appointments" ? "Appointments" : "Invoices"}
                 </button>
               ))}
             </div>

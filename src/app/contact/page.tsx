@@ -76,8 +76,7 @@ export default function ContactPage() {
             <span className="text-accent">Your Business</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-            Schedule a free 15-minute call. We&apos;ll show you exactly how many
-            opportunities you&apos;re missing, and what we can do about it.
+            15 minutes. No pitch deck. We&apos;ll pull up your numbers and show you exactly where the leaks are.
           </p>
         </div>
       </section>
@@ -138,32 +137,32 @@ export default function ContactPage() {
                 </div>
               </div>
 
-              {/* Calendly Placeholder */}
-              <div className="mt-10">
-                <h3 className="text-lg font-bold text-dark mb-4">
-                  Or schedule a call directly
-                </h3>
-                <div className="rounded-2xl border-2 border-dashed border-gray-200 bg-white p-8 text-center">
-                  <div className="text-4xl mb-3">📅</div>
-                  <p className="text-sm font-semibold text-dark">
-                    Calendar booking coming soon
-                  </p>
-                  <p className="mt-2 text-sm text-gray-500">
-                    In the meantime, give us a call at{" "}
-                    <a
-                      href="tel:+18058011380"
-                      className="font-semibold text-accent hover:text-accent-hover transition-colors"
-                    >
-                      (805) 801-1380
-                    </a>
-                  </p>
+              {/* Quick Response Promise */}
+              <div className="mt-10 rounded-2xl bg-primary/5 border border-primary/10 p-6">
+                <div className="flex items-start gap-3">
+                  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-accent/10 text-accent">
+                    <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                  </div>
+                  <div>
+                    <p className="text-sm font-semibold text-dark">We respond fast</p>
+                    <p className="mt-1 text-sm text-text-light">
+                      Most inquiries get a response within a few hours. Call us directly at{" "}
+                      <a
+                        href="tel:+18058011380"
+                        className="font-semibold text-accent hover:text-accent-hover transition-colors"
+                      >
+                        (805) 801-1380
+                      </a>{" "}
+                      if you want to talk now.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
 
             {/* Contact Form */}
             <div>
-              <div className="rounded-2xl bg-white border border-gray-100 shadow-lg p-6 sm:p-8">
+              <div className="rounded-2xl bg-white border border-gray-100 shadow-xl p-8 sm:p-10">
                 {submitted ? (
                   <div className="text-center py-12">
                     <div className="text-5xl mb-4">✅</div>
@@ -222,7 +221,7 @@ export default function ContactPage() {
                         required
                         value={form.name}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                        className="w-full rounded-xl border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all"
                         placeholder="John Smith"
                       />
                     </div>
@@ -242,7 +241,7 @@ export default function ContactPage() {
                         required
                         value={form.business}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                        className="w-full rounded-xl border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all"
                         placeholder="Smith Plumbing"
                       />
                     </div>
@@ -263,7 +262,7 @@ export default function ContactPage() {
                           required
                           value={form.phone}
                           onChange={handleChange}
-                          className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                          className="w-full rounded-xl border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all"
                           placeholder="(555) 123-4567"
                         />
                       </div>
@@ -281,7 +280,7 @@ export default function ContactPage() {
                           required
                           value={form.email}
                           onChange={handleChange}
-                          className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary transition-colors"
+                          className="w-full rounded-xl border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all"
                           placeholder="john@smithplumbing.com"
                         />
                       </div>
@@ -301,7 +300,7 @@ export default function ContactPage() {
                         required
                         value={form.trade}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 focus:border-primary focus:ring-1 focus:ring-primary transition-colors bg-white"
+                        className="w-full rounded-xl border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all"
                       >
                         <option value="" disabled>
                           Select your trade
@@ -331,7 +330,7 @@ export default function ContactPage() {
                         rows={4}
                         value={form.message}
                         onChange={handleChange}
-                        className="w-full rounded-lg border border-gray-200 px-4 py-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-primary focus:ring-1 focus:ring-primary transition-colors resize-none"
+                        className="w-full rounded-xl border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all resize-none"
                         placeholder="Tell us about your business, how many techs you have, what's taking up the most time..."
                       />
                     </div>

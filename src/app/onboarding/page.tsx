@@ -257,9 +257,9 @@ export default function OnboardingPage() {
               );
             })}
           </div>
-          <div className="h-1.5 bg-gray-200 rounded-full overflow-hidden">
+          <div className="h-2 bg-gray-200 rounded-full overflow-hidden shadow-inner">
             <div
-              className="h-full bg-accent rounded-full transition-all duration-300"
+              className="h-full bg-accent rounded-full transition-all duration-500 ease-out shadow-sm shadow-accent/25"
               style={{ width: `${((step - 1) / (totalSteps - 1)) * 100}%` }}
             />
           </div>
@@ -269,7 +269,7 @@ export default function OnboardingPage() {
         </div>
 
         {/* Form Card */}
-        <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8">
+        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 sm:p-10">
           {/* ---- Step 1: About Your Business ---- */}
           {step === 1 && (
             <div className="space-y-5">
@@ -350,7 +350,7 @@ export default function OnboardingPage() {
               {errors.selectedPackage && (
                 <p className="text-sm text-red-500 mb-4">{errors.selectedPackage}</p>
               )}
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {PACKAGES.map((pkg) => {
                   const selected = form.selectedPackage === pkg.id;
                   return (
@@ -358,10 +358,10 @@ export default function OnboardingPage() {
                       key={pkg.id}
                       type="button"
                       onClick={() => set("selectedPackage", pkg.id)}
-                      className={`relative text-left rounded-xl border-2 p-5 transition-all ${
+                      className={`relative text-left rounded-2xl border-2 p-6 transition-all duration-200 ${
                         selected
-                          ? "border-accent bg-accent/5 shadow-md"
-                          : "border-gray-100 hover:border-gray-200 bg-white"
+                          ? "border-accent bg-accent/5 shadow-lg shadow-accent/10 scale-[1.02]"
+                          : "border-gray-100 hover:border-gray-300 hover:shadow-md bg-white"
                       }`}
                     >
                       {pkg.popular && (
@@ -452,7 +452,7 @@ export default function OnboardingPage() {
               <button
                 type="button"
                 onClick={prev}
-                className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-gray-700 transition"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-gray-500 hover:text-gray-700 transition min-h-[44px]"
               >
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -499,10 +499,10 @@ export default function OnboardingPage() {
 /* ------------------------------------------------------------------ */
 
 function inputClass(error?: string) {
-  return `w-full text-sm border rounded-lg px-3 py-2.5 transition focus:ring-1 focus:outline-none ${
+  return `w-full text-sm border rounded-xl px-4 py-3 bg-light-bg transition-all focus:ring-2 focus:outline-none focus:bg-white ${
     error
       ? "border-red-300 focus:border-red-500 focus:ring-red-200"
-      : "border-gray-200 focus:border-primary focus:ring-primary/20"
+      : "border-gray-200 focus:border-accent focus:ring-accent/20"
   }`;
 }
 

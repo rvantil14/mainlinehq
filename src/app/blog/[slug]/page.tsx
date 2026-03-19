@@ -84,17 +84,19 @@ export default async function BlogPostPage({
       </section>
 
       {/* Article Content */}
-      <section className="py-12 sm:py-20">
-        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-24">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <article
             className="prose prose-lg max-w-none
               prose-headings:text-dark prose-headings:font-bold prose-headings:tracking-tight
-              prose-h2:text-2xl prose-h2:mt-10 prose-h2:mb-4
-              prose-p:text-text-light prose-p:leading-relaxed
+              prose-h2:text-2xl prose-h2:sm:text-3xl prose-h2:mt-12 prose-h2:mb-5 prose-h2:border-b prose-h2:border-gray-100 prose-h2:pb-3
+              prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
+              prose-p:text-text-light prose-p:leading-[1.8] prose-p:text-base prose-p:sm:text-lg
               prose-strong:text-dark
               prose-ul:text-text-light prose-ul:space-y-2
               prose-li:leading-relaxed
               prose-a:text-accent prose-a:font-semibold prose-a:no-underline hover:prose-a:underline
+              prose-blockquote:border-l-4 prose-blockquote:border-accent prose-blockquote:bg-accent/5 prose-blockquote:rounded-r-xl prose-blockquote:py-4 prose-blockquote:px-6
               prose-table:border-collapse prose-table:w-full prose-table:text-sm
               prose-th:border prose-th:border-gray-200 prose-th:bg-light-bg prose-th:px-4 prose-th:py-3 prose-th:text-left prose-th:font-semibold prose-th:text-dark
               prose-td:border prose-td:border-gray-200 prose-td:px-4 prose-td:py-3 prose-td:text-text-light"

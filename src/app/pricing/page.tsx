@@ -195,7 +195,7 @@ const comparisonRows = [
 const faqs = [
   {
     q: "How does this compare to Jobber or Housecall Pro?",
-    a: "They give you tools to figure out yourself. We build it, run it, and optimize it for you. With Jobber or Housecall Pro, you're paying for software and spending your nights learning how to set it up. With Mainline, we handle the setup, train the AI on your specific business, and make sure everything is running. You focus on the work.",
+    a: "They give you tools to figure out yourself. We build it, run it, and optimize it for you. With Mainline, we handle setup, train the AI on your specific business, and keep everything running. You focus on the work.",
   },
   {
     q: "Is there a guarantee?",
@@ -215,7 +215,7 @@ const faqs = [
   },
   {
     q: "Do I need to be tech-savvy to use this?",
-    a: "Not at all. We set everything up and train your team. The whole point is that the AI handles the work your office manager or receptionist would normally do. Your techs just show up and do the job. If you can use a smartphone, you can use our system.",
+    a: "Not at all. We set everything up and train your team. If you can use a smartphone, you can use our system. Your techs just show up and do the job.",
   },
   {
     q: "What trades do you work with?",
@@ -241,13 +241,17 @@ export default function PricingPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="bg-dark text-white py-20 sm:py-28">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
+      <section className="relative overflow-hidden bg-dark text-white py-24 sm:py-32">
+        <div className="pointer-events-none absolute inset-0">
+          <div className="absolute top-0 right-1/4 h-[400px] w-[400px] rounded-full bg-accent/5 blur-3xl" />
+          <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-primary-light/5 blur-3xl" />
+        </div>
+        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
             Simple Pricing. Real Results.{" "}
             <span className="text-accent">No Contracts.</span>
           </h1>
-          <p className="mt-5 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+          <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
             We don&apos;t sell software. We build, run, and optimize your
             entire front office, so you never miss another call, lead, or
             dollar.
@@ -262,10 +266,10 @@ export default function PricingPage() {
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`relative rounded-2xl bg-white shadow-lg transition-transform hover:-translate-y-1 ${
+                className={`relative rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1 ${
                   tier.popular
-                    ? "ring-2 ring-accent lg:scale-105 lg:z-10"
-                    : "ring-1 ring-gray-200"
+                    ? "ring-2 ring-accent lg:scale-105 lg:z-10 shadow-2xl shadow-accent/15"
+                    : "ring-1 ring-gray-200 shadow-lg hover:shadow-xl"
                 }`}
               >
                 {tier.popular && (
@@ -383,19 +387,19 @@ export default function PricingPage() {
             <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-gray-200">
-                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 w-[200px]">
+                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 min-w-[140px] sm:w-[200px]">
                     Feature
                   </th>
-                  <th className="py-4 px-5 text-sm font-bold text-primary bg-accent/5">
+                  <th className="py-4 px-5 text-sm font-bold text-primary bg-accent/5 min-w-[100px]">
                     Mainline
                   </th>
-                  <th className="py-4 px-5 text-sm font-semibold text-gray-500">
+                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 min-w-[100px]">
                     Jobber
                   </th>
-                  <th className="py-4 px-5 text-sm font-semibold text-gray-500">
+                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 min-w-[100px]">
                     Housecall Pro
                   </th>
-                  <th className="py-4 px-5 text-sm font-semibold text-gray-500">
+                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 min-w-[100px]">
                     ServiceTitan
                   </th>
                 </tr>
@@ -511,11 +515,11 @@ export default function PricingPage() {
                   </p>
                   <p className="text-2xl font-bold mt-1">=</p>
                 </div>
-                <div className="bg-white/10 rounded-lg p-4">
-                  <p className="text-sm text-accent font-medium">
+                <div className="bg-accent/20 rounded-xl p-5 ring-2 ring-accent/30">
+                  <p className="text-sm text-accent font-semibold uppercase tracking-wide">
                     Monthly revenue lost
                   </p>
-                  <p className="text-3xl font-bold text-accent mt-1">
+                  <p className="text-4xl sm:text-5xl font-extrabold text-accent mt-2">
                     ${monthlyRevenueLost.toLocaleString()}
                   </p>
                 </div>
@@ -556,12 +560,12 @@ export default function PricingPage() {
             Straight answers. No runaround.
           </p>
 
-          <div className="mt-12 divide-y divide-gray-200">
+          <div className="mt-12 space-y-3">
             {faqs.map((faq, i) => (
-              <div key={i}>
+              <div key={i} className={`rounded-2xl border transition-all duration-200 ${openFaq === i ? "border-accent/20 bg-white shadow-md" : "border-gray-200 bg-white hover:border-gray-300"}`}>
                 <button
                   type="button"
-                  className="flex w-full items-center justify-between py-5 text-left"
+                  className="flex w-full items-center justify-between px-6 py-5 text-left"
                   onClick={() => setOpenFaq(openFaq === i ? null : i)}
                   aria-expanded={openFaq === i}
                 >
@@ -569,8 +573,8 @@ export default function PricingPage() {
                     {faq.q}
                   </span>
                   <svg
-                    className={`h-5 w-5 shrink-0 text-gray-400 transition-transform ${
-                      openFaq === i ? "rotate-180" : ""
+                    className={`h-5 w-5 shrink-0 text-gray-400 transition-transform duration-200 ${
+                      openFaq === i ? "rotate-180 text-accent" : ""
                     }`}
                     fill="none"
                     viewBox="0 0 24 24"
@@ -585,9 +589,11 @@ export default function PricingPage() {
                   </svg>
                 </button>
                 {openFaq === i && (
-                  <p className="pb-5 text-sm leading-relaxed text-gray-600">
-                    {faq.a}
-                  </p>
+                  <div className="px-6 pb-5">
+                    <p className="text-sm leading-relaxed text-gray-600">
+                      {faq.a}
+                    </p>
+                  </div>
                 )}
               </div>
             ))}

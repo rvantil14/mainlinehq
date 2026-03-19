@@ -260,7 +260,7 @@ export default function DemoPage() {
             <button
               key={biz.clientId}
               onClick={() => switchBusiness(biz)}
-              className={`relative flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
+              className={`relative flex items-center gap-2 px-4 sm:px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 min-h-[44px] ${
                 activeBusiness.clientId === biz.clientId
                   ? "bg-primary text-white shadow-md"
                   : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
