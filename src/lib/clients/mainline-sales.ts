@@ -72,9 +72,9 @@ export const mainlineSalesConfig: ClientConfig = {
         "Plumbing, HVAC, electrical, painting, landscaping, roofing, general contracting, and cleaning services.",
     },
     {
-      question: "Is there a guarantee?",
+      question: "Are there contracts?",
       answer:
-        "Yes. 30-day money-back guarantee on your setup fee. If you don't see results, we refund it.",
+        "No. All plans are month-to-month. Cancel anytime with 30 days notice. We earn your business every month.",
     },
   ],
   businessHours: {

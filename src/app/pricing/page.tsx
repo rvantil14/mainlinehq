@@ -198,8 +198,8 @@ const faqs = [
     a: "They give you tools to figure out yourself. We build it, run it, and optimize it for you. With Mainline, we handle setup, train the AI on your specific business, and keep everything running. You focus on the work.",
   },
   {
-    q: "Is there a guarantee?",
-    a: "Try it for 30 days. If you don't see at least 5 new leads from our system, we refund your setup fee. Every penny. We're confident in what we build because we've seen it work across dozens of trade businesses.",
+    q: "What if it doesn't work for my business?",
+    a: "All plans are month-to-month. If you're not seeing results, you can cancel anytime with 30 days notice. No long-term commitments.",
   },
   {
     q: "Are there long-term contracts?",

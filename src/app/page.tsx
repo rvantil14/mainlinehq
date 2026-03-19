@@ -99,12 +99,12 @@ const steps = [
 
 const trades = [
   { name: "Plumbing", image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" },
-  { name: "HVAC", image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80" },
+  { name: "HVAC", image: "https://images.unsplash.com/photo-1621460248083-6271cc4437a8?w=600&q=80" },
   { name: "Electrical", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" },
-  { name: "Painting", image: "https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=600&q=80" },
+  { name: "Painting", image: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80" },
   { name: "Landscaping", image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80" },
   { name: "General Contracting", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" },
-  { name: "Roofing", image: "https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=600&q=80" },
+  { name: "Roofing", image: "https://images.unsplash.com/photo-1600585152220-90363fe7e115?w=600&q=80" },
   { name: "Cleaning", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" },
 ];
 
@@ -353,21 +353,21 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4">
+          <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {trades.map((trade, i) => (
               <div
                 key={i}
-                className="group relative overflow-hidden rounded-lg h-40 sm:h-48 cursor-default"
+                className="group relative overflow-hidden rounded-lg h-44 sm:h-52"
               >
                 <img
                   src={trade.image}
                   alt={trade.name}
-                  className="absolute inset-0 w-full h-full object-cover"
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-dark/60" />
-                <div className="relative flex items-center justify-center h-full">
-                  <span className="text-lg sm:text-xl font-bold text-white tracking-wide drop-shadow-lg">
+                <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/30 to-transparent" />
+                <div className="relative flex items-end h-full p-4">
+                  <span className="text-base sm:text-lg font-bold text-white tracking-wide">
                     {trade.name}
                   </span>
                 </div>
@@ -460,9 +460,9 @@ export default function Home() {
               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
               CCPA Compliant
             </span>
-            <span className="inline-flex items-center gap-1.5 rounded-md bg-accent/10 px-4 py-2 text-xs font-semibold text-accent">
+            <span className="inline-flex items-center gap-1.5 rounded-md bg-success/10 px-4 py-2 text-xs font-semibold text-success">
               <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-              30-Day Money-Back Guarantee
+              No Contracts
             </span>
           </div>
         </div>
