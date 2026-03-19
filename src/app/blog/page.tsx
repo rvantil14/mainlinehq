@@ -19,7 +19,7 @@ export default function BlogPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="bg-dark py-16 sm:py-24">
+      <section className="bg-dark py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
             The Mainline Blog
@@ -32,16 +32,16 @@ export default function BlogPage() {
       </section>
 
       {/* Article Grid */}
-      <section className="py-16 sm:py-24">
+      <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {blogArticles.map((article) => (
               <Link
                 key={article.slug}
                 href={`/blog/${article.slug}`}
-                className="group flex flex-col rounded-2xl border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1"
+                className="group flex flex-col rounded-lg border border-gray-200 bg-white shadow-sm transition-all duration-300 hover:border-accent/30 hover:shadow-xl hover:shadow-accent/5 hover:-translate-y-1"
               >
-                <div className="h-2 w-full bg-accent/10 group-hover:bg-accent/20 transition-colors rounded-t-2xl" />
+                <div className="h-2 w-full bg-accent/10 group-hover:bg-accent/20 transition-colors rounded-t-lg" />
                 <div className="flex flex-1 flex-col p-8">
                   <div className="flex items-center gap-3 mb-4">
                     <span
@@ -87,7 +87,7 @@ export default function BlogPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-dark py-16 sm:py-24">
+      <section className="bg-dark py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Want to See What AI Can Do for Your Business?

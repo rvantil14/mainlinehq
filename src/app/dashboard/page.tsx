@@ -4,10 +4,10 @@ import { useState } from "react";
 import Link from "next/link";
 
 const stats = [
-  { label: "Conversations This Month", value: "47", icon: "\uD83D\uDCAC", change: "+12% from last month" },
-  { label: "Leads Captured", value: "23", icon: "\uD83C\uDFAF", change: "+8% from last month" },
-  { label: "Appointments Booked", value: "18", icon: "\uD83D\uDCC5", change: "+22% from last month" },
-  { label: "Revenue Collected", value: "$12,450", icon: "\uD83D\uDCB0", change: "+15% from last month" },
+  { label: "Conversations This Month", value: "47", icon: "chat", change: "+12% from last month" },
+  { label: "Leads Captured", value: "23", icon: "target", change: "+8% from last month" },
+  { label: "Appointments Booked", value: "18", icon: "calendar", change: "+22% from last month" },
+  { label: "Revenue Collected", value: "$12,450", icon: "dollar", change: "+15% from last month" },
 ];
 
 const conversations = [
@@ -115,7 +115,12 @@ export default function DashboardPage() {
             >
               <div className="flex items-center justify-between mb-3">
                 <span className="text-sm font-medium text-text-light">{stat.label}</span>
-                <span className="text-2xl">{stat.icon}</span>
+                <span className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center text-primary">
+                  {stat.icon === "chat" && <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" /></svg>}
+                  {stat.icon === "target" && <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0115 0z" /></svg>}
+                  {stat.icon === "calendar" && <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>}
+                  {stat.icon === "dollar" && <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>}
+                </span>
               </div>
               <p className="text-3xl font-bold text-primary">{stat.value}</p>
               <p className="text-xs text-success mt-1">{stat.change}</p>
@@ -279,7 +284,7 @@ export default function DashboardPage() {
             <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider text-text-light bg-gray-100 px-2 py-0.5 rounded-full">
               Demo
             </span>
-            <div className="text-2xl mb-2">🤖</div>
+            <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center mb-2"><svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-4.03 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C3.93 16.178 3 14.189 3 12c0-4.556 4.03-8.25 9-8.25s9 3.694 9 8.25z" /></svg></div>
             <h3 className="font-semibold text-primary">AI Chat Settings</h3>
             <p className="text-xs text-text-light mt-1">Customize your chatbot responses, tone, and availability hours.</p>
           </div>
@@ -287,7 +292,7 @@ export default function DashboardPage() {
             <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider text-text-light bg-gray-100 px-2 py-0.5 rounded-full">
               Demo
             </span>
-            <div className="text-2xl mb-2">📊</div>
+            <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center mb-2"><svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg></div>
             <h3 className="font-semibold text-primary">Full Reports</h3>
             <p className="text-xs text-text-light mt-1">View detailed analytics on leads, conversions, and revenue trends.</p>
           </div>
@@ -295,14 +300,14 @@ export default function DashboardPage() {
             <span className="absolute top-3 right-3 text-[10px] font-semibold uppercase tracking-wider text-text-light bg-gray-100 px-2 py-0.5 rounded-full">
               Demo
             </span>
-            <div className="text-2xl mb-2">⚡</div>
+            <div className="w-8 h-8 rounded-md bg-primary/10 flex items-center justify-center mb-2"><svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg></div>
             <h3 className="font-semibold text-primary">Quick Actions</h3>
             <p className="text-xs text-text-light mt-1">Send follow-ups, create invoices, or manage your schedule.</p>
           </div>
         </div>
 
         {/* Bottom CTA */}
-        <div className="bg-primary rounded-2xl p-8 sm:p-10 text-center shadow-lg">
+        <div className="bg-primary rounded-lg p-8 sm:p-10 text-center shadow-lg">
           <h2 className="text-xl sm:text-2xl font-bold text-white mb-2">
             Want This For Your Business?
           </h2>

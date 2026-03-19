@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: "📞",
+    icon: "",
     title: "Emergency Calls Missed While You're on a Job",
     description:
       "You're under a house fixing a slab leak and your phone is in the truck. Meanwhile, a homeowner with a burst pipe is calling, and when you don't answer, they call the next plumber on Google. That job is gone in 30 seconds.",
@@ -17,7 +17,7 @@ const painPoints = [
       "Our AI receptionist answers every call instantly, 24/7, including nights and weekends. It qualifies the emergency, captures the details, and books the appointment. By the time you're back in your truck, the job is on your calendar.",
   },
   {
-    icon: "📝",
+    icon: "",
     title: "Estimates Take Days to Send Out",
     description:
       "You do the walkthrough, take notes on your phone, then get busy with the next three jobs. By the time you sit down to write the estimate, it's been two days. Half the time, the customer already went with someone faster.",
@@ -25,7 +25,7 @@ const painPoints = [
       "AI generates a rough estimate based on your pricing and the job details from the call. You review it on your phone, make any adjustments, and send it. Usually within hours, not days.",
   },
   {
-    icon: "🔄",
+    icon: "",
     title: "No Follow-Up After the Job",
     description:
       "You fixed their water heater. They were happy. Six months later they need a repipe and they can't remember your name, so they're back on Google searching for a new plumber.",
@@ -33,7 +33,7 @@ const painPoints = [
       "Automated follow-up sequences keep you top of mind. Thank you texts, maintenance reminders, seasonal check-in emails. When they need a plumber again, your name is the first one they think of.",
   },
   {
-    icon: "💸",
+    icon: "",
     title: "Invoices Sent Late, Payments Collected Later",
     description:
       "You finish the job at 4 PM and tell yourself you'll send the invoice tonight. Three days later you still haven't. The customer forgets. Now you're chasing payments instead of doing plumbing.",
@@ -46,16 +46,11 @@ export default function PlumbersPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-dark pt-16 pb-20 sm:pt-24 sm:pb-28">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-20 right-[-10%] h-[500px] w-[500px] rounded-full bg-accent/8 blur-3xl" />
-          <div className="absolute bottom-0 left-[-5%] h-[400px] w-[400px] rounded-full bg-primary-light/8 blur-3xl" />
-        </div>
-
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-dark pt-16 pb-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-gray-300">
-              <span className="text-lg">🔧</span>
+              <span className="inline-block h-2 w-2 rounded-full bg-accent" />
               Built for Plumbing Businesses
             </div>
 
@@ -103,7 +98,7 @@ export default function PlumbersPage() {
               <p className="text-4xl sm:text-5xl font-extrabold text-white mt-1">$350</p>
             </div>
             <div className="hidden sm:block text-3xl text-gray-400">=</div>
-            <div className="rounded-2xl bg-white/10 px-8 py-4">
+            <div className="rounded-lg bg-white/10 px-8 py-4">
               <p className="text-sm font-semibold uppercase tracking-wider text-accent">Monthly Revenue Lost</p>
               <p className="text-4xl sm:text-5xl font-extrabold text-accent mt-1">$7,000</p>
             </div>
@@ -112,7 +107,7 @@ export default function PlumbersPage() {
       </section>
 
       {/* Pain Points + Solutions */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
@@ -127,12 +122,11 @@ export default function PlumbersPage() {
             {painPoints.map((point, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-gray-100 bg-light-bg p-8 sm:p-10"
+                className="rounded-lg border border-gray-100 bg-light-bg p-8 sm:p-10"
               >
                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
                   <div>
                     <div className="flex items-start gap-3">
-                      <span className="text-2xl">{point.icon}</span>
                       <h3 className="text-xl font-bold text-dark">
                         {point.title}
                       </h3>
@@ -157,7 +151,7 @@ export default function PlumbersPage() {
       </section>
 
       {/* Pricing Example */}
-      <section className="bg-light-bg py-20 sm:py-28">
+      <section className="bg-light-bg py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
@@ -165,7 +159,7 @@ export default function PlumbersPage() {
             </h2>
           </div>
 
-          <div className="rounded-2xl bg-white border border-gray-200 shadow-lg p-8 sm:p-12">
+          <div className="rounded-lg bg-white border border-gray-200 shadow-lg p-8 sm:p-12">
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-dark">Without Mainline</h3>
@@ -224,9 +218,9 @@ export default function PlumbersPage() {
       </section>
 
       {/* Testimonial */}
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-light-bg border border-gray-100 p-10 sm:p-16 text-center">
+          <div className="relative rounded-lg bg-light-bg border border-gray-100 p-10 sm:p-16 text-center">
             <span className="absolute top-6 left-8 text-7xl font-serif leading-none text-accent/10 select-none">&ldquo;</span>
             <div className="flex justify-center gap-1 mb-6">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -253,7 +247,7 @@ export default function PlumbersPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-dark py-20 sm:py-28">
+      <section className="bg-dark py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to Stop Losing Jobs to Missed Calls?

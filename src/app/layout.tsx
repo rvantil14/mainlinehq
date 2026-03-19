@@ -73,27 +73,26 @@ export default function RootLayout({
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               {/* Logo */}
-              <Link href="/" className="flex items-center gap-2 group">
-                <span className="text-2xl">🔧</span>
-                <span className="text-xl font-bold text-white tracking-tight group-hover:text-accent transition-colors">
+              <Link href="/" className="flex items-center group">
+                <span className="text-xl font-black text-white uppercase tracking-wider group-hover:text-accent transition-colors">
                   Mainline
                 </span>
               </Link>
 
               {/* Desktop Nav */}
-              <nav className="hidden md:flex items-center gap-2">
+              <nav className="hidden md:flex items-center gap-1">
                 {navLinks.map((link) => (
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="px-5 py-2 text-sm font-medium text-gray-300 hover:text-white rounded-lg hover:bg-white/5 transition-all"
+                    className="px-4 py-2 text-sm font-medium text-gray-300 hover:text-white border-b-2 border-transparent hover:border-accent transition-all"
                   >
                     {link.label}
                   </Link>
                 ))}
                 <Link
                   href="/contact"
-                  className="ml-3 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-primary bg-accent hover:bg-accent-hover rounded-lg transition-colors shadow-sm shadow-accent/25"
+                  className="ml-4 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-white bg-accent hover:bg-accent-hover rounded-md transition-colors"
                 >
                   Free Consultation
                 </Link>
@@ -114,9 +113,8 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
               {/* Brand */}
               <div>
-                <div className="flex items-center gap-2 mb-3">
-                  <span className="text-xl">🔧</span>
-                  <span className="text-lg font-bold text-white">Mainline</span>
+                <div className="mb-3">
+                  <span className="text-lg font-black text-white uppercase tracking-wider">Mainline</span>
                 </div>
                 <p className="text-sm leading-relaxed text-gray-400 max-w-sm">
                   The main line between your customers and your calendar.

@@ -28,7 +28,7 @@ const BUSINESSES: DemoBusiness[] = [
   {
     clientId: "demo-plumbing",
     name: "Ace Plumbing",
-    icon: "\uD83D\uDD27",
+    icon: "AP",
     greeting:
       "Hi! Thanks for reaching out to Ace Plumbing & Drain. Whether you have a leaky faucet or a full plumbing emergency, we're here to help. What can I do for you today?",
     features: ["AI Chatbot", "Lead Capture", "Scheduling", "Emergency Routing"],
@@ -42,21 +42,21 @@ const BUSINESSES: DemoBusiness[] = [
   {
     clientId: "demo-hvac",
     name: "Summit HVAC",
-    icon: "\u2744\uFE0F",
+    icon: "SH",
     greeting:
       "Hello! Welcome to Summit HVAC. From AC installs to furnace repairs, we keep your home comfortable year-round. How can I help you today?",
     features: ["AI Chatbot", "Lead Capture", "Scheduling", "Seasonal Promos"],
     suggestedMessages: [
       "My AC stopped blowing cold air",
       "How much does a new furnace cost?",
-      "Can you come out today? It\u2019s 100 degrees",
+      "Can you come out today? It's 100 degrees",
       "I need my system serviced before summer",
     ],
   },
   {
     clientId: "demo-electrical",
     name: "Volt Electric",
-    icon: "\u26A1",
+    icon: "VE",
     greeting:
       "Hey there! Thanks for contacting Volt Electric. We handle everything from panel upgrades to outlet installs. What do you need help with?",
     features: ["AI Chatbot", "Lead Capture", "Scheduling", "Safety Alerts"],
@@ -70,7 +70,7 @@ const BUSINESSES: DemoBusiness[] = [
   {
     clientId: "demo-painting",
     name: "Fresh Coat Painters",
-    icon: "\uD83C\uDFA8",
+    icon: "FC",
     greeting:
       "Hi! Welcome to Fresh Coat Painters. Whether it's interior, exterior, or a full color consultation, we'd love to help transform your space. What are you looking to get done?",
     features: ["AI Chatbot", "Lead Capture", "Estimates", "Color Consult"],
@@ -266,7 +266,7 @@ export default function DemoPage() {
                   : "bg-white text-gray-600 hover:bg-gray-100 border border-gray-200"
               }`}
             >
-              <span className="text-lg leading-none">{biz.icon}</span>
+              <span className="text-xs font-bold leading-none">{biz.icon}</span>
               <span>{biz.name}</span>
               {activeBusiness.clientId === biz.clientId && (
                 <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-6 h-1 bg-accent rounded-full" />
@@ -279,10 +279,10 @@ export default function DemoPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* Chat Panel - 3/5 = 60% */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden flex flex-col min-h-[400px] lg:min-h-[500px]">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden flex flex-col min-h-[400px] lg:min-h-[500px]">
               {/* Chat Header */}
               <div className="px-5 py-3.5 flex items-center gap-3 border-b border-gray-100 bg-primary">
-                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xl">
+                <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold text-white">
                   {activeBusiness.icon}
                 </div>
                 <div className="flex-1">
@@ -306,11 +306,11 @@ export default function DemoPage() {
                     {msg.role === "assistant" ? (
                       /* AI message - left-aligned with avatar */
                       <div className="flex gap-2.5 max-w-[85%] sm:max-w-[75%]">
-                        <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm bg-white border border-gray-200 shadow-sm">
+                        <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-[10px] font-bold text-primary bg-primary/10 border border-gray-200 shadow-sm">
                           {activeBusiness.icon}
                         </div>
                         <div>
-                          <div className="bg-white border border-gray-200 rounded-2xl rounded-tl-sm px-4 py-3 text-sm leading-relaxed text-gray-800 shadow-sm">
+                          <div className="bg-white border border-gray-200 rounded-lg rounded-tl-sm px-4 py-3 text-sm leading-relaxed text-gray-800 shadow-sm">
                             {msg.content}
                           </div>
                           <p className="text-[10px] text-gray-400 mt-1 ml-1">
@@ -321,7 +321,7 @@ export default function DemoPage() {
                     ) : (
                       /* User message - right-aligned */
                       <div className="max-w-[85%] sm:max-w-[75%]">
-                        <div className="bg-accent text-white rounded-2xl rounded-tr-sm px-4 py-3 text-sm leading-relaxed shadow-sm">
+                        <div className="bg-accent text-white rounded-lg rounded-tr-sm px-4 py-3 text-sm leading-relaxed shadow-sm">
                           {msg.content}
                         </div>
                         <p className="text-[10px] text-gray-400 mt-1 text-right mr-1">
@@ -339,7 +339,7 @@ export default function DemoPage() {
                       <div className="w-8 h-8 rounded-full flex-shrink-0 flex items-center justify-center text-sm bg-white border border-gray-200 shadow-sm">
                         {activeBusiness.icon}
                       </div>
-                      <div className="bg-white border border-gray-200 rounded-2xl rounded-tl-sm px-4 py-3.5 shadow-sm">
+                      <div className="bg-white border border-gray-200 rounded-lg rounded-tl-sm px-4 py-3.5 shadow-sm">
                         <div className="flex gap-1">
                           <span
                             className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"
@@ -373,12 +373,12 @@ export default function DemoPage() {
                     placeholder="Type your message..."
                     disabled={loading}
                     autoFocus
-                    className="flex-1 px-4 py-3 border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary disabled:opacity-50 disabled:bg-gray-50 bg-gray-50"
+                    className="flex-1 px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary disabled:opacity-50 disabled:bg-gray-50 bg-gray-50"
                   />
                   <button
                     type="submit"
                     disabled={loading || !input.trim()}
-                    className="px-4 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl text-sm transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
+                    className="px-4 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-lg text-sm transition-colors disabled:opacity-40 disabled:cursor-not-allowed shadow-sm"
                   >
                     <svg
                       className="w-5 h-5"
@@ -402,10 +402,10 @@ export default function DemoPage() {
           {/* Info Panel - 2/5 = 40% */}
           <div className="lg:col-span-2 space-y-5">
             {/* Active Business Card */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 overflow-hidden">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden">
               <div className="px-6 pt-5 pb-4 border-b border-gray-100">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 bg-primary/10 rounded-xl flex items-center justify-center text-2xl">
+                  <div className="w-11 h-11 bg-primary/10 rounded-lg flex items-center justify-center text-xs font-bold text-primary">
                     {activeBusiness.icon}
                   </div>
                   <div>
@@ -439,7 +439,7 @@ export default function DemoPage() {
                 <p className="text-xs font-semibold text-text-light uppercase tracking-wider mb-1">
                   What Just Happened
                 </p>
-                <div className="flex items-center justify-between py-2.5 px-3.5 rounded-xl bg-gray-50">
+                <div className="flex items-center justify-between py-2.5 px-3.5 rounded-lg bg-gray-50">
                   <span className="text-sm text-gray-700 font-medium">Lead Captured</span>
                   {leadCaptured ? (
                     <span className="flex items-center gap-1.5 text-sm font-semibold text-success">
@@ -459,7 +459,7 @@ export default function DemoPage() {
                     </span>
                   )}
                 </div>
-                <div className="flex items-center justify-between py-2.5 px-3.5 rounded-xl bg-gray-50">
+                <div className="flex items-center justify-between py-2.5 px-3.5 rounded-lg bg-gray-50">
                   <span className="text-sm text-gray-700 font-medium">Appointment Booked</span>
                   {appointmentBooked ? (
                     <span className="flex items-center gap-1.5 text-sm font-semibold text-success">
@@ -483,7 +483,7 @@ export default function DemoPage() {
             </div>
 
             {/* Suggested Messages */}
-            <div className="bg-white rounded-2xl shadow-lg border border-gray-200 p-6">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-200 p-6">
               <p className="text-xs font-semibold text-text-light uppercase tracking-wider mb-3">
                 Try Asking
               </p>
@@ -493,7 +493,7 @@ export default function DemoPage() {
                     key={i}
                     onClick={() => sendMessage(msg)}
                     disabled={loading}
-                    className="w-full text-left px-3.5 py-2.5 text-sm text-gray-700 rounded-xl transition-all border border-gray-200 hover:border-accent hover:bg-accent/5 hover:text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed"
+                    className="w-full text-left px-3.5 py-2.5 text-sm text-gray-700 rounded-lg transition-all border border-gray-200 hover:border-accent hover:bg-accent/5 hover:text-gray-900 disabled:opacity-40 disabled:cursor-not-allowed"
                   >
                     &ldquo;{msg}&rdquo;
                   </button>
@@ -502,7 +502,7 @@ export default function DemoPage() {
             </div>
 
             {/* Sidebar CTA */}
-            <div className="bg-primary rounded-2xl p-6 text-center shadow-lg">
+            <div className="bg-primary rounded-lg p-6 text-center shadow-lg">
               <p className="text-white font-semibold mb-1.5">
                 Want This For Your Business?
               </p>
@@ -534,7 +534,7 @@ export default function DemoPage() {
 
         {/* Bottom CTA Section */}
         <div className="mt-16 mb-8 text-center">
-          <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-lg border border-gray-200 px-8 py-10">
+          <div className="max-w-2xl mx-auto bg-white rounded-lg shadow-lg border border-gray-200 px-8 py-10">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
               Want This For Your Business?
             </h2>
@@ -545,7 +545,7 @@ export default function DemoPage() {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-8 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-xl text-base transition-colors shadow-md"
+                className="inline-flex items-center gap-2 px-8 py-3 bg-accent hover:bg-accent-hover text-white font-semibold rounded-lg text-base transition-colors shadow-md"
               >
                 Schedule a Free Consultation
                 <svg

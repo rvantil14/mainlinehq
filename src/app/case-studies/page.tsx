@@ -31,7 +31,7 @@ const caseStudies = [
     quote:
       "I was losing 4-5 calls a day while my guys were on jobs. Now every call gets answered and half of them book before I even get back to the truck.",
     quoteName: "Mike T., Owner",
-    icon: "🔧",
+    icon: "P",
   },
   {
     id: "summit-climate",
@@ -56,7 +56,7 @@ const caseStudies = [
     quote:
       "Last summer we were drowning in calls. This year, every single one got answered. The invoicing alone paid for the service. We went from waiting 3 weeks for payment to getting paid same day.",
     quoteName: "Sarah K., Operations Manager",
-    icon: "❄️",
+    icon: "H",
   },
   {
     id: "southeastern-electrical",
@@ -80,7 +80,7 @@ const caseStudies = [
     quote:
       "I used to spend every Sunday night doing estimates and invoices. Now estimates go out the same day and invoices send themselves. I got my weekends back.",
     quoteName: "Tom R., Owner",
-    icon: "⚡",
+    icon: "E",
   },
 ];
 
@@ -133,7 +133,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Case Studies */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="space-y-20">
             {caseStudies.map((study, idx) => (
@@ -153,7 +153,7 @@ export default function CaseStudies() {
 
                 {/* Header */}
                 <div className="flex flex-wrap items-start gap-4 mb-10">
-                  <span className="text-5xl">{study.icon}</span>
+                  <span className="flex items-center justify-center w-14 h-14 rounded-lg bg-accent/10 text-accent text-xl font-bold">{study.icon}</span>
                   <div>
                     <h2 className="text-2xl font-bold text-dark sm:text-3xl">
                       {study.business}
@@ -194,7 +194,7 @@ export default function CaseStudies() {
                     </div>
 
                     {/* Quote */}
-                    <div className="relative rounded-2xl border-l-4 border-l-accent bg-accent/5 p-8">
+                    <div className="relative rounded-lg border-l-4 border-l-accent bg-accent/5 p-8">
                       <span className="absolute top-3 right-5 text-5xl font-serif leading-none text-accent/15 select-none">&ldquo;</span>
                       <blockquote className="relative text-dark leading-relaxed italic text-lg">
                         &ldquo;{study.quote}&rdquo;
@@ -210,7 +210,7 @@ export default function CaseStudies() {
                     <h3 className="text-sm font-semibold uppercase tracking-wider text-green-600 mb-4">
                       Results After 90 Days
                     </h3>
-                    <div className="rounded-2xl border border-gray-100 bg-light-bg p-6">
+                    <div className="rounded-lg border border-gray-100 bg-light-bg p-6">
                       {study.results.map((result, i) => (
                         <StatBar
                           key={i}
@@ -230,7 +230,7 @@ export default function CaseStudies() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-dark py-20 sm:py-28">
+      <section className="bg-dark py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">

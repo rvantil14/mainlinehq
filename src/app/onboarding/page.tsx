@@ -192,7 +192,7 @@ export default function OnboardingPage() {
               <span className="text-gray-600">You&apos;ll be live and capturing leads within one week</span>
             </li>
           </ol>
-          <div className="bg-light-bg rounded-xl p-4">
+          <div className="bg-light-bg rounded-lg p-4">
             <p className="text-sm text-text-light mb-1">Can&apos;t wait?</p>
             <a href="tel:+18058011380" className="text-lg font-bold text-primary hover:text-primary-light transition">
               Call us now: (805) 801-1380
@@ -269,7 +269,7 @@ export default function OnboardingPage() {
         </div>
 
         {/* Form Card */}
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 sm:p-10">
+        <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-8 sm:p-10">
           {/* ---- Step 1: About Your Business ---- */}
           {step === 1 && (
             <div className="space-y-5">
@@ -358,7 +358,7 @@ export default function OnboardingPage() {
                       key={pkg.id}
                       type="button"
                       onClick={() => set("selectedPackage", pkg.id)}
-                      className={`relative text-left rounded-2xl border-2 p-6 transition-all duration-200 ${
+                      className={`relative text-left rounded-lg border-2 p-6 transition-all duration-200 ${
                         selected
                           ? "border-accent bg-accent/5 shadow-lg shadow-accent/10 scale-[1.02]"
                           : "border-gray-100 hover:border-gray-300 hover:shadow-md bg-white"
@@ -499,7 +499,7 @@ export default function OnboardingPage() {
 /* ------------------------------------------------------------------ */
 
 function inputClass(error?: string) {
-  return `w-full text-sm border rounded-xl px-4 py-3 bg-light-bg transition-all focus:ring-2 focus:outline-none focus:bg-white ${
+  return `w-full text-sm border rounded-lg px-4 py-3 bg-light-bg transition-all focus:ring-2 focus:outline-none focus:bg-white ${
     error
       ? "border-red-300 focus:border-red-500 focus:ring-red-200"
       : "border-gray-200 focus:border-accent focus:ring-accent/20"
@@ -531,7 +531,7 @@ function Field({
 
 function SummarySection({ title, children }: { title: string; children: React.ReactNode }) {
   return (
-    <div className="bg-light-bg rounded-xl p-4">
+    <div className="bg-light-bg rounded-lg p-4">
       <p className="text-xs font-semibold uppercase tracking-wide text-text-light mb-2">{title}</p>
       <div className="space-y-1">{children}</div>
     </div>

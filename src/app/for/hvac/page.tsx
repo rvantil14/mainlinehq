@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: "🌡️",
+    icon: "",
     title: "Summer and Winter Spikes Overwhelm Your Office",
     description:
       "June hits and your phone explodes. Your one office person is juggling 40+ calls a day while also dispatching techs and handling walk-ins. Calls go to voicemail. Hold times go through the roof. Customers hang up and call your competitor.",
@@ -17,7 +17,7 @@ const painPoints = [
       "Our AI receptionist handles unlimited simultaneous calls. During a heat wave, when 10 people call at the same time, every single one gets answered immediately. No hold times. No voicemail. No lost leads.",
   },
   {
-    icon: "💰",
+    icon: "",
     title: "Slow Invoicing Kills Your Cash Flow",
     description:
       "Your tech finishes a $1,200 compressor replacement at 3 PM. The invoice doesn't go out until the office gets to it. Maybe tomorrow, maybe the next day. The customer forgets. Now you're chasing a payment that should've been collected on the spot.",
@@ -25,7 +25,7 @@ const painPoints = [
       "Invoices go out automatically the moment a job is marked complete. The customer gets a text with a pay-now link. Most pay within hours, not weeks. Your cash flow goes from unpredictable to consistent.",
   },
   {
-    icon: "🔁",
+    icon: "",
     title: "No Maintenance Reminders = Lost Repeat Business",
     description:
       "You installed a new system last year. The customer was happy. But nobody followed up about the annual maintenance. They forgot. Now they're calling someone else for their spring tune-up, and you lost a recurring customer for no reason.",
@@ -33,7 +33,7 @@ const painPoints = [
       "Automated maintenance reminders go out at the right time: seasonal tune-ups, filter changes, warranty check-ins. You stay top of mind and keep customers coming back without anyone on your team tracking it manually.",
   },
   {
-    icon: "📅",
+    icon: "",
     title: "Scheduling Chaos with Multiple Techs",
     description:
       "You've got 5 techs in the field and your office manager is trying to coordinate their schedules on a whiteboard. Double bookings happen. Drive times aren't optimized. You're sending a tech 30 miles when another tech is around the corner.",
@@ -46,16 +46,11 @@ export default function HvacPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-dark pt-16 pb-20 sm:pt-24 sm:pb-28">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-20 right-[-10%] h-[500px] w-[500px] rounded-full bg-accent/8 blur-3xl" />
-          <div className="absolute bottom-0 left-[-5%] h-[400px] w-[400px] rounded-full bg-primary-light/8 blur-3xl" />
-        </div>
-
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-dark pt-16 pb-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-gray-300">
-              <span className="text-lg">❄️</span>
+              <span className="inline-block h-2 w-2 rounded-full bg-accent" />
               Built for HVAC Companies
             </div>
 
@@ -103,7 +98,7 @@ export default function HvacPage() {
               <p className="text-4xl sm:text-5xl font-extrabold text-white mt-1">$500</p>
             </div>
             <div className="hidden sm:block text-3xl text-gray-400">=</div>
-            <div className="rounded-2xl bg-white/10 px-8 py-4">
+            <div className="rounded-lg bg-white/10 px-8 py-4">
               <p className="text-sm font-semibold uppercase tracking-wider text-accent">Monthly Revenue Lost</p>
               <p className="text-4xl sm:text-5xl font-extrabold text-accent mt-1">$40,000</p>
             </div>
@@ -112,7 +107,7 @@ export default function HvacPage() {
       </section>
 
       {/* Pain Points + Solutions */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
@@ -127,12 +122,11 @@ export default function HvacPage() {
             {painPoints.map((point, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-gray-100 bg-light-bg p-8 sm:p-10"
+                className="rounded-lg border border-gray-100 bg-light-bg p-8 sm:p-10"
               >
                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
                   <div>
                     <div className="flex items-start gap-3">
-                      <span className="text-2xl">{point.icon}</span>
                       <h3 className="text-xl font-bold text-dark">
                         {point.title}
                       </h3>
@@ -157,7 +151,7 @@ export default function HvacPage() {
       </section>
 
       {/* Pricing Example */}
-      <section className="bg-light-bg py-20 sm:py-28">
+      <section className="bg-light-bg py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
@@ -165,7 +159,7 @@ export default function HvacPage() {
             </h2>
           </div>
 
-          <div className="rounded-2xl bg-white border border-gray-200 shadow-lg p-8 sm:p-12">
+          <div className="rounded-lg bg-white border border-gray-200 shadow-lg p-8 sm:p-12">
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-dark">Without Mainline</h3>
@@ -223,9 +217,9 @@ export default function HvacPage() {
       </section>
 
       {/* Testimonial */}
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-light-bg border border-gray-100 p-10 sm:p-16 text-center">
+          <div className="relative rounded-lg bg-light-bg border border-gray-100 p-10 sm:p-16 text-center">
             <span className="absolute top-6 left-8 text-7xl font-serif leading-none text-accent/10 select-none">&ldquo;</span>
             <div className="flex justify-center gap-1 mb-6">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -252,7 +246,7 @@ export default function HvacPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-dark py-20 sm:py-28">
+      <section className="bg-dark py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready for Your Best Peak Season Yet?

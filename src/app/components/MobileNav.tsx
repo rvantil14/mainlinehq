@@ -18,7 +18,7 @@ export default function MobileNav() {
     <>
       <button
         type="button"
-        className="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
+        className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-gray-300 hover:text-white hover:bg-white/10 transition-colors"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         aria-label="Toggle navigation menu"
@@ -41,7 +41,7 @@ export default function MobileNav() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="block px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                className="block px-4 py-2.5 text-sm font-medium text-gray-300 hover:text-white hover:bg-white/5 rounded-md transition-colors"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
@@ -50,7 +50,7 @@ export default function MobileNav() {
             <div className="pt-2">
               <Link
                 href="/contact"
-                className="block w-full text-center px-4 py-2.5 text-sm font-semibold text-primary bg-accent hover:bg-accent-hover rounded-lg transition-colors"
+                className="block w-full text-center px-4 py-2.5 text-sm font-semibold text-white bg-accent hover:bg-accent-hover rounded-md transition-colors"
                 onClick={() => setOpen(false)}
               >
                 Free Consultation

@@ -114,7 +114,7 @@ export default function SiteChat() {
 
       {/* Chat window */}
       {isOpen && (
-        <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 w-full sm:w-[350px] h-[100dvh] sm:h-[500px] flex flex-col bg-white rounded-none sm:rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+        <div className="fixed bottom-0 right-0 sm:bottom-6 sm:right-6 z-50 w-full sm:w-[350px] h-[100dvh] sm:h-[500px] flex flex-col bg-white rounded-none sm:rounded-lg shadow-2xl border border-gray-200 overflow-hidden">
           {/* Header */}
           <div className="flex items-center justify-between px-4 py-3 bg-primary text-white shrink-0">
             <div className="flex items-center gap-2">
@@ -145,7 +145,7 @@ export default function SiteChat() {
                 className={`flex ${msg.role === "user" ? "justify-end" : "justify-start"}`}
               >
                 <div
-                  className={`max-w-[85%] px-3 py-2 rounded-2xl text-sm leading-relaxed ${
+                  className={`max-w-[85%] px-3 py-2 rounded-lg text-sm leading-relaxed ${
                     msg.role === "user"
                       ? "bg-primary text-white rounded-br-md"
                       : "bg-white text-foreground border border-gray-200 rounded-bl-md shadow-sm"
@@ -157,7 +157,7 @@ export default function SiteChat() {
             ))}
             {isLoading && (
               <div className="flex justify-start">
-                <div className="bg-white border border-gray-200 rounded-2xl rounded-bl-md px-4 py-2 shadow-sm">
+                <div className="bg-white border border-gray-200 rounded-lg rounded-bl-md px-4 py-2 shadow-sm">
                   <span className="flex gap-1">
                     <span className="w-2 h-2 rounded-full bg-gray-400 animate-bounce" />
                     <span

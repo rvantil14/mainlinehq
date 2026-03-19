@@ -34,7 +34,7 @@ export default function TermsPage() {
 
       <section className="py-16 sm:py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl bg-white border border-gray-100 shadow-sm p-6 sm:p-10">
+          <div className="rounded-lg bg-white border border-gray-100 shadow-sm p-6 sm:p-10">
             <div className="prose prose-gray max-w-none space-y-8 text-sm leading-relaxed text-gray-600">
               {/* Intro */}
               <div>
@@ -313,7 +313,7 @@ export default function TermsPage() {
                 <p>
                   Questions about these Terms? Contact us at:
                 </p>
-                <div className="mt-3 rounded-xl bg-light-bg p-4">
+                <div className="mt-3 rounded-lg bg-light-bg p-4">
                   <p className="font-semibold text-dark">Mainline</p>
                   <p>
                     Email:{" "}

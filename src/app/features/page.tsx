@@ -124,7 +124,7 @@ const differentiators = [
 function FeatureMockup({ type }: { type: string }) {
   const mockups: Record<string, React.ReactNode> = {
     phone: (
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+      <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
             <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
@@ -139,7 +139,7 @@ function FeatureMockup({ type }: { type: string }) {
             <span className="inline-flex items-center rounded-full bg-success/10 px-2 py-0.5 text-[10px] font-medium text-success">AI Answered</span>
           </div>
         </div>
-        <div className="bg-gray-50 rounded-xl p-3 space-y-2.5">
+        <div className="bg-gray-50 rounded-lg p-3 space-y-2.5">
           <div className="flex items-start gap-2">
             <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center shrink-0 mt-0.5">
               <span className="text-white text-[8px] font-bold">AI</span>
@@ -173,7 +173,7 @@ function FeatureMockup({ type }: { type: string }) {
       </div>
     ),
     calendar: (
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+      <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
         <p className="text-sm font-semibold text-gray-900 mb-3">Select a Time</p>
         <div className="grid grid-cols-7 gap-1 text-center mb-3">
           {["M", "T", "W", "T", "F", "S", "S"].map((d, i) => (
@@ -218,7 +218,7 @@ function FeatureMockup({ type }: { type: string }) {
       </div>
     ),
     invoice: (
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+      <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
         <div className="flex items-center justify-between mb-3">
           <p className="text-sm font-semibold text-gray-900">Invoice #1042</p>
           <span className="text-[10px] font-medium bg-success/10 text-success px-2 py-0.5 rounded-full">Paid</span>
@@ -246,8 +246,8 @@ function FeatureMockup({ type }: { type: string }) {
       </div>
     ),
     review: (
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
-        <div className="bg-gray-50 rounded-xl p-3 mb-3">
+      <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+        <div className="bg-gray-50 rounded-lg p-3 mb-3">
           <div className="flex items-center gap-1 mb-1">
             <div className="flex">
               {[1, 2, 3, 4, 5].map((s) => (
@@ -261,7 +261,7 @@ function FeatureMockup({ type }: { type: string }) {
           <p className="text-xs text-gray-700 leading-relaxed">&quot;John came out same day and fixed our water heater. Fair price, great work. Highly recommend Smith Plumbing!&quot;</p>
           <p className="text-[10px] text-gray-400 mt-1">- Sarah M., 2 hours ago on Google</p>
         </div>
-        <div className="border border-gray-100 rounded-xl p-3">
+        <div className="border border-gray-100 rounded-lg p-3">
           <p className="text-[10px] text-gray-400 mb-1.5 font-medium uppercase tracking-wide">AI-Drafted Response</p>
           <p className="text-xs text-gray-700 leading-relaxed">&quot;Thank you Sarah! We&apos;re glad John could get your water heater fixed quickly. We appreciate you trusting Smith Plumbing.&quot;</p>
           <div className="flex gap-2 mt-2.5">
@@ -272,7 +272,7 @@ function FeatureMockup({ type }: { type: string }) {
       </div>
     ),
     pipeline: (
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+      <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
         <p className="text-sm font-semibold text-gray-900 mb-3">Lead Pipeline</p>
         <div className="flex gap-1.5 mb-3">
           {[
@@ -309,7 +309,7 @@ function FeatureMockup({ type }: { type: string }) {
       </div>
     ),
     dashboard: (
-      <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+      <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
         <p className="text-sm font-semibold text-gray-900 mb-3">March Overview</p>
         <div className="grid grid-cols-2 gap-3 mb-4">
           {[
@@ -336,20 +336,20 @@ function FeatureMockup({ type }: { type: string }) {
   };
 
   const fallback = (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
-      <div className="bg-gray-50 rounded-xl p-6 flex items-center justify-center min-h-[200px]">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+      <div className="bg-gray-50 rounded-lg p-6 flex items-center justify-center min-h-[200px]">
         <p className="text-sm text-gray-400 text-center">Feature preview coming soon</p>
       </div>
     </div>
   );
 
   mockups["estimate"] = (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
       <div className="flex items-center justify-between mb-3">
         <p className="text-sm font-semibold text-gray-900">Estimate #247</p>
         <span className="text-[10px] font-medium bg-yellow-500/10 text-yellow-600 px-2 py-0.5 rounded-full">Pending Review</span>
       </div>
-      <div className="bg-gray-50 rounded-xl p-3 mb-3 space-y-2">
+      <div className="bg-gray-50 rounded-lg p-3 mb-3 space-y-2">
         <div className="flex items-start gap-2">
           <div className="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center shrink-0 mt-0.5">
             <span className="text-white text-[8px] font-bold">C</span>
@@ -383,7 +383,7 @@ function FeatureMockup({ type }: { type: string }) {
   );
 
   mockups["contract"] = (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
       <div className="flex items-center justify-between mb-3">
         <p className="text-sm font-semibold text-gray-900">Proposal</p>
         <span className="text-[10px] font-medium bg-accent/10 text-accent px-2 py-0.5 rounded-full">Ready to Send</span>
@@ -414,12 +414,12 @@ function FeatureMockup({ type }: { type: string }) {
   );
 
   mockups["codes"] = (
-    <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
+    <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
       <div className="flex items-center gap-2 mb-3">
         <p className="text-sm font-semibold text-gray-900">Code Assistant</p>
         <span className="text-[9px] font-bold bg-accent/10 text-accent px-2 py-0.5 rounded-full uppercase tracking-wide">Coming Soon</span>
       </div>
-      <div className="bg-gray-50 rounded-xl p-3 space-y-2.5">
+      <div className="bg-gray-50 rounded-lg p-3 space-y-2.5">
         <div className="flex items-start gap-2">
           <div className="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center shrink-0 mt-0.5">
             <span className="text-white text-[8px] font-bold">Y</span>
@@ -452,7 +452,7 @@ export default function FeaturesPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="bg-dark text-white py-20 sm:py-28">
+      <section className="bg-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
             Everything Your Front Office{" "}
@@ -489,7 +489,7 @@ export default function FeaturesPage() {
             <section
               key={feature.id}
               id={feature.id}
-              className={`${bgClass} py-20 sm:py-28`}
+              className={`${bgClass} py-20`}
             >
               <div className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex flex-col ${
                 isReversed ? "lg:flex-row-reverse" : "lg:flex-row"
@@ -517,7 +517,7 @@ export default function FeaturesPage() {
               {/* Mockup */}
               <div className="flex-1 w-full flex justify-center">
                 <div className="w-full max-w-sm">
-                  <div className="rounded-2xl shadow-xl border border-gray-200/60 overflow-hidden">
+                  <div className="rounded-lg shadow-xl border border-gray-200/60 overflow-hidden">
                     <FeatureMockup type={feature.mockup} />
                   </div>
                 </div>
@@ -529,7 +529,7 @@ export default function FeaturesPage() {
       </div>
 
       {/* How We're Different */}
-      <section className="py-24 sm:py-32 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
@@ -545,7 +545,7 @@ export default function FeaturesPage() {
             {differentiators.map((item) => (
               <div
                 key={item.title}
-                className="rounded-2xl border border-gray-200 border-t-4 border-t-accent bg-white p-8 hover:border-accent/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
+                className="rounded-lg border border-gray-200 border-t-4 border-t-accent bg-white p-8 hover:border-accent/40 hover:shadow-lg transition-all duration-300 hover:-translate-y-1"
               >
                 <h3 className="text-lg font-bold text-primary mb-3">
                   {item.title}

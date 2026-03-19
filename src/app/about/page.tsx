@@ -47,7 +47,7 @@ export default function AboutPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="bg-dark text-white py-20 sm:py-28">
+      <section className="bg-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
             We Build and Run{" "}
@@ -63,7 +63,7 @@ export default function AboutPage() {
       </section>
 
       {/* What We Believe */}
-      <section className="py-20 sm:py-28 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
@@ -85,7 +85,7 @@ export default function AboutPage() {
       </section>
 
       {/* What Makes Us Different */}
-      <section className="py-20 sm:py-28">
+      <section className="py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
@@ -101,7 +101,7 @@ export default function AboutPage() {
             {differentiators.map((item, i) => (
               <div
                 key={i}
-                className="group rounded-2xl border border-gray-100 bg-white p-8 transition-all hover:border-accent/20 hover:shadow-lg hover:shadow-accent/5"
+                className="group rounded-lg border border-gray-100 bg-white p-8 transition-all hover:border-accent/20 hover:shadow-lg hover:shadow-accent/5"
               >
                 <h3 className="text-lg font-bold text-dark">
                   {item.title}
@@ -116,7 +116,7 @@ export default function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="bg-primary py-20 sm:py-28">
+      <section className="bg-primary py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
             Our Mission
@@ -130,7 +130,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 sm:py-28">
+      <section className="py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-dark tracking-tight">
             Ready to see what AI can do for your business?

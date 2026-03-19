@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 
 const painPoints = [
   {
-    icon: "📋",
+    icon: "",
     title: "Complex Estimates Take Forever",
     description:
       "A commercial client wants a bid on a full panel upgrade with sub-panel work. You need to walk the site, calculate materials, factor in permit costs, and write it all up. That's 2-3 hours per estimate, and you're backed up on six of them.",
@@ -17,7 +17,7 @@ const painPoints = [
       "AI generates a draft estimate based on the job details from the initial call and your pricing history. You review it, adjust any specifics, and send it out. Usually the same day instead of next week. Faster estimates mean more closed deals.",
   },
   {
-    icon: "🏃",
+    icon: "",
     title: "Commercial Leads Lost to Faster Competitors",
     description:
       "A property manager emails you about a multi-unit rewiring project. You see it 4 hours later between jobs. By then, two other electricians have already responded. Speed wins in commercial work, and you're always a step behind.",
@@ -25,7 +25,7 @@ const painPoints = [
       "Our AI captures and responds to every lead (phone, email, web form) within 60 seconds. It qualifies the job, gathers details, and books a site visit. You show up prepared instead of scrambling to return calls at 8 PM.",
   },
   {
-    icon: "❓",
+    icon: "",
     title: "Permit and Code Questions Pile Up",
     description:
       "Customers call asking about permit requirements, code compliance for their renovation, or whether their panel can handle a new EV charger. Good questions, but answering them all day eats into your billable hours.",
@@ -33,7 +33,7 @@ const painPoints = [
       "The AI handles common pre-qualification questions based on your service area's code requirements and your expertise. It gives customers accurate preliminary answers and books a consultation when the job needs your personal assessment.",
   },
   {
-    icon: "📆",
+    icon: "",
     title: "Owner Does Admin on Weekends",
     description:
       "You spent all week on job sites. Now it's Sunday night and you're doing invoices, updating the schedule, following up with leads from Tuesday, and prepping quotes for Monday. This is not what you started your business to do.",
@@ -46,16 +46,11 @@ export default function ElectriciansPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-dark pt-16 pb-20 sm:pt-24 sm:pb-28">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-20 right-[-10%] h-[500px] w-[500px] rounded-full bg-accent/8 blur-3xl" />
-          <div className="absolute bottom-0 left-[-5%] h-[400px] w-[400px] rounded-full bg-primary-light/8 blur-3xl" />
-        </div>
-
-        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-dark pt-16 pb-20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-gray-300">
-              <span className="text-lg">⚡</span>
+              <span className="inline-block h-2 w-2 rounded-full bg-accent" />
               Built for Electrical Contractors
             </div>
 
@@ -98,7 +93,7 @@ export default function ElectriciansPage() {
               <p className="text-4xl sm:text-5xl font-extrabold text-white mt-1">4+ hrs</p>
             </div>
             <div className="hidden sm:block text-3xl text-gray-400">vs</div>
-            <div className="rounded-2xl bg-white/10 px-8 py-4">
+            <div className="rounded-lg bg-white/10 px-8 py-4">
               <p className="text-sm font-semibold uppercase tracking-wider text-accent">Mainline Response</p>
               <p className="text-4xl sm:text-5xl font-extrabold text-accent mt-1">&lt;60 sec</p>
             </div>
@@ -112,7 +107,7 @@ export default function ElectriciansPage() {
       </section>
 
       {/* Pain Points + Solutions */}
-      <section className="bg-white py-20 sm:py-28">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
@@ -127,12 +122,11 @@ export default function ElectriciansPage() {
             {painPoints.map((point, i) => (
               <div
                 key={i}
-                className="rounded-2xl border border-gray-100 bg-light-bg p-8 sm:p-10"
+                className="rounded-lg border border-gray-100 bg-light-bg p-8 sm:p-10"
               >
                 <div className="grid gap-6 lg:grid-cols-2 lg:gap-12">
                   <div>
                     <div className="flex items-start gap-3">
-                      <span className="text-2xl">{point.icon}</span>
                       <h3 className="text-xl font-bold text-dark">
                         {point.title}
                       </h3>
@@ -157,7 +151,7 @@ export default function ElectriciansPage() {
       </section>
 
       {/* Pricing Example */}
-      <section className="bg-light-bg py-20 sm:py-28">
+      <section className="bg-light-bg py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center mb-12">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
@@ -165,7 +159,7 @@ export default function ElectriciansPage() {
             </h2>
           </div>
 
-          <div className="rounded-2xl bg-white border border-gray-200 shadow-lg p-8 sm:p-12">
+          <div className="rounded-lg bg-white border border-gray-200 shadow-lg p-8 sm:p-12">
             <div className="grid gap-6 sm:grid-cols-2">
               <div className="space-y-4">
                 <h3 className="text-lg font-bold text-dark">Without Mainline</h3>
@@ -224,9 +218,9 @@ export default function ElectriciansPage() {
       </section>
 
       {/* Testimonial */}
-      <section className="bg-white py-24 sm:py-32">
+      <section className="bg-white py-20">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="relative rounded-3xl bg-light-bg border border-gray-100 p-10 sm:p-16 text-center">
+          <div className="relative rounded-lg bg-light-bg border border-gray-100 p-10 sm:p-16 text-center">
             <span className="absolute top-6 left-8 text-7xl font-serif leading-none text-accent/10 select-none">&ldquo;</span>
             <div className="flex justify-center gap-1 mb-6">
               {Array.from({ length: 5 }).map((_, i) => (
@@ -253,7 +247,7 @@ export default function ElectriciansPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="bg-dark py-20 sm:py-28">
+      <section className="bg-dark py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
             Ready to Run a Smarter Electrical Business?

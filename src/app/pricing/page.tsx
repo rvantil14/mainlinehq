@@ -241,12 +241,8 @@ export default function PricingPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-dark text-white py-24 sm:py-32">
-        <div className="pointer-events-none absolute inset-0">
-          <div className="absolute top-0 right-1/4 h-[400px] w-[400px] rounded-full bg-accent/5 blur-3xl" />
-          <div className="absolute bottom-0 left-1/3 h-[300px] w-[300px] rounded-full bg-primary-light/5 blur-3xl" />
-        </div>
-        <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
+      <section className="bg-dark text-white py-20">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight">
             Simple Pricing. Real Results.{" "}
             <span className="text-accent">No Contracts.</span>
@@ -266,9 +262,9 @@ export default function PricingPage() {
             {tiers.map((tier) => (
               <div
                 key={tier.name}
-                className={`relative rounded-2xl bg-white transition-all duration-300 hover:-translate-y-1 ${
+                className={`relative rounded-lg bg-white transition-all duration-300 hover:-translate-y-1 ${
                   tier.popular
-                    ? "ring-2 ring-accent lg:scale-105 lg:z-10 shadow-2xl shadow-accent/15"
+                    ? "ring-2 ring-accent shadow-2xl shadow-accent/15"
                     : "ring-1 ring-gray-200 shadow-lg hover:shadow-xl"
                 }`}
               >
@@ -342,7 +338,7 @@ export default function PricingPage() {
       </section>
 
       {/* Add-Ons */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
@@ -357,7 +353,7 @@ export default function PricingPage() {
             {addOns.map((addon) => (
               <div
                 key={addon.name}
-                className="rounded-xl border border-gray-200 p-6 text-center hover:border-accent/40 hover:shadow-md transition-all"
+                className="rounded-lg border border-gray-200 p-6 text-center hover:border-accent/40 hover:shadow-md transition-all"
               >
                 <h3 className="font-semibold text-gray-900">{addon.name}</h3>
                 <p className="mt-2 text-2xl font-bold text-primary">
@@ -371,7 +367,7 @@ export default function PricingPage() {
       </section>
 
       {/* Comparison Table */}
-      <section className="py-16 sm:py-20">
+      <section className="py-20">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-primary">
@@ -383,7 +379,7 @@ export default function PricingPage() {
             </p>
           </div>
 
-          <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white shadow-sm">
+          <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
             <table className="w-full text-left">
               <thead>
                 <tr className="border-b border-gray-200">
@@ -431,9 +427,9 @@ export default function PricingPage() {
       </section>
 
       {/* Interactive ROI Calculator */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-          <div className="rounded-2xl bg-primary p-8 sm:p-12 text-white">
+          <div className="rounded-lg bg-primary p-8 sm:p-12 text-white">
             <div className="text-center">
               <h2 className="text-3xl sm:text-4xl font-bold">
                 Still Thinking About It? Do the Math.
@@ -491,7 +487,7 @@ export default function PricingPage() {
               </div>
             </div>
 
-            <div className="mt-8 rounded-xl bg-white/10 p-6 sm:p-8">
+            <div className="mt-8 rounded-lg bg-white/10 p-6 sm:p-8">
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center items-center">
                 <div>
                   <p className="text-sm text-gray-300">
@@ -515,7 +511,7 @@ export default function PricingPage() {
                   </p>
                   <p className="text-2xl font-bold mt-1">=</p>
                 </div>
-                <div className="bg-accent/20 rounded-xl p-5 ring-2 ring-accent/30">
+                <div className="bg-accent/20 rounded-lg p-5 ring-2 ring-accent/30">
                   <p className="text-sm text-accent font-semibold uppercase tracking-wide">
                     Monthly revenue lost
                   </p>
@@ -551,7 +547,7 @@ export default function PricingPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 sm:py-20">
+      <section className="py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary text-center">
             Frequently Asked Questions
@@ -562,7 +558,7 @@ export default function PricingPage() {
 
           <div className="mt-12 space-y-3">
             {faqs.map((faq, i) => (
-              <div key={i} className={`rounded-2xl border transition-all duration-200 ${openFaq === i ? "border-accent/20 bg-white shadow-md" : "border-gray-200 bg-white hover:border-gray-300"}`}>
+              <div key={i} className={`rounded-lg border transition-all duration-200 ${openFaq === i ? "border-accent/20 bg-white shadow-md" : "border-gray-200 bg-white hover:border-gray-300"}`}>
                 <button
                   type="button"
                   className="flex w-full items-center justify-between px-6 py-5 text-left"
@@ -602,7 +598,7 @@ export default function PricingPage() {
       </section>
 
       {/* Bottom CTA */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-20 bg-white">
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-primary">
             Ready to stop leaving money on the table?
