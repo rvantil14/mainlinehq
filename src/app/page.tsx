@@ -104,14 +104,14 @@ const steps = [
 ];
 
 const trades = [
-  { icon: "🔧", name: "Plumbing" },
-  { icon: "❄️", name: "HVAC" },
-  { icon: "⚡", name: "Electrical" },
-  { icon: "🎨", name: "Painting" },
-  { icon: "🌿", name: "Landscaping" },
-  { icon: "🏗️", name: "General Contracting" },
-  { icon: "🏠", name: "Roofing" },
-  { icon: "🧹", name: "Cleaning" },
+  { name: "Plumbing", image: "https://images.unsplash.com/photo-1585704032915-c3400ca199e7?w=600&q=80" },
+  { name: "HVAC", image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?w=600&q=80" },
+  { name: "Electrical", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" },
+  { name: "Painting", image: "https://images.unsplash.com/photo-1562259929-b4e1fd3aef09?w=600&q=80" },
+  { name: "Landscaping", image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?w=600&q=80" },
+  { name: "General Contracting", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" },
+  { name: "Roofing", image: "https://images.unsplash.com/photo-1607400201515-c2c41c07d307?w=600&q=80" },
+  { name: "Cleaning", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" },
 ];
 
 const testimonials = [
@@ -375,12 +375,20 @@ export default function Home() {
             {trades.map((trade, i) => (
               <div
                 key={i}
-                className="flex flex-col items-center gap-3 rounded-2xl border border-gray-100 bg-light-bg p-6 text-center transition-all hover:border-primary/10 hover:shadow-md"
+                className="group relative overflow-hidden rounded-2xl h-40 sm:h-48 cursor-default transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
               >
-                <span className="text-4xl">{trade.icon}</span>
-                <span className="text-sm font-semibold text-dark">
-                  {trade.name}
-                </span>
+                <img
+                  src={trade.image}
+                  alt={trade.name}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-dark/50 group-hover:bg-dark/60 transition-colors duration-300" />
+                <div className="relative flex items-center justify-center h-full">
+                  <span className="text-lg sm:text-xl font-bold text-white tracking-wide drop-shadow-lg">
+                    {trade.name}
+                  </span>
+                </div>
               </div>
             ))}
           </div>
