@@ -142,7 +142,7 @@ export default function PrivacyPage() {
                     scheduling and appointment booking
                   </li>
                   <li>
-                    <strong className="text-gray-900">OpenAI</strong>: AI
+                    <strong className="text-gray-900">Anthropic</strong>: AI
                     chatbot and natural language processing
                   </li>
                   <li>

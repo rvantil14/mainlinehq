@@ -37,7 +37,7 @@ const caseStudies = [
     id: "summit-climate",
     business: "Summit Climate Solutions",
     trade: "HVAC",
-    location: "San Diego, CA",
+    location: "Dallas, TX",
     size: "15-person team",
     revenue: "$2.1M revenue",
     package: "Growth",
@@ -59,10 +59,10 @@ const caseStudies = [
     icon: "❄️",
   },
   {
-    id: "pacific-coast-electrical",
-    business: "Pacific Coast Electrical",
+    id: "southeastern-electrical",
+    business: "Southeastern Electrical",
     trade: "Electrical",
-    location: "Ventura, CA",
+    location: "Atlanta, GA",
     size: "6-person team",
     revenue: "$800K revenue",
     package: "Starter",
@@ -122,7 +122,7 @@ export default function CaseStudies() {
               Projected Results
             </div>
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-              Real Results for Real{" "}
+              Projected Results for{" "}
               <span className="text-accent">Trade Businesses</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
@@ -229,7 +229,7 @@ export default function CaseStudies() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Get Results Like These
+              See What This Could Look Like for You
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-lg text-gray-400">
               Schedule a free 15-minute call. We&apos;ll show you exactly how

@@ -26,26 +26,20 @@ export default function SiteChat() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  // Don't render on /demo page
-  if (pathname === "/demo") return null;
-
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     scrollToBottom();
   }, [messages]);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     if (isOpen && inputRef.current) {
       inputRef.current.focus();
     }
   }, [isOpen]);
 
-  // eslint-disable-next-line react-hooks/rules-of-hooks
   const sendMessage = useCallback(async () => {
     const trimmed = input.trim();
     if (!trimmed || isLoading) return;
@@ -87,7 +81,10 @@ export default function SiteChat() {
     } finally {
       setIsLoading(false);
     }
-  }, [input, isLoading, conversationId]);
+  }, [input, isLoading, messages, conversationId]);
+
+  // Don't render on /demo page
+  if (pathname === "/demo") return null;
 
   return (
     <>

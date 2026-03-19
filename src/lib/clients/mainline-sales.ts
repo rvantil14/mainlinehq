@@ -12,7 +12,7 @@ export const mainlineSalesConfig: ClientConfig = {
   phoneNumber: "(805) 801-1380",
   email: "hello@mainlinehq.com",
   website: "https://mainlinehq.com",
-  ownerName: "Ryan",
+  ownerName: undefined,
   tagline: "The main line between your customers and your calendar.",
   brandVoice: "friendly",
   services: [

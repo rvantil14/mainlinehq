@@ -49,7 +49,7 @@ export default function MobileNav() {
             ))}
             <div className="pt-2">
               <Link
-                href="/onboarding"
+                href="/contact"
                 className="block w-full text-center px-4 py-2.5 text-sm font-semibold text-primary bg-accent hover:bg-accent-hover rounded-lg transition-colors"
                 onClick={() => setOpen(false)}
               >

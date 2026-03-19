@@ -330,7 +330,7 @@ export default function OnboardingPage() {
                     type="text"
                     value={form.cityArea}
                     onChange={(e) => set("cityArea", e.target.value)}
-                    placeholder="San Diego, CA"
+                    placeholder="Your City, ST"
                     className={inputClass()}
                   />
                 </Field>

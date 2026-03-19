@@ -92,7 +92,7 @@ export default function RootLayout({
                   </Link>
                 ))}
                 <Link
-                  href="/onboarding"
+                  href="/contact"
                   className="ml-3 inline-flex items-center px-5 py-2.5 text-sm font-semibold text-primary bg-accent hover:bg-accent-hover rounded-lg transition-colors shadow-sm shadow-accent/25"
                 >
                   Free Consultation
