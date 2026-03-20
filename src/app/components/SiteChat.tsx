@@ -12,7 +12,7 @@ const INITIAL_GREETING =
   "Hey! I'm the Mainline assistant. I can answer questions about our services, pricing, and how we help trade businesses. What would you like to know?";
 
 const FALLBACK_MESSAGE =
-  "I'm having trouble connecting. Call us at (805) 801-1380 or email hello@mainlinehq.com";
+  "I'm having trouble connecting. Call us at (805) 801-1380 or email ryan@mainlinehq.com";
 
 export default function SiteChat() {
   const pathname = usePathname();

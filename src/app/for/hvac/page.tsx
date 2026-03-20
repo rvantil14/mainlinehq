@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -46,8 +47,18 @@ export default function HvacPage() {
   return (
     <div className="bg-light-bg">
       {/* Hero */}
-      <section className="bg-dark pt-16 pb-20">
-        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      <section className="bg-dark pt-16 pb-20 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-15">
+          <Image
+            src="/images/trades/hvac.jpg"
+            alt=""
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-dark/80 via-dark/90 to-dark" />
+        <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium text-gray-300">
               <span className="inline-block h-2 w-2 rounded-full bg-accent" />

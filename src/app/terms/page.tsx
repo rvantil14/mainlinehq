@@ -139,10 +139,10 @@ export default function TermsPage() {
                     You may cancel your subscription at any time with 30 days
                     written notice by emailing{" "}
                     <a
-                      href="mailto:hello@mainlinehq.com"
+                      href="mailto:ryan@mainlinehq.com"
                       className="text-accent hover:text-accent-hover font-medium transition-colors"
                     >
-                      hello@mainlinehq.com
+                      ryan@mainlinehq.com
                     </a>
                     .
                   </li>
@@ -318,10 +318,10 @@ export default function TermsPage() {
                   <p>
                     Email:{" "}
                     <a
-                      href="mailto:hello@mainlinehq.com"
+                      href="mailto:ryan@mainlinehq.com"
                       className="text-accent hover:text-accent-hover font-medium transition-colors"
                     >
-                      hello@mainlinehq.com
+                      ryan@mainlinehq.com
                     </a>
                   </p>
                   <p>

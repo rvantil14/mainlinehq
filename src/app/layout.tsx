@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Link from "next/link";
+import Image from "next/image";
 import MobileNav from "./components/MobileNav";
 import Analytics from "./components/Analytics";
 import SiteChatWrapper from "./components/SiteChatWrapper";
@@ -12,6 +13,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://mainlinehq.com"),
   title: "Mainline | AI Automation for Trade Businesses",
   description:
     "We build and run your AI front office. Phone answering, scheduling, invoicing, and reviews, automated for plumbers, HVAC, electricians, and contractors.",
@@ -52,18 +54,19 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
+              "@type": "Organization",
               name: "Mainline",
-              applicationCategory: "BusinessApplication",
-              description:
-                "AI automation platform for trade businesses",
               url: "https://mainlinehq.com",
-              provider: {
-                "@type": "Organization",
-                name: "Mainline",
-                telephone: "(805) 801-1380",
-                email: "hello@mainlinehq.com",
-                areaServed: "United States",
+              description:
+                "AI automation platform for trade businesses. We build and run your AI front office: phone answering, scheduling, invoicing, and reviews.",
+              telephone: "(805) 801-1380",
+              email: "ryan@mainlinehq.com",
+              areaServed: "United States",
+              contactPoint: {
+                "@type": "ContactPoint",
+                telephone: "+1-805-801-1380",
+                contactType: "sales",
+                availableLanguage: "English",
               },
             }),
           }}
@@ -73,10 +76,15 @@ export default function RootLayout({
           <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="flex h-16 items-center justify-between">
               {/* Logo */}
-              <Link href="/" className="flex items-center group">
-                <span className="text-xl font-black text-white uppercase tracking-wider group-hover:text-accent transition-colors">
-                  Mainline
-                </span>
+              <Link href="/" className="flex items-center">
+                <Image
+                  src="/images/logo-dark-bg.jpg"
+                  alt="Mainline HQ"
+                  width={140}
+                  height={40}
+                  className="h-8 w-auto"
+                  priority
+                />
               </Link>
 
               {/* Desktop Nav */}
@@ -114,35 +122,17 @@ export default function RootLayout({
               {/* Brand */}
               <div>
                 <div className="mb-3">
-                  <span className="text-lg font-black text-white uppercase tracking-wider">Mainline</span>
+                  <Image
+                    src="/images/logo-dark-bg.jpg"
+                    alt="Mainline HQ"
+                    width={120}
+                    height={34}
+                    className="h-7 w-auto"
+                  />
                 </div>
                 <p className="text-sm leading-relaxed text-gray-400 max-w-sm">
                   The main line between your customers and your calendar.
                 </p>
-                <div className="flex items-center gap-3 mt-4">
-                  <a
-                    href="https://linkedin.com/company/mainlinehq"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                    aria-label="LinkedIn"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                    </svg>
-                  </a>
-                  <a
-                    href="https://facebook.com/mainlinehq"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-400 hover:text-white transition-colors"
-                    aria-label="Facebook"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
-                    </svg>
-                  </a>
-                </div>
               </div>
 
               {/* Product */}
@@ -209,10 +199,10 @@ export default function RootLayout({
                   </li>
                   <li>
                     <a
-                      href="mailto:hello@mainlinehq.com"
+                      href="mailto:ryan@mainlinehq.com"
                       className="text-sm hover:text-white transition-colors"
                     >
-                      hello@mainlinehq.com
+                      ryan@mainlinehq.com
                     </a>
                   </li>
                   <li>

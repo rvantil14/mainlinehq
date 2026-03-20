@@ -10,7 +10,7 @@ export const mainlineSalesConfig: ClientConfig = {
   businessName: "Mainline",
   businessType: "technology",
   phoneNumber: "(805) 801-1380",
-  email: "hello@mainlinehq.com",
+  email: "ryan@mainlinehq.com",
   website: "https://mainlinehq.com",
   ownerName: undefined,
   tagline: "The main line between your customers and your calendar.",

@@ -103,7 +103,6 @@ const tiers = [
       "Customer portal for job status + payments",
       "QuickBooks / accounting integration",
       "Automated contracts & proposals",
-      "Building code assistant (coming soon)",
       "Monthly strategy call with your account lead",
       "Priority same-day support",
     ],
@@ -238,8 +237,25 @@ export default function PricingPage() {
   const monthlyRevenueLost =
     missedCallsPerWeek * 4 * 0.4 * avgJobValue;
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  };
+
   return (
     <div className="bg-light-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* Hero */}
       <section className="bg-dark text-white py-20">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">

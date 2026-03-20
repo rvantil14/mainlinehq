@@ -83,14 +83,6 @@ const features: {
       "AI drafts a professional proposal from the job details: scope of work, materials, timeline, payment terms. You review and edit before sending. Customer signs digitally. A 45-minute task becomes a 2-minute review.",
     mockup: "contract",
   },
-  {
-    id: "codes",
-    title: "Building Code & Spec Assistant",
-    description:
-      "Ask building code questions in plain English. Upload spec books and get instant summaries. Jurisdiction-specific answers for your area, in seconds.",
-    mockup: "codes",
-    comingSoon: true,
-  },
 ];
 
 const differentiators = [
@@ -144,7 +136,7 @@ function FeatureMockup({ type }: { type: string }) {
             <div className="w-5 h-5 rounded-full bg-primary flex items-center justify-center shrink-0 mt-0.5">
               <span className="text-white text-[8px] font-bold">AI</span>
             </div>
-            <p className="text-xs text-gray-700">&quot;Thanks for calling Smith Plumbing, how can I help you today?&quot;</p>
+            <p className="text-xs text-gray-700">&quot;Thanks for calling Ace Plumbing, how can I help you today?&quot;</p>
           </div>
           <div className="flex items-start gap-2">
             <div className="w-5 h-5 rounded-full bg-gray-300 flex items-center justify-center shrink-0 mt-0.5">
@@ -258,12 +250,12 @@ function FeatureMockup({ type }: { type: string }) {
             </div>
             <span className="text-xs text-gray-500 ml-1">5.0</span>
           </div>
-          <p className="text-xs text-gray-700 leading-relaxed">&quot;John came out same day and fixed our water heater. Fair price, great work. Highly recommend Smith Plumbing!&quot;</p>
+          <p className="text-xs text-gray-700 leading-relaxed">&quot;John came out same day and fixed our water heater. Fair price, great work. Highly recommend Ace Plumbing!&quot;</p>
           <p className="text-[10px] text-gray-400 mt-1">- Sarah M., 2 hours ago on Google</p>
         </div>
         <div className="border border-gray-100 rounded-lg p-3">
           <p className="text-[10px] text-gray-400 mb-1.5 font-medium uppercase tracking-wide">AI-Drafted Response</p>
-          <p className="text-xs text-gray-700 leading-relaxed">&quot;Thank you Sarah! We&apos;re glad John could get your water heater fixed quickly. We appreciate you trusting Smith Plumbing.&quot;</p>
+          <p className="text-xs text-gray-700 leading-relaxed">&quot;Thank you Sarah! We&apos;re glad John could get your water heater fixed quickly. We appreciate you trusting Ace Plumbing.&quot;</p>
           <div className="flex gap-2 mt-2.5">
             <div className="bg-accent text-white text-[10px] font-medium rounded-full px-3 py-1.5">Post Response</div>
             <div className="bg-gray-100 text-gray-600 text-[10px] font-medium rounded-full px-3 py-1.5">Edit</div>
@@ -310,7 +302,7 @@ function FeatureMockup({ type }: { type: string }) {
     ),
     dashboard: (
       <div className="bg-white rounded-lg shadow-lg border border-gray-100 p-5 max-w-[340px] mx-auto">
-        <p className="text-sm font-semibold text-gray-900 mb-3">March Overview</p>
+        <p className="text-sm font-semibold text-gray-900 mb-3">Monthly Overview</p>
         <div className="grid grid-cols-2 gap-3 mb-4">
           {[
             { label: "New Leads", value: "24", change: "+18%" },
@@ -329,7 +321,7 @@ function FeatureMockup({ type }: { type: string }) {
           <svg className="w-4 h-4 text-primary" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
             <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75" />
           </svg>
-          <p className="text-[11px] text-primary">Monthly report emailed Mar 1</p>
+          <p className="text-[11px] text-primary">Monthly report emailed on the 1st</p>
         </div>
       </div>
     ),
@@ -395,7 +387,7 @@ function FeatureMockup({ type }: { type: string }) {
         </div>
         <div>
           <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wide">Timeline</p>
-          <p className="text-xs text-gray-700 mt-0.5">1 day, scheduled March 22, 2026</p>
+          <p className="text-xs text-gray-700 mt-0.5">1 day, next available slot</p>
         </div>
         <div>
           <p className="text-[10px] text-gray-400 font-medium uppercase tracking-wide">Payment Terms</p>
@@ -527,6 +519,23 @@ export default function FeaturesPage() {
           );
         })}
       </div>
+
+      {/* Coming Soon */}
+      <section className="bg-dark py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto max-w-3xl text-center">
+            <span className="inline-flex items-center rounded-full bg-accent/10 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-accent mb-4">
+              On the Roadmap
+            </span>
+            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
+              Building Code &amp; Spec Assistant
+            </h2>
+            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
+              Ask building code questions in plain English. Upload spec books and get instant summaries. Jurisdiction-specific answers for your area, in seconds.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* How We're Different */}
       <section className="py-20 bg-white">

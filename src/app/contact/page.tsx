@@ -115,10 +115,10 @@ export default function ContactPage() {
                   <div>
                     <p className="text-sm font-semibold text-dark">Email</p>
                     <a
-                      href="mailto:hello@mainlinehq.com"
+                      href="mailto:ryan@mainlinehq.com"
                       className="text-sm text-gray-600 hover:text-accent transition-colors"
                     >
-                      hello@mainlinehq.com
+                      ryan@mainlinehq.com
                     </a>
                   </div>
                 </div>

@@ -21,6 +21,18 @@ export async function generateMetadata({
   return {
     title: `${article.title} | Mainline Blog`,
     description: article.excerpt,
+    openGraph: {
+      title: article.title,
+      description: article.excerpt,
+      type: "article",
+      url: `https://mainlinehq.com/blog/${article.slug}`,
+      publishedTime: article.date,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: article.title,
+      description: article.excerpt,
+    },
   };
 }
 
@@ -43,8 +55,31 @@ export default async function BlogPostPage({
     notFound();
   }
 
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.excerpt,
+    datePublished: article.date,
+    author: {
+      "@type": "Organization",
+      name: "Mainline",
+      url: "https://mainlinehq.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Mainline",
+      url: "https://mainlinehq.com",
+    },
+    mainEntityOfPage: `https://mainlinehq.com/blog/${article.slug}`,
+  };
+
   return (
     <div className="bg-light-bg">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
       {/* Header */}
       <section className="bg-dark py-16 sm:py-24">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">

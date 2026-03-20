@@ -122,11 +122,11 @@ export default function CaseStudies() {
               Projected Results
             </div>
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl">
-              Projected Results for{" "}
+              What AI Automation Looks Like for{" "}
               <span className="text-accent">Trade Businesses</span>
             </h1>
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
-              Real numbers from plumbing, HVAC, and electrical companies that stopped leaving money on the table.
+              Projected scenarios showing what plumbing, HVAC, and electrical companies can expect when they stop leaving money on the table.
             </p>
           </div>
         </div>
@@ -261,7 +261,7 @@ export default function CaseStudies() {
       <section className="bg-light-bg py-6">
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-xs text-text-light">
-            Results shown are projected based on industry benchmarks for AI-automated trade businesses. Individual results may vary.
+            These scenarios are based on industry benchmarks and typical outcomes for AI-automated trade businesses. Names and businesses are illustrative examples. Individual results will vary based on market, team size, and implementation.
           </p>
         </div>
       </section>

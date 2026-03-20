@@ -206,10 +206,10 @@ export default function PrivacyPage() {
                 <p className="mt-3">
                   To exercise any of these rights, contact us at{" "}
                   <a
-                    href="mailto:hello@mainlinehq.com"
+                    href="mailto:ryan@mainlinehq.com"
                     className="text-accent hover:text-accent-hover font-medium transition-colors"
                   >
-                    hello@mainlinehq.com
+                    ryan@mainlinehq.com
                   </a>
                   . We will respond within 45 days.
                 </p>
@@ -268,10 +268,10 @@ export default function PrivacyPage() {
                   <p>
                     Email:{" "}
                     <a
-                      href="mailto:hello@mainlinehq.com"
+                      href="mailto:ryan@mainlinehq.com"
                       className="text-accent hover:text-accent-hover font-medium transition-colors"
                     >
-                      hello@mainlinehq.com
+                      ryan@mainlinehq.com
                     </a>
                   </p>
                   <p>

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -98,14 +99,14 @@ const steps = [
 ];
 
 const trades = [
-  { name: "Plumbing", image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=600&q=80" },
-  { name: "HVAC", image: "https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?w=600&q=80" },
-  { name: "Electrical", image: "https://images.unsplash.com/photo-1621905252507-b35492cc74b4?w=600&q=80" },
-  { name: "Painting", image: "https://images.unsplash.com/photo-1562259949-e8e7689d7828?w=600&q=80" },
-  { name: "Landscaping", image: "https://images.unsplash.com/photo-1592417817098-8fd3d9eb14a5?w=600&q=80" },
-  { name: "General Contracting", image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" },
-  { name: "Roofing", image: "https://images.unsplash.com/photo-1513880989635-6eb491ce7f5b?w=600&q=80" },
-  { name: "Cleaning", image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=600&q=80" },
+  { name: "Plumbing", image: "/images/trades/plumbing.jpg", href: "/for/plumbers" },
+  { name: "HVAC", image: "/images/trades/hvac.jpg", href: "/for/hvac" },
+  { name: "Electrical", image: "/images/trades/electrical.jpg", href: "/for/electricians" },
+  { name: "Painting", image: "/images/trades/painting.jpg", href: "/contact" },
+  { name: "Landscaping", image: "/images/trades/landscaping.jpg", href: "/contact" },
+  { name: "General Contracting", image: "/images/trades/contracting.jpg", href: "/contact" },
+  { name: "Roofing", image: "/images/trades/roofing.jpg", href: "/contact" },
+  { name: "Cleaning", image: "/images/trades/cleaning.jpg", href: "/contact" },
 ];
 
 const testimonials = [
@@ -193,7 +194,7 @@ export default function Home() {
             </div>
 
             <p className="mt-6 text-sm text-gray-500">
-              Trusted by trade businesses nationwide
+              No contracts. Live in under a week.
             </p>
           </div>
         </div>
@@ -355,15 +356,17 @@ export default function Home() {
 
           <div className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-4">
             {trades.map((trade, i) => (
-              <div
+              <Link
                 key={i}
+                href={trade.href}
                 className="group relative overflow-hidden rounded-lg h-44 sm:h-52"
               >
-                <img
+                <Image
                   src={trade.image}
                   alt={trade.name}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  loading="lazy"
+                  fill
+                  sizes="(max-width: 640px) 50vw, 25vw"
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-dark/80 via-dark/30 to-transparent" />
                 <div className="relative flex items-end h-full p-4">
@@ -371,7 +374,7 @@ export default function Home() {
                     {trade.name}
                   </span>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

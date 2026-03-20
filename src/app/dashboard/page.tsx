@@ -316,7 +316,7 @@ export default function DashboardPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-flex items-center px-8 py-3 bg-accent hover:bg-accent-hover text-primary font-semibold text-sm rounded-lg transition-colors shadow-sm shadow-accent/25"
+            className="inline-flex items-center px-8 py-3 bg-accent hover:bg-accent-hover text-white font-semibold text-sm rounded-lg transition-colors shadow-sm shadow-accent/25"
           >
             Schedule a Free Consultation
           </Link>

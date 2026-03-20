@@ -264,8 +264,7 @@ export class ChatEngine {
 
     try {
       // Call Claude API
-      // Using claude-sonnet-4-5-20250514 for good quality at reasonable cost.
-      // For high volume clients, switch to claude-haiku-4-5-20251001 to save ~80%.
+      // Using claude-haiku-4-5 for fast responses at low cost.
       let response = await this.anthropic.messages.create({
         model: "claude-haiku-4-5-20251001",
         max_tokens: 1024,

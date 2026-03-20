@@ -1,19 +1,17 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import { Resend } from "resend";
 
-// TODO: Integrate email notifications via Resend or SendGrid
+const resend = process.env.RESEND_API_KEY
+  ? new Resend(process.env.RESEND_API_KEY)
+  : null;
 
-const DATA_DIR = path.join(process.cwd(), "data");
-const ONBOARDING_FILE = path.join(DATA_DIR, "onboarding.json");
-const LEADS_LOG = path.join(DATA_DIR, "leads.log");
+const NOTIFICATION_EMAIL = "ryan@mainlinehq.com";
 
 export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { ownerName, businessName, businessType, phone, email, city, selectedPackage } = body;
 
-    // Basic validation
     if (!ownerName || !businessName || !businessType || !phone || !email || !selectedPackage) {
       return NextResponse.json(
         { success: false, message: "Missing required fields" },
@@ -22,27 +20,29 @@ export async function POST(request: Request) {
     }
 
     const timestamp = new Date().toISOString();
-    const entry = { ownerName, businessName, businessType, phone, email, city, selectedPackage, timestamp };
 
-    // Ensure data directory exists
-    await fs.mkdir(DATA_DIR, { recursive: true });
-
-    // Append to onboarding.json
-    let submissions: unknown[] = [];
-    try {
-      const raw = await fs.readFile(ONBOARDING_FILE, "utf-8");
-      submissions = JSON.parse(raw);
-    } catch {
-      // File doesn't exist yet - start fresh
+    if (resend) {
+      await resend.emails.send({
+        from: "Mainline <leads@mainlinehq.com>",
+        to: [NOTIFICATION_EMAIL],
+        subject: `New Onboarding: ${ownerName} - ${businessName} (${selectedPackage})`,
+        html: `
+          <h2>New Onboarding Submission</h2>
+          <table style="border-collapse:collapse;width:100%;max-width:600px;">
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Owner</td><td style="padding:8px;border:1px solid #ddd;">${ownerName}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Business</td><td style="padding:8px;border:1px solid #ddd;">${businessName}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Trade</td><td style="padding:8px;border:1px solid #ddd;">${businessType}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Package</td><td style="padding:8px;border:1px solid #ddd;font-weight:bold;color:#E8630A;">${selectedPackage}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Phone</td><td style="padding:8px;border:1px solid #ddd;"><a href="tel:${phone}">${phone}</a></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #ddd;"><a href="mailto:${email}">${email}</a></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">City</td><td style="padding:8px;border:1px solid #ddd;">${city || "Not provided"}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Submitted</td><td style="padding:8px;border:1px solid #ddd;">${new Date(timestamp).toLocaleString("en-US", { timeZone: "America/Los_Angeles" })}</td></tr>
+          </table>
+        `,
+      });
+    } else {
+      console.warn("RESEND_API_KEY not configured - onboarding notification not sent");
     }
-    submissions.push(entry);
-    await fs.writeFile(ONBOARDING_FILE, JSON.stringify(submissions, null, 2));
-
-    // Append to leads.log
-    const logLine = `[${timestamp}] ONBOARDING | ${ownerName} | ${businessName} | ${businessType} | ${selectedPackage} | ${phone} | ${email}\n`;
-    await fs.appendFile(LEADS_LOG, logLine);
-
-    console.log(`New onboarding submission: ${ownerName} (${businessName}) - ${selectedPackage} package`);
 
     return NextResponse.json({ success: true });
   } catch (error) {
