@@ -80,9 +80,9 @@ export default function RootLayout({
                 <Image
                   src="/images/logo-dark-bg.jpg"
                   alt="Mainline HQ"
-                  width={140}
-                  height={40}
-                  className="h-8 w-auto"
+                  width={180}
+                  height={52}
+                  className="h-10 w-auto"
                   priority
                 />
               </Link>
@@ -125,9 +125,9 @@ export default function RootLayout({
                   <Image
                     src="/images/logo-dark-bg.jpg"
                     alt="Mainline HQ"
-                    width={120}
-                    height={34}
-                    className="h-7 w-auto"
+                    width={150}
+                    height={44}
+                    className="h-9 w-auto"
                   />
                 </div>
                 <p className="text-sm leading-relaxed text-gray-400 max-w-sm">
