@@ -93,7 +93,7 @@ export const blogArticles: BlogArticle[] = [
 
 <h2>The ROI Is Hard to Argue With</h2>
 
-<p>Let's put it plainly. If you're missing 5 calls per week and losing $2,800 per month in revenue, an AI answering service that costs $500/month pays for itself five times over. Even if it only captures half those missed calls, you're still coming out way ahead.</p>
+<p>Let's put it plainly. If you're missing 5 calls per week and losing $2,800 per month in revenue, an AI answering service that costs $297/month pays for itself nine times over. Even if it only captures half those missed calls, you're still coming out way ahead.</p>
 
 <p>The plumbing businesses we work with typically see their booked jobs increase by 20-35% within the first month. Not because they're getting more leads, but because they're finally capturing the ones they were already getting.</p>
 
@@ -168,7 +168,7 @@ export const blogArticles: BlogArticle[] = [
 <li>Average answer time: under 5 seconds</li>
 <li>Booked jobs per week: 62 (37% increase)</li>
 <li>Google reviews received per month: 22-28</li>
-<li>AI receptionist cost: $1,500/month</li>
+<li>AI receptionist cost: $797/month</li>
 </ul>
 
 <p>They didn't fire their office staff. They moved them to dispatch coordination and customer follow-up, which is a better use of their time anyway. But the AI handled the phone volume that two people couldn't keep up with.</p>
@@ -189,7 +189,7 @@ export const blogArticles: BlogArticle[] = [
 
 <p><strong>AI receptionist:</strong></p>
 <ul>
-<li>$500-$1,500/month depending on call volume</li>
+<li>$297-$797/month depending on features</li>
 <li>Available 24/7/365</li>
 <li>Handles unlimited simultaneous calls</li>
 <li>Never calls in sick, never quits</li>
@@ -269,7 +269,7 @@ export const blogArticles: BlogArticle[] = [
 <tr><th></th><th>DIY Stack</th><th>Mainline (Done-For-You)</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>Monthly cost</strong></td><td>$400-$950</td><td>$500-$2,500</td></tr>
+<tr><td><strong>Monthly cost</strong></td><td>$400-$950</td><td>$297-$1,497</td></tr>
 <tr><td><strong>Setup time (your time)</strong></td><td>20-40 hours</td><td>30 minutes (one call)</td></tr>
 <tr><td><strong>Monthly maintenance (your time)</strong></td><td>5-10 hours</td><td>0 hours</td></tr>
 <tr><td><strong>AI phone answering</strong></td><td>No (basic call forwarding)</td><td>Yes, 24/7</td></tr>

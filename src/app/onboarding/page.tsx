@@ -34,7 +34,7 @@ const PACKAGES = [
   {
     id: "starter",
     name: "Starter",
-    price: "$500",
+    price: "$297",
     period: "/mo",
     description: "Perfect for solo operators getting started with automation.",
     features: [
@@ -48,7 +48,7 @@ const PACKAGES = [
   {
     id: "growth",
     name: "Growth",
-    price: "$1,500",
+    price: "$797",
     period: "/mo",
     popular: true,
     description: "The full stack for growing trade businesses.",
@@ -64,7 +64,7 @@ const PACKAGES = [
   {
     id: "pro",
     name: "Pro",
-    price: "$2,500",
+    price: "$1,497",
     period: "/mo",
     description: "For established businesses scaling to multiple crews.",
     features: [

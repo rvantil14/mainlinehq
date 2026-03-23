@@ -54,8 +54,8 @@ const checkSmall = (
 const tiers = [
   {
     name: "Starter",
-    price: "$500",
-    setup: "$3,000",
+    price: "$297",
+    setup: "$500",
     audience: "For the one-truck operator who's tired of missing calls",
     description:
       "Everything a solo operator or small crew needs to stop missing calls and start collecting reviews.",
@@ -70,8 +70,8 @@ const tiers = [
   },
   {
     name: "Growth",
-    price: "$1,500",
-    setup: "$5,000",
+    price: "$797",
+    setup: "$1,500",
     audience: "For the growing shop that needs to stop drowning in admin",
     description:
       "Full front office automation. AI answers your phone, sends invoices, and follows up with every lead.",
@@ -89,8 +89,8 @@ const tiers = [
   },
   {
     name: "Pro",
-    price: "$2,500",
-    setup: "$10,000",
+    price: "$1,497",
+    setup: "$3,000",
     audience: "For the established operation ready to run on autopilot",
     description:
       "Custom-trained AI, multi-tech dispatch, customer portal, and a dedicated monthly strategy call.",
@@ -135,7 +135,7 @@ const addOns = [
 const comparisonRows = [
   {
     label: "Monthly Cost",
-    mainline: "$500 - $2,500",
+    mainline: "$297 - $1,497",
     jobber: "$69 - $349",
     housecall: "$59 - $199",
     servicetitan: "$398+",
@@ -545,7 +545,7 @@ export default function PricingPage() {
               </span>{" "}
               on the table. Mainline costs{" "}
               <span className="font-bold text-white">
-                $500 - $2,500/month
+                $297 - $1,497/month
               </span>
               .
             </p>

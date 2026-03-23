@@ -59,7 +59,7 @@ export const mainlineSalesConfig: ClientConfig = {
     {
       question: "How much does it cost?",
       answer:
-        "Starter is $500/month + $3,000 setup. Growth is $1,500/month + $5,000 setup. Pro is $2,500/month + $10,000 setup. All plans are month-to-month with no contracts.",
+        "Starter is $297/month + $500 setup. Growth is $797/month + $1,500 setup. Pro is $1,497/month + $3,000 setup. All plans are month-to-month with no contracts.",
     },
     {
       question: "How long does setup take?",
