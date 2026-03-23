@@ -64,3 +64,15 @@ html {
 .bg-primary .text-accent {
   filter: brightness(1.1);
 }
+
+/* Hide site header/footer/chat when admin panel is active */
+body:has(#admin-panel) > header,
+body:has(#admin-panel) > footer,
+body:has(#admin-panel) > main > #admin-panel ~ *,
+body:has(#admin-panel) [data-site-chat] {
+  display: none !important;
+}
+
+body:has(#admin-panel) > main {
+  min-height: auto;
+}
