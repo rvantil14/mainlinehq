@@ -103,6 +103,7 @@ export default function DemoPage() {
   const [mounted, setMounted] = useState(false);
 
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const messagesContainerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   // Only render chat after mount to avoid hydration issues
@@ -116,10 +117,10 @@ export default function DemoPage() {
     }]);
   }, []);
 
-  // Auto-scroll on new messages
+  // Auto-scroll within the chat container only (not the page)
   useEffect(() => {
-    if (mounted) {
-      messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    if (mounted && messagesContainerRef.current) {
+      messagesContainerRef.current.scrollTop = messagesContainerRef.current.scrollHeight;
     }
   }, [messages, loading, mounted]);
 
@@ -297,7 +298,7 @@ export default function DemoPage() {
               </div>
 
               {/* Messages Area */}
-              <div className="flex-1 overflow-y-auto px-4 py-5 space-y-4 bg-gray-50/50">
+              <div ref={messagesContainerRef} className="flex-1 overflow-y-auto px-4 py-5 space-y-4 bg-gray-50/50">
                 {mounted && messages.map((msg) => (
                   <div
                     key={msg.id}

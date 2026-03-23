@@ -11,6 +11,8 @@ import { demoHvacConfig } from "@/lib/clients/demo-hvac";
 import { demoElectricalConfig } from "@/lib/clients/demo-electrical";
 import { demoPaintingConfig } from "@/lib/clients/demo-painting";
 import { mainlineSalesConfig } from "@/lib/clients/mainline-sales";
+import { getSupabase, isSupabaseConfigured } from "@/lib/supabase";
+import type { ChatMessageRecord } from "@/lib/database.types";
 
 // Singleton engine instance (persists across requests in the same server process)
 let engine: ChatEngine | null = null;
@@ -88,6 +90,50 @@ export async function POST(request: NextRequest) {
 
     // Send the message and get a response
     const response = await chatEngine.sendMessage(activeConversationId, message);
+
+    // Persist conversation to Supabase (non-blocking, don't fail the response)
+    if (isSupabaseConfigured()) {
+      try {
+        const conv = chatEngine.getConversation(activeConversationId);
+        if (conv) {
+          const supabase = getSupabase();
+
+          // Only persist if the client exists in the DB (skip demo clients without DB rows)
+          const { data: clientRow } = await supabase
+            .from("clients")
+            .select("id")
+            .eq("id", clientId)
+            .limit(1)
+            .single();
+
+          if (clientRow) {
+            const messagesForDb: ChatMessageRecord[] = conv.messages.map((m) => ({
+              role: m.role,
+              content: m.content,
+              timestamp: new Date(m.timestamp).toISOString(),
+            }));
+
+            const { error } = await supabase.from("conversations").upsert(
+              {
+                id: activeConversationId,
+                client_id: clientRow.id,
+                lead_id: null,
+                messages: messagesForDb,
+                lead_captured: conv.leadCaptured,
+                appointment_booked: conv.appointmentBooked,
+                updated_at: new Date().toISOString(),
+              },
+              { onConflict: "id" }
+            );
+            if (error) {
+              console.error("[/api/chat] Failed to persist conversation:", error.message);
+            }
+          }
+        }
+      } catch (err) {
+        console.error("[/api/chat] Conversation persistence error:", err);
+      }
+    }
 
     return NextResponse.json({
       conversationId: response.conversationId,

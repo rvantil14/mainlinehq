@@ -14,6 +14,8 @@ import {
   CustomerInfo,
 } from "@/lib/types";
 import { buildSystemPrompt, buildLeadExtractionPrompt } from "@/lib/prompt-builder";
+import { getSupabase, isSupabaseConfigured } from "@/lib/supabase";
+import type { LeadInsert, AppointmentInsert } from "@/lib/database.types";
 
 // Simple logger (console-based)
 const logger = {
@@ -384,15 +386,46 @@ export class ChatEngine {
           JSON.stringify(customerInfo, null, 2)
         );
 
-        // TODO: In production, this would:
-        // 1. Create a deal in Pipedrive CRM
-        // 2. Send notification to business owner via SMS/email
-        // 3. Store in database
+        const leadId = uuidv4();
+
+        // Persist to Supabase when configured
+        if (isSupabaseConfigured()) {
+          try {
+            const urgencyMap: Record<string, "normal" | "urgent" | "emergency"> = {
+              emergency: "emergency",
+              urgent: "urgent",
+              routine: "normal",
+              inquiry: "normal",
+            };
+            const leadInsert: LeadInsert = {
+              id: leadId,
+              client_id: conversation.clientId,
+              name: customerInfo.name || "Unknown",
+              phone: customerInfo.phone || null,
+              email: customerInfo.email || null,
+              source: "chatbot",
+              job_type: customerInfo.serviceNeeded || null,
+              urgency: urgencyMap[customerInfo.urgency || "routine"] || "normal",
+              notes: customerInfo.notes || null,
+              status: "new",
+            };
+            const { error } = await getSupabase()
+              .from("leads")
+              .insert(leadInsert);
+            if (error) {
+              logger.error("Failed to persist lead to Supabase:", error.message);
+            } else {
+              logger.info(`Lead ${leadId} persisted to Supabase`);
+            }
+          } catch (err) {
+            logger.error("Supabase lead insert error:", err);
+          }
+        }
 
         return {
           success: true,
           message: "Lead information saved successfully. The team will follow up.",
-          leadId: uuidv4(),
+          leadId,
         };
       }
 
@@ -404,15 +437,76 @@ export class ChatEngine {
           JSON.stringify(input, null, 2)
         );
 
-        // TODO: In production, this would:
-        // 1. Call Cal.com API to create the booking
-        // 2. Send SMS confirmation via Twilio
-        // 3. Create deal in Pipedrive
-        // 4. Add to technician's calendar
+        const appointmentId = uuidv4();
+
+        // Persist to Supabase when configured
+        if (isSupabaseConfigured()) {
+          try {
+            // Build scheduled_at from date + time
+            const dateStr = input.preferredDate as string;
+            const timeStr = input.preferredTime as string;
+            const scheduledAt = new Date(`${dateStr}T${timeStr}:00`).toISOString();
+
+            // Try to find or create a lead for this appointment
+            let leadId: string | null = null;
+            const supabase = getSupabase();
+
+            // Look up existing lead by client + customer name/phone
+            const { data: existingLead } = await supabase
+              .from("leads")
+              .select("id")
+              .eq("client_id", conversation.clientId)
+              .eq("name", (input.customerName as string) || "")
+              .limit(1)
+              .single();
+
+            if (existingLead) {
+              leadId = existingLead.id;
+              // Update lead status to booked
+              await supabase.from("leads").update({ status: "booked" as const }).eq("id", leadId!);
+            } else {
+              // Create a lead record for the appointment
+              leadId = uuidv4();
+              await supabase.from("leads").insert({
+                id: leadId,
+                client_id: conversation.clientId,
+                name: (input.customerName as string) || "Unknown",
+                phone: (input.customerPhone as string) || null,
+                email: (input.customerEmail as string) || null,
+                source: "chatbot",
+                job_type: (input.serviceType as string) || null,
+                urgency: "normal",
+                notes: null,
+                status: "booked",
+              } satisfies LeadInsert);
+            }
+
+            const apptInsert: AppointmentInsert = {
+              id: appointmentId,
+              client_id: conversation.clientId,
+              lead_id: leadId!, // leadId is always set by this point
+              scheduled_at: scheduledAt,
+              duration_minutes: 60,
+              job_type: (input.serviceType as string) || null,
+              address: (input.address as string) || null,
+              notes: (input.jobDescription as string) || null,
+              status: "scheduled",
+              technician_name: null,
+            };
+            const { error } = await supabase.from("appointments").insert(apptInsert);
+            if (error) {
+              logger.error("Failed to persist appointment to Supabase:", error.message);
+            } else {
+              logger.info(`Appointment ${appointmentId} persisted to Supabase`);
+            }
+          } catch (err) {
+            logger.error("Supabase appointment insert error:", err);
+          }
+        }
 
         return {
           success: true,
-          appointmentId: uuidv4(),
+          appointmentId,
           confirmed: true,
           date: input.preferredDate,
           time: input.preferredTime,

@@ -234,40 +234,49 @@ export interface Database {
         Row: ClientRow;
         Insert: ClientInsert;
         Update: ClientUpdate;
+        Relationships: [];
       };
       leads: {
         Row: LeadRow;
         Insert: LeadInsert;
         Update: LeadUpdate;
+        Relationships: [];
       };
       conversations: {
         Row: ConversationRow;
         Insert: ConversationInsert;
         Update: ConversationUpdate;
+        Relationships: [];
       };
       appointments: {
         Row: AppointmentRow;
         Insert: AppointmentInsert;
         Update: AppointmentUpdate;
+        Relationships: [];
       };
       invoices: {
         Row: InvoiceRow;
         Insert: InvoiceInsert;
         Update: InvoiceUpdate;
+        Relationships: [];
       };
       reviews: {
         Row: ReviewRow;
         Insert: ReviewInsert;
         Update: ReviewUpdate;
+        Relationships: [];
       };
       sms_messages: {
         Row: SmsMessageRow;
         Insert: SmsMessageInsert;
         Update: SmsMessageUpdate;
+        Relationships: [];
       };
     };
-    Views: Record<string, never>;
-    Functions: Record<string, never>;
+    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+    Views: {};
+    // eslint-disable-next-line @typescript-eslint/no-empty-object-type
+    Functions: {};
     Enums: {
       business_type: BusinessType;
       client_package: ClientPackage;
