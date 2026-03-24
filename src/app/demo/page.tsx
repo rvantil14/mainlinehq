@@ -280,7 +280,7 @@ export default function DemoPage() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
           {/* Chat Panel - 3/5 = 60% */}
           <div className="lg:col-span-3">
-            <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden flex flex-col min-h-[400px] lg:min-h-[500px]">
+            <div className="bg-white rounded-lg shadow-lg border border-gray-200 overflow-hidden flex flex-col h-[500px] lg:h-[600px]">
               {/* Chat Header */}
               <div className="px-5 py-3.5 flex items-center gap-3 border-b border-gray-100 bg-primary">
                 <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center text-xs font-bold text-white">
