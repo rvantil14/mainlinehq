@@ -23,8 +23,6 @@ const BUSINESS_TYPE_LABELS: Record<string, string> = {
 
 const PACKAGE_LABELS: Record<string, string> = {
   starter: "Starter",
-  growth: "Growth",
-  pro: "Pro",
 };
 
 export default function ClientsPage() {
@@ -64,7 +62,7 @@ export default function ClientsPage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold">Clients</h1>
-            <p className="text-gray-400 mt-1">
+            <p className="text-gray-500 mt-1">
               {clients.length} total client{clients.length !== 1 ? "s" : ""}
             </p>
           </div>
@@ -87,7 +85,7 @@ export default function ClientsPage() {
         </div>
 
         {loading && (
-          <div className="text-gray-400 text-center py-20">Loading clients...</div>
+          <div className="text-gray-500 text-center py-20">Loading clients...</div>
         )}
 
         {error && (
@@ -106,7 +104,7 @@ export default function ClientsPage() {
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
-                <tr className="border-b border-gray-800 text-gray-400 text-sm">
+                <tr className="border-b border-gray-200 text-gray-500 text-sm">
                   <th className="pb-3 pr-4">Business</th>
                   <th className="pb-3 pr-4">Owner</th>
                   <th className="pb-3 pr-4">Type</th>
@@ -120,28 +118,28 @@ export default function ClientsPage() {
                   <tr
                     key={client.id}
                     onClick={() => router.push(`/admin/clients/${client.id}`)}
-                    className="border-b border-gray-800/50 hover:bg-gray-900 cursor-pointer transition-colors"
+                    className="border-b border-gray-100 hover:bg-gray-50 cursor-pointer transition-colors"
                   >
                     <td className="py-4 pr-4 font-medium">{client.business_name}</td>
-                    <td className="py-4 pr-4 text-gray-300">{client.owner_name}</td>
-                    <td className="py-4 pr-4 text-gray-300">
+                    <td className="py-4 pr-4 text-gray-600">{client.owner_name}</td>
+                    <td className="py-4 pr-4 text-gray-600">
                       {BUSINESS_TYPE_LABELS[client.business_type] || client.business_type}
                     </td>
                     <td className="py-4 pr-4">
-                      <span className="bg-gray-800 text-gray-200 text-xs px-2 py-1 rounded-full">
+                      <span className="bg-gray-100 text-gray-700 text-xs px-2 py-1 rounded-full">
                         {PACKAGE_LABELS[client.package] || client.package}
                       </span>
                     </td>
                     <td className="py-4 pr-4">
                       <span
                         className={`text-xs px-2 py-1 rounded-full font-medium ${
-                          STATUS_COLORS[client.status] || "bg-gray-700 text-gray-300"
+                          STATUS_COLORS[client.status] || "bg-gray-100 text-gray-500"
                         }`}
                       >
                         {client.status}
                       </span>
                     </td>
-                    <td className="py-4 text-gray-400 text-sm">
+                    <td className="py-4 text-gray-500 text-sm">
                       {new Date(client.created_at).toLocaleDateString()}
                     </td>
                   </tr>

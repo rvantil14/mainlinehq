@@ -520,23 +520,6 @@ export default function FeaturesPage() {
         })}
       </div>
 
-      {/* Coming Soon */}
-      <section className="bg-dark py-16">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto max-w-3xl text-center">
-            <span className="inline-flex items-center rounded-full bg-accent/10 px-4 py-1.5 text-sm font-bold uppercase tracking-wide text-accent mb-4">
-              On the Roadmap
-            </span>
-            <h2 className="text-2xl sm:text-3xl font-bold text-white tracking-tight">
-              Building Code &amp; Spec Assistant
-            </h2>
-            <p className="mt-4 text-lg text-gray-400 max-w-2xl mx-auto leading-relaxed">
-              Ask building code questions in plain English. Upload spec books and get instant summaries. Jurisdiction-specific answers for your area, in seconds.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* How We're Different */}
       <section className="py-20 bg-white">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">

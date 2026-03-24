@@ -23,8 +23,6 @@ const BUSINESS_TYPES: { value: BusinessType; label: string }[] = [
 
 const PACKAGES: { value: ClientPackage; label: string; desc: string }[] = [
   { value: "starter", label: "Starter", desc: "$297/mo" },
-  { value: "growth", label: "Growth", desc: "$797/mo" },
-  { value: "pro", label: "Pro", desc: "$1,497/mo" },
 ];
 
 const STATUS_OPTIONS: { value: ClientStatus; label: string; color: string }[] = [
@@ -256,7 +254,7 @@ export default function ClientDetailPage({
             href={`/demo?client=${id}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-50 border border-gray-200 hover:bg-gray-100 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            className="bg-gray-50 border border-gray-200 hover:bg-gray-100 text-gray-700 px-4 py-2 rounded-lg text-sm font-medium transition-colors"
           >
             View Chatbot
           </a>
@@ -404,7 +402,7 @@ export default function ClientDetailPage({
 
             <div className="mt-4">
               <label className={LABEL_CLASS}>Package</label>
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-1 gap-3">
                 {PACKAGES.map((pkg) => (
                   <button
                     key={pkg.value}
@@ -413,7 +411,7 @@ export default function ClientDetailPage({
                     className={`p-3 rounded-lg border text-center transition-colors ${
                       clientPackage === pkg.value
                         ? "border-orange-600 bg-orange-600/10 text-orange-400"
-                        : "border-gray-700 bg-white text-gray-600 hover:border-gray-600"
+                        : "border-gray-200 bg-white text-gray-600 hover:border-gray-300"
                     }`}
                   >
                     <div className="font-medium">{pkg.label}</div>

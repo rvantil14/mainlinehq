@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
+import { isSupabaseConfigured, getSupabase } from "@/lib/supabase";
 
 const resend = process.env.RESEND_API_KEY
   ? new Resend(process.env.RESEND_API_KEY)
@@ -46,6 +47,30 @@ export async function POST(request: Request) {
       });
     } else {
       console.warn("RESEND_API_KEY not configured - onboarding notification not sent");
+    }
+
+    // Persist lead to Supabase if configured
+    if (isSupabaseConfigured()) {
+      try {
+        const { error: dbError } = await getSupabase()
+          .from("leads")
+          .insert({
+            name: ownerName,
+            phone,
+            email,
+            source: "form",
+            job_type: businessType,
+            urgency: "normal",
+            notes: `Package: ${selectedPackage}. Business: ${businessName}. City: ${city || "N/A"}`,
+            status: "new",
+            client_id: null,
+          });
+        if (dbError) {
+          console.error("Failed to persist onboarding lead to Supabase:", dbError.message);
+        }
+      } catch (dbErr) {
+        console.error("Supabase onboarding lead insert error:", dbErr);
+      }
     }
 
     return NextResponse.json({ success: true });

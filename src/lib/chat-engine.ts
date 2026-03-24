@@ -618,6 +618,6 @@ export class ChatEngine {
     if (msg.includes("hi") || msg.includes("hello") || msg.includes("hey")) {
       return `Hey there! Welcome to ${biz}. ${client.tagline || ""} How can I help you today? Whether you need a repair, want to schedule maintenance, or just have a question, I'm here for you.`;
     }
-    return `Thanks for reaching out to ${biz}! I can help you with scheduling appointments, getting price estimates, answering questions about our services, or connecting you with our team. What do you need help with?\n\n**[DEMO MODE]** Add your Anthropic API key to .env for full AI-powered conversations.`;
+    return `Thanks for reaching out to ${biz}! I can help you with scheduling appointments, getting price estimates, answering questions about our services, or connecting you with our team. What do you need help with?\n\nI'm having trouble connecting right now. Call us at (805) 801-1380 or email ryan@mainlinehq.com`;
   }
 }
