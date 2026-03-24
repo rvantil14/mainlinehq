@@ -34,9 +34,9 @@ const STATUS_OPTIONS: { value: ClientStatus; label: string; color: string }[] = 
 ];
 
 const INPUT_CLASS =
-  "w-full bg-gray-900 border border-gray-700 rounded-lg px-4 py-2.5 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent";
+  "w-full bg-white border border-gray-200 rounded-lg px-4 py-2.5 text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent";
 
-const LABEL_CLASS = "block text-sm font-medium text-gray-300 mb-1.5";
+const LABEL_CLASS = "block text-sm font-medium text-gray-700 mb-1.5";
 
 export default function ClientDetailPage({
   params,
@@ -211,22 +211,22 @@ export default function ClientDetailPage({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-950 text-white flex items-center justify-center">
-        <p className="text-gray-400">Loading client...</p>
+      <div className="min-h-screen flex items-center justify-center">
+        <p className="text-gray-500">Loading client...</p>
       </div>
     );
   }
 
   if (!client && error) {
     return (
-      <div className="min-h-screen bg-gray-950 text-white p-6 md:p-10">
+      <div className="min-h-screen">
         <div className="max-w-3xl mx-auto">
           <div className="bg-red-900/30 border border-red-700 text-red-300 px-4 py-3 rounded-lg">
             {error}
           </div>
           <button
             onClick={() => router.push("/admin/clients")}
-            className="text-gray-400 hover:text-white text-sm mt-4 inline-block"
+            className="text-gray-500 hover:text-white text-sm mt-4 inline-block"
           >
             &larr; Back to Clients
           </button>
@@ -236,11 +236,11 @@ export default function ClientDetailPage({
   }
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-6 md:p-10">
+    <div className="min-h-screen">
       <div className="max-w-3xl mx-auto">
         <button
           onClick={() => router.push("/admin/clients")}
-          className="text-gray-400 hover:text-white text-sm mb-6 inline-block transition-colors"
+          className="text-gray-500 hover:text-white text-sm mb-6 inline-block transition-colors"
         >
           &larr; Back to Clients
         </button>
@@ -248,7 +248,7 @@ export default function ClientDetailPage({
         <div className="flex items-start justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold">{client?.business_name}</h1>
-            <p className="text-gray-400 mt-1">
+            <p className="text-gray-500 mt-1">
               Client ID: {id.slice(0, 8)}...
             </p>
           </div>
@@ -256,7 +256,7 @@ export default function ClientDetailPage({
             href={`/demo?client=${id}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+            className="bg-gray-50 border border-gray-200 hover:bg-gray-100 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors"
           >
             View Chatbot
           </a>
@@ -264,17 +264,17 @@ export default function ClientDetailPage({
 
         {/* Stats */}
         <div className="grid grid-cols-3 gap-4 mb-8">
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-white">{counts.leads}</div>
-            <div className="text-xs text-gray-400 mt-1">Leads</div>
+          <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-gray-900">{counts.leads}</div>
+            <div className="text-xs text-gray-500 mt-1">Leads</div>
           </div>
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-white">{counts.appointments}</div>
-            <div className="text-xs text-gray-400 mt-1">Appointments</div>
+          <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-gray-900">{counts.appointments}</div>
+            <div className="text-xs text-gray-500 mt-1">Appointments</div>
           </div>
-          <div className="bg-gray-900 border border-gray-800 rounded-lg p-4 text-center">
-            <div className="text-2xl font-bold text-white">{counts.conversations}</div>
-            <div className="text-xs text-gray-400 mt-1">Conversations</div>
+          <div className="bg-white border border-gray-200 rounded-lg p-4 text-center">
+            <div className="text-2xl font-bold text-gray-900">{counts.conversations}</div>
+            <div className="text-xs text-gray-500 mt-1">Conversations</div>
           </div>
         </div>
 
@@ -303,7 +303,7 @@ export default function ClientDetailPage({
                   className={`px-4 py-2 rounded-lg text-sm font-medium border transition-colors ${
                     status === opt.value
                       ? `${opt.color} border-transparent`
-                      : "border-gray-700 bg-gray-900 text-gray-400 hover:border-gray-600"
+                      : "border-gray-700 bg-white text-gray-500 hover:border-gray-600"
                   }`}
                 >
                   {opt.label}
@@ -413,7 +413,7 @@ export default function ClientDetailPage({
                     className={`p-3 rounded-lg border text-center transition-colors ${
                       clientPackage === pkg.value
                         ? "border-orange-600 bg-orange-600/10 text-orange-400"
-                        : "border-gray-700 bg-gray-900 text-gray-300 hover:border-gray-600"
+                        : "border-gray-700 bg-white text-gray-600 hover:border-gray-600"
                     }`}
                   >
                     <div className="font-medium">{pkg.label}</div>
@@ -505,7 +505,7 @@ export default function ClientDetailPage({
             <button
               type="button"
               onClick={() => router.push("/admin/clients")}
-              className="text-gray-400 hover:text-white px-4 py-2.5 transition-colors"
+              className="text-gray-500 hover:text-white px-4 py-2.5 transition-colors"
             >
               Cancel
             </button>
@@ -513,9 +513,9 @@ export default function ClientDetailPage({
         </form>
 
         {/* Embed Code */}
-        <section className="bg-gray-800 rounded-xl p-6 mt-8">
-          <h2 className="text-lg font-bold text-white mb-1">Chat Widget Embed Code</h2>
-          <p className="text-sm text-gray-400 mb-4">Add this script to the client&apos;s website to enable the AI chatbot.</p>
+        <section className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-8">
+          <h2 className="text-lg font-bold text-gray-900 mb-1">Chat Widget Embed Code</h2>
+          <p className="text-sm text-gray-500 mb-4">Add this script to the client&apos;s website to enable the AI chatbot.</p>
           <div className="relative">
             <pre className="bg-gray-900 rounded-lg p-4 text-sm text-green-400 overflow-x-auto">
 {`<script>
@@ -532,7 +532,7 @@ export default function ClientDetailPage({
                 setSuccess("Embed code copied!");
                 setTimeout(() => setSuccess(""), 2000);
               }}
-              className="absolute top-3 right-3 bg-gray-700 hover:bg-gray-600 text-white text-xs px-3 py-1.5 rounded-md transition-colors"
+              className="absolute top-3 right-3 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs px-3 py-1.5 rounded-md transition-colors"
             >
               Copy
             </button>
@@ -540,12 +540,12 @@ export default function ClientDetailPage({
         </section>
 
         {/* Quick Links */}
-        <section className="bg-gray-800 rounded-xl p-6 mt-6 mb-8">
-          <h2 className="text-lg font-bold text-white mb-4">Quick Links</h2>
+        <section className="bg-gray-50 border border-gray-200 rounded-xl p-6 mt-6 mb-8">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">Quick Links</h2>
           <div className="flex flex-wrap gap-3">
             <a
               href={`/admin/leads?client_id=${id}`}
-              className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white text-sm px-4 py-2.5 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm px-4 py-2.5 rounded-lg transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.012 1.244l.256.512a2.25 2.25 0 002.013 1.244h3.218a2.25 2.25 0 002.013-1.244l.256-.512a2.25 2.25 0 012.013-1.244h3.859" />
@@ -554,7 +554,7 @@ export default function ClientDetailPage({
             </a>
             <a
               href={`/admin/conversations?client_id=${id}`}
-              className="inline-flex items-center gap-2 bg-gray-700 hover:bg-gray-600 text-white text-sm px-4 py-2.5 rounded-lg transition-colors"
+              className="inline-flex items-center gap-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-sm px-4 py-2.5 rounded-lg transition-colors"
             >
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242" />

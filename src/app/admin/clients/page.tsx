@@ -59,7 +59,7 @@ export default function ClientsPage() {
   );
 
   return (
-    <div className="min-h-screen bg-gray-950 text-white p-6 md:p-10">
+    <div className="min-h-screen">
       <div className="max-w-6xl mx-auto">
         <div className="flex items-center justify-between mb-8">
           <div>
@@ -70,7 +70,7 @@ export default function ClientsPage() {
           </div>
           <button
             onClick={() => router.push("/admin/clients/new")}
-            className="bg-orange-600 hover:bg-orange-700 text-white px-4 py-2 rounded-lg font-medium transition-colors"
+            className="bg-accent hover:bg-accent-hover text-white px-4 py-2 rounded-lg font-medium transition-colors"
           >
             + Add Client
           </button>
@@ -82,7 +82,7 @@ export default function ClientsPage() {
             placeholder="Search by business name..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full md:w-80 bg-gray-900 border border-gray-700 rounded-lg px-4 py-2 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
+            className="w-full md:w-80 bg-white border border-gray-200 rounded-lg px-4 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-orange-600 focus:border-transparent"
           />
         </div>
 

@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { getAdminToken } from "@/lib/admin-auth";
 
 export async function POST(req: NextRequest) {
   try {
@@ -20,12 +21,12 @@ export async function POST(req: NextRequest) {
     }
 
     const response = NextResponse.json({ success: true });
-    response.cookies.set("mainline_admin", "1", {
+    response.cookies.set("mainline_admin", getAdminToken(), {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
       sameSite: "lax",
       path: "/",
-      maxAge: 60 * 60 * 24 * 7, // 7 days
+      maxAge: 60 * 60 * 24 * 7,
     });
 
     return response;

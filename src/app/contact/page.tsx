@@ -244,7 +244,7 @@ export default function ContactPage() {
                         value={form.business}
                         onChange={handleChange}
                         className="w-full rounded-md border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all"
-                        placeholder="Smith Plumbing"
+                        placeholder="Ace Plumbing"
                       />
                     </div>
 
@@ -283,7 +283,7 @@ export default function ContactPage() {
                           value={form.email}
                           onChange={handleChange}
                           className="w-full rounded-md border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all"
-                          placeholder="john@smithplumbing.com"
+                          placeholder="john@aceplumbing.com"
                         />
                       </div>
                     </div>

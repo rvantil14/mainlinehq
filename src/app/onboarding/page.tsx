@@ -291,7 +291,7 @@ export default function OnboardingPage() {
                     type="text"
                     value={form.businessName}
                     onChange={(e) => set("businessName", e.target.value)}
-                    placeholder="Smith Plumbing"
+                    placeholder="Ace Plumbing"
                     className={inputClass(errors.businessName)}
                   />
                 </Field>
@@ -321,7 +321,7 @@ export default function OnboardingPage() {
                     type="email"
                     value={form.email}
                     onChange={(e) => set("email", e.target.value)}
-                    placeholder="john@smithplumbing.com"
+                    placeholder="john@aceplumbing.com"
                     className={inputClass(errors.email)}
                   />
                 </Field>

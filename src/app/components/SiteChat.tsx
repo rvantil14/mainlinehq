@@ -83,8 +83,8 @@ export default function SiteChat() {
     }
   }, [input, isLoading, messages, conversationId]);
 
-  // Don't render on /demo page
-  if (pathname === "/demo") return null;
+  // Don't render on /demo or /admin pages
+  if (pathname === "/demo" || pathname?.startsWith("/admin")) return null;
 
   return (
     <>

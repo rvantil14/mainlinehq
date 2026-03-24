@@ -385,10 +385,10 @@ export default function Home() {
         <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-tight text-dark sm:text-4xl">
-              What Our Clients Say
+              What Trade Businesses Are Saying
             </h2>
             <p className="mt-3 text-lg text-text-light">
-              Real results from real trade businesses.
+              Results trade businesses can expect with AI automation.
             </p>
           </div>
 

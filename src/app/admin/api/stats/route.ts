@@ -1,9 +1,9 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import { isAdminAuthenticated } from "@/lib/admin-auth";
 import { isSupabaseConfigured, getSupabase } from "@/lib/supabase";
 
-export async function GET(req: NextRequest) {
-  const adminCookie = req.cookies.get("mainline_admin");
-  if (!adminCookie || adminCookie.value !== "1") {
+export async function GET() {
+  if (!(await isAdminAuthenticated())) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
 
@@ -21,18 +21,15 @@ export async function GET(req: NextRequest) {
   try {
     const supabase = getSupabase();
 
-    // Get client count
     const { count: clientCount } = await supabase
       .from("clients")
       .select("*", { count: "exact", head: true });
 
-    // Get active leads (status = new)
     const { count: leadCount } = await supabase
       .from("leads")
       .select("*", { count: "exact", head: true })
       .eq("status", "new");
 
-    // Get appointments this week
     const now = new Date();
     const weekStart = new Date(now);
     weekStart.setDate(now.getDate() - now.getDay());
@@ -46,15 +43,13 @@ export async function GET(req: NextRequest) {
       .gte("scheduled_at", weekStart.toISOString())
       .lt("scheduled_at", weekEnd.toISOString());
 
-    // Get SMS sent count
     const { count: smsCount } = await supabase
       .from("sms_messages")
       .select("*", { count: "exact", head: true });
 
-    // Get recent leads
     const { data: recentLeads } = await supabase
       .from("leads")
-      .select("id, name, email, phone, trade, status, created_at")
+      .select("id, name, email, phone, job_type, status, created_at")
       .order("created_at", { ascending: false })
       .limit(10);
 

@@ -158,6 +158,6 @@ Everything in Growth plus custom AI training, multi-tech dispatch, customer port
 
 **CTA:** "Book Your Free Consultation" - mainlinehq.com/contact
 **Phone:** (805) 801-1380
-**Email:** hello@mainlinehq.com
+**Email:** ryan@mainlinehq.com
 
 **Visual:** Clean slide with one button/link, phone number, email. Nothing else.

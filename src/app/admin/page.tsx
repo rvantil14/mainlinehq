@@ -7,7 +7,7 @@ interface Lead {
   name: string;
   email: string;
   phone: string;
-  trade: string;
+  job_type: string | null;
   status: string;
   created_at: string;
 }
@@ -127,7 +127,7 @@ export default function AdminDashboard() {
                   <th className="px-5 py-3 font-medium">Name</th>
                   <th className="px-5 py-3 font-medium">Email</th>
                   <th className="px-5 py-3 font-medium">Phone</th>
-                  <th className="px-5 py-3 font-medium">Trade</th>
+                  <th className="px-5 py-3 font-medium">Job Type</th>
                   <th className="px-5 py-3 font-medium">Status</th>
                   <th className="px-5 py-3 font-medium">Date</th>
                 </tr>
@@ -140,7 +140,7 @@ export default function AdminDashboard() {
                     <td className="px-5 py-3 text-text-light">{lead.phone}</td>
                     <td className="px-5 py-3">
                       <span className="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-gray-100 text-gray-700 capitalize">
-                        {lead.trade}
+                        {lead.job_type || "N/A"}
                       </span>
                     </td>
                     <td className="px-5 py-3">
