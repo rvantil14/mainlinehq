@@ -3,11 +3,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Pricing | Mainline",
   description:
-    "Transparent pricing for AI automation. Starter $297/mo, Growth $797/mo, Pro $1,497/mo. No contracts, cancel anytime.",
+    "Simple pricing. $297/mo with a 14-day free trial. No setup fee, no contracts. AI chatbot, SMS reminders, review automation for trade businesses.",
   openGraph: {
     title: "Pricing | Mainline",
     description:
-      "Transparent pricing for AI automation. Starter $297/mo, Growth $797/mo, Pro $1,497/mo. No contracts, cancel anytime.",
+      "Simple pricing. $297/mo with a 14-day free trial. No setup fee, no contracts. AI chatbot, SMS reminders, review automation for trade businesses.",
     type: "website",
     url: "https://mainlinehq.com/pricing",
   },
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Pricing | Mainline",
     description:
-      "Transparent pricing for AI automation. Starter $297/mo, Growth $797/mo, Pro $1,497/mo. No contracts, cancel anytime.",
+      "Simple pricing. $297/mo with a 14-day free trial. No setup fee, no contracts. AI chatbot, SMS reminders, review automation for trade businesses.",
   },
 };
 

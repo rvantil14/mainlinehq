@@ -206,7 +206,7 @@ export default function HvacPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    $297/month for AI front office
+                    $297/month, 14-day free trial
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>

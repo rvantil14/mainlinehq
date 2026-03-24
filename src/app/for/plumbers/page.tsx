@@ -218,7 +218,7 @@ export default function PlumbersPage() {
 
             <div className="mt-8 pt-8 border-t border-gray-100 text-center">
               <p className="text-text-light">
-                Mainline starts at <strong className="text-dark">$297/month</strong>.
+                Mainline is <strong className="text-dark">$297/month with a 14-day free trial</strong>. No setup fee.
                 Even capturing <strong className="text-dark">2 extra jobs per month</strong> at $350 each
                 means you&apos;re making <strong className="text-accent">$200+ more than you spend</strong>.
                 Most plumbers see 5-10 extra jobs.

@@ -19,215 +19,43 @@ const checkIcon = (
   </svg>
 );
 
-const xIcon = (
-  <svg
-    className="h-4 w-4 text-gray-300"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={2}
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M6 18L18 6M6 6l12 12"
-    />
-  </svg>
-);
-
-const checkSmall = (
-  <svg
-    className="h-4 w-4 text-accent"
-    fill="none"
-    viewBox="0 0 24 24"
-    strokeWidth={2.5}
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      d="M4.5 12.75l6 6 9-13.5"
-    />
-  </svg>
-);
-
-const tiers = [
-  {
-    name: "Starter",
-    price: "$297",
-    setup: "$500",
-    audience: "For the one-truck operator who's tired of missing calls",
-    description:
-      "Everything a solo operator or small crew needs to stop missing calls and start collecting reviews.",
-    popular: false,
-    features: [
-      "AI chatbot on your website (24/7 lead capture + booking)",
-      "Online booking system synced to your calendar",
-      "Automated appointment reminders via SMS",
-      "Automated review requests after every job",
-      "Basic monthly performance report",
-    ],
-  },
-  {
-    name: "Growth",
-    price: "$797",
-    setup: "$1,500",
-    audience: "For the growing shop that needs to stop drowning in admin",
-    description:
-      "Full front office automation. AI answers your phone, sends invoices, and follows up with every lead.",
-    popular: true,
-    features: [
-      "Everything in Starter, plus:",
-      "AI phone receptionist (answers with YOUR business name)",
-      "Automated invoicing + payment collection via text",
-      "Smart scheduling with technician assignment",
-      "CRM setup and full lead management",
-      "Automated follow-up sequences for cold leads",
-      "Google Business Profile optimization",
-      "AI-generated estimates (you review & approve)",
-    ],
-  },
-  {
-    name: "Pro",
-    price: "$1,497",
-    setup: "$3,000",
-    audience: "For the established operation ready to run on autopilot",
-    description:
-      "Custom-trained AI, multi-tech dispatch, customer portal, and a dedicated monthly strategy call.",
-    popular: false,
-    features: [
-      "Everything in Growth, plus:",
-      "Custom AI trained on your specific business",
-      "Multi-technician dispatch optimization",
-      "Automated quote generation",
-      "Customer portal for job status + payments",
-      "QuickBooks / accounting integration",
-      "Automated contracts & proposals",
-      "Monthly strategy call with your account lead",
-      "Priority same-day support",
-    ],
-  },
-];
-
-const addOns = [
-  {
-    name: "Website Build",
-    price: "$2,000 - $5,000",
-    detail: "one-time",
-  },
-  {
-    name: "Google Ads Management",
-    price: "$500/mo",
-    detail: "+ ad spend",
-  },
-  {
-    name: "Social Media Automation",
-    price: "$300/mo",
-    detail: "content scheduling & posting",
-  },
-  {
-    name: "Custom AI Training",
-    price: "$150/hr",
-    detail: "specialized workflows",
-  },
-];
-
-const comparisonRows = [
-  {
-    label: "Monthly Cost",
-    mainline: "$297 - $1,497",
-    jobber: "$69 - $349",
-    housecall: "$59 - $199",
-    servicetitan: "$398+",
-  },
-  {
-    label: "Setup Time",
-    mainline: "Live in 1 week",
-    jobber: "Self-serve (weeks)",
-    housecall: "Self-serve (weeks)",
-    servicetitan: "3-6 months",
-  },
-  {
-    label: "Done-For-You Setup?",
-    mainline: true,
-    jobber: false,
-    housecall: false,
-    servicetitan: false,
-  },
-  {
-    label: "AI Chatbot",
-    mainline: true,
-    jobber: false,
-    housecall: false,
-    servicetitan: false,
-  },
-  {
-    label: "AI Phone Answering",
-    mainline: true,
-    jobber: false,
-    housecall: false,
-    servicetitan: false,
-  },
-  {
-    label: "Invoicing & Payments",
-    mainline: true,
-    jobber: true,
-    housecall: true,
-    servicetitan: true,
-  },
-  {
-    label: "Review Automation",
-    mainline: true,
-    jobber: false,
-    housecall: false,
-    servicetitan: true,
-  },
-  {
-    label: "No Contracts",
-    mainline: true,
-    jobber: true,
-    housecall: true,
-    servicetitan: false,
-  },
+const features = [
+  "AI chatbot on your website (24/7 lead capture + booking)",
+  "Trained on YOUR business, services, and pricing",
+  "Online booking synced to your calendar",
+  "Automated appointment reminders via SMS",
+  "Automated review requests after every job",
+  "Monthly performance report",
+  "Done-for-you setup (live in under a week)",
+  "Month-to-month, cancel anytime",
 ];
 
 const faqs = [
   {
+    q: "What do I get for $297/month?",
+    a: "An AI chatbot trained on your specific business that lives on your website 24/7. It answers customer questions, captures leads, and helps book appointments. You also get automated SMS appointment reminders, review requests after every job, and a monthly performance report. We handle all the setup.",
+  },
+  {
+    q: "Is there really no setup fee?",
+    a: "No setup fee. No contracts. We get you live within a week and you try it free for 14 days. If it works, $297/month. If not, walk away. We take the risk, not you.",
+  },
+  {
     q: "How does this compare to Jobber or Housecall Pro?",
-    a: "They give you tools to figure out yourself. We build it, run it, and optimize it for you. With Mainline, we handle setup, train the AI on your specific business, and keep everything running. You focus on the work.",
+    a: "They give you software to figure out yourself. We build, configure, and manage your system for you. No learning curve, no tutorials. You tell us about your business, we handle the rest.",
   },
   {
-    q: "What if it doesn't work for my business?",
-    a: "All plans are month-to-month. If you're not seeing results, you can cancel anytime with 30 days notice. No long-term commitments.",
-  },
-  {
-    q: "Are there long-term contracts?",
-    a: "No. All plans are month-to-month after the initial setup. We earn your business every month. The setup fee covers onboarding and configuration. After that, cancel anytime with 30 days notice.",
-  },
-  {
-    q: "How long does it take to get started?",
-    a: "Live within one week for all plans. We handle everything. You just give us access to your existing tools and answer a few questions about your business, and we take it from there.",
-  },
-  {
-    q: "What if I need features from a higher tier but don't want the full package?",
-    a: "We can customize. If there's a specific feature from Growth or Pro that would move the needle for your business, reach out and we'll put together a plan that fits. No cookie-cutter nonsense.",
+    q: "What if I need something beyond the standard plan?",
+    a: "We build custom automation for whatever is eating your time. Phone answering, invoicing, follow-up sequences, CRM setup. Tell us the problem, we scope it and price it. No cookie-cutter packages.",
   },
   {
     q: "Do I need to be tech-savvy to use this?",
-    a: "Not at all. We set everything up and train your team. If you can use a smartphone, you can use our system. Your techs just show up and do the job.",
+    a: "Not at all. We set everything up. If you can use a smartphone, you can use our system. Your techs just show up and do the job.",
   },
   {
     q: "What trades do you work with?",
-    a: "Plumbing, HVAC, electrical, roofing, landscaping, painting, general contracting, pest control, cleaning services - any service-based trade business. The systems are built for how trade businesses actually operate: dispatch, job scheduling, estimates, and follow-ups.",
+    a: "Plumbing, HVAC, electrical, roofing, landscaping, painting, general contracting, pest control, cleaning services. Any service-based trade business that runs on appointments and job sites.",
   },
 ];
-
-function ComparisonCell({ value }: { value: boolean | string }) {
-  if (typeof value === "boolean") {
-    return value ? checkSmall : xIcon;
-  }
-  return <span className="text-sm text-gray-700">{value}</span>;
-}
 
 export default function PricingPage() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
@@ -264,180 +92,106 @@ export default function PricingPage() {
             <span className="text-accent">No Contracts.</span>
           </h1>
           <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
-            We don&apos;t sell software. We build, run, and optimize your
-            entire front office, so you never miss another call, lead, or
-            dollar.
+            Try it free for 14 days. No setup fee. No contracts.
+            If it works, $297/month. If not, walk away.
           </p>
         </div>
       </section>
 
-      {/* Pricing Cards */}
+      {/* Single Plan Card */}
       <section className="-mt-12 pb-20">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-            {tiers.map((tier) => (
-              <div
-                key={tier.name}
-                className={`relative rounded-lg bg-white transition-all duration-300 hover:-translate-y-1 ${
-                  tier.popular
-                    ? "ring-2 ring-accent shadow-2xl shadow-accent/15"
-                    : "ring-1 ring-gray-200 shadow-lg hover:shadow-xl"
-                }`}
-              >
-                {tier.popular && (
-                  <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center rounded-full bg-accent px-4 py-1 text-sm font-semibold text-white shadow-md">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
+        <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
+          <div className="relative rounded-xl bg-white ring-2 ring-accent shadow-2xl shadow-accent/15">
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+              <span className="inline-flex items-center rounded-full bg-accent px-4 py-1 text-sm font-semibold text-white shadow-md">
+                14-Day Free Trial
+              </span>
+            </div>
 
-                <div className="p-8">
-                  <h3 className="text-xl font-bold text-primary">
-                    {tier.name}
-                  </h3>
-                  <p className="mt-0.5 text-sm font-medium text-accent">
-                    {tier.audience}
-                  </p>
-                  <p className="mt-1.5 text-sm text-gray-500">
-                    {tier.description}
-                  </p>
-
-                  <div className="mt-6">
-                    <span className="text-4xl font-bold text-gray-900">
-                      {tier.price}
-                    </span>
-                    <span className="text-gray-500">/month</span>
-                  </div>
-                  <div className="mt-2 inline-flex items-center rounded-md bg-primary/5 px-3 py-1.5">
-                    <span className="text-sm font-semibold text-primary">
-                      One-time setup: {tier.setup}
-                    </span>
-                  </div>
-
-                  <Link
-                    href="/contact"
-                    className={`mt-8 block w-full text-center rounded-lg py-3 px-4 text-sm font-semibold transition-colors ${
-                      tier.popular
-                        ? "bg-accent text-white hover:bg-accent-hover shadow-sm shadow-accent/25"
-                        : "bg-primary text-white hover:bg-primary-light"
-                    }`}
-                  >
-                    Schedule a Free Consultation
-                  </Link>
-
-                  <ul className="mt-8 space-y-3">
-                    {tier.features.map((feature, i) => (
-                      <li key={i} className="flex items-start gap-3">
-                        {i === 0 && tier.name !== "Starter" ? (
-                          <span className="h-5 w-5 shrink-0" />
-                        ) : (
-                          checkIcon
-                        )}
-                        <span
-                          className={`text-sm ${
-                            i === 0 && tier.name !== "Starter"
-                              ? "font-semibold text-primary"
-                              : "text-gray-600"
-                          }`}
-                        >
-                          {feature}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
+            <div className="p-8 sm:p-10">
+              <div className="text-center">
+                <h3 className="text-2xl font-bold text-primary">
+                  Everything You Need to Stop Missing Calls
+                </h3>
+                <div className="mt-6">
+                  <span className="text-5xl font-bold text-gray-900">$297</span>
+                  <span className="text-gray-500 text-lg">/month</span>
                 </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Add-Ons */}
-      <section className="py-20 bg-white">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-              Add-Ons
-            </h2>
-            <p className="mt-3 text-gray-500 max-w-lg mx-auto">
-              Layer these onto any plan to fill gaps or push growth further.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {addOns.map((addon) => (
-              <div
-                key={addon.name}
-                className="rounded-lg border border-gray-200 p-6 text-center hover:border-accent/40 hover:shadow-md transition-all"
-              >
-                <h3 className="font-semibold text-gray-900">{addon.name}</h3>
-                <p className="mt-2 text-2xl font-bold text-primary">
-                  {addon.price}
+                <p className="mt-2 text-sm text-text-light">
+                  No setup fee. No contracts. Cancel anytime.
                 </p>
-                <p className="mt-1 text-xs text-gray-400">{addon.detail}</p>
               </div>
-            ))}
+
+              <ul className="mt-8 space-y-3">
+                {features.map((feature, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    {checkIcon}
+                    <span className="text-sm text-gray-600">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="mt-8 space-y-3">
+                <Link
+                  href="/contact"
+                  className="block w-full text-center rounded-lg py-3.5 px-4 text-base font-semibold bg-accent text-white hover:bg-accent-hover transition-colors shadow-sm shadow-accent/25"
+                >
+                  Start Your Free Trial
+                </Link>
+                <p className="text-center text-xs text-text-light">
+                  No credit card required. Live in under a week.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Comparison Table */}
-      <section className="py-20">
-        <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary">
-              Mainline vs. The Other Guys
-            </h2>
-            <p className="mt-3 text-gray-500 max-w-2xl mx-auto">
-              They sell you software to figure out on your own. We build it, run
-              it, and optimize it for you.
-            </p>
-          </div>
-
-          <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-            <table className="w-full text-left">
-              <thead>
-                <tr className="border-b border-gray-200">
-                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 min-w-[140px] sm:w-[200px]">
-                    Feature
-                  </th>
-                  <th className="py-4 px-5 text-sm font-bold text-primary bg-accent/5 min-w-[100px]">
-                    Mainline
-                  </th>
-                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 min-w-[100px]">
-                    Jobber
-                  </th>
-                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 min-w-[100px]">
-                    Housecall Pro
-                  </th>
-                  <th className="py-4 px-5 text-sm font-semibold text-gray-500 min-w-[100px]">
-                    ServiceTitan
-                  </th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-gray-100">
-                {comparisonRows.map((row) => (
-                  <tr key={row.label}>
-                    <td className="py-3.5 px-5 text-sm font-medium text-gray-900">
-                      {row.label}
-                    </td>
-                    <td className="py-3.5 px-5 bg-accent/5">
-                      <ComparisonCell value={row.mainline} />
-                    </td>
-                    <td className="py-3.5 px-5">
-                      <ComparisonCell value={row.jobber} />
-                    </td>
-                    <td className="py-3.5 px-5">
-                      <ComparisonCell value={row.housecall} />
-                    </td>
-                    <td className="py-3.5 px-5">
-                      <ComparisonCell value={row.servicetitan} />
-                    </td>
-                  </tr>
+      {/* Custom Automation Section */}
+      <section className="py-20 bg-white">
+        <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div className="rounded-xl border border-gray-200 overflow-hidden">
+            <div className="bg-primary p-8 sm:p-10 text-center">
+              <h2 className="text-2xl sm:text-3xl font-bold text-white">
+                Got a Workflow That&apos;s Eating Your Time?
+              </h2>
+              <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
+                Every business runs differently. If there&apos;s something specific
+                slowing you down, let&apos;s talk. We&apos;ll scope it, price it, and build it.
+              </p>
+            </div>
+            <div className="p-8 sm:p-10">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  "AI phone answering",
+                  "Automated invoicing",
+                  "Follow-up sequences",
+                  "CRM setup and management",
+                  "Estimate and proposal generation",
+                  "Multi-tech scheduling",
+                  "Google Ads management",
+                  "Whatever else is on your plate",
+                ].map((item) => (
+                  <div key={item} className="flex items-center gap-2.5 text-sm text-gray-700">
+                    <svg className="w-4 h-4 text-accent shrink-0" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                    </svg>
+                    {item}
+                  </div>
                 ))}
-              </tbody>
-            </table>
+              </div>
+              <div className="mt-8 text-center">
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center gap-2 px-8 py-3.5 text-sm font-semibold bg-primary hover:bg-primary-light text-white rounded-lg transition-colors"
+                >
+                  Let&apos;s Talk About Your Business
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -545,7 +299,7 @@ export default function PricingPage() {
               </span>{" "}
               on the table. Mainline costs{" "}
               <span className="font-bold text-white">
-                $297 - $1,497/month
+                $297/month
               </span>
               .
             </p>
@@ -629,7 +383,7 @@ export default function PricingPage() {
             href="/contact"
             className="mt-8 inline-flex items-center px-8 py-4 text-base font-semibold bg-accent hover:bg-accent-hover text-white rounded-lg transition-colors shadow-md shadow-accent/25"
           >
-            Schedule a Free Consultation
+            Start Your Free Trial
           </Link>
         </div>
       </section>

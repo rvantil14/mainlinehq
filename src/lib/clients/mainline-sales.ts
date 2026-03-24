@@ -59,7 +59,7 @@ export const mainlineSalesConfig: ClientConfig = {
     {
       question: "How much does it cost?",
       answer:
-        "Starter is $297/month + $500 setup. Growth is $797/month + $1,500 setup. Pro is $1,497/month + $3,000 setup. All plans are month-to-month with no contracts.",
+        "$297/month with a 14-day free trial. No setup fee, no contracts. We also build custom automation for anything else your business needs. Just tell us the problem.",
     },
     {
       question: "How long does setup take?",
