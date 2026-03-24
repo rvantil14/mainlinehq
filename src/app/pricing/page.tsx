@@ -258,7 +258,7 @@ export default function PricingPage() {
             </div>
 
             <div className="mt-8 rounded-lg bg-white/10 p-6 sm:p-8">
-              <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 text-center items-center">
+              <div className="grid grid-cols-3 gap-4 text-center items-center">
                 <div>
                   <p className="text-sm text-gray-300">
                     Missed calls/mo
@@ -281,14 +281,14 @@ export default function PricingPage() {
                   </p>
                   <p className="text-2xl font-bold mt-1">=</p>
                 </div>
-                <div className="bg-accent/20 rounded-lg p-5 ring-2 ring-accent/30">
-                  <p className="text-sm text-accent font-semibold uppercase tracking-wide">
-                    Monthly revenue lost
-                  </p>
-                  <p className="text-4xl sm:text-5xl font-extrabold text-accent mt-2">
-                    ${monthlyRevenueLost.toLocaleString()}
-                  </p>
-                </div>
+              </div>
+              <div className="mt-6 bg-accent/20 rounded-lg p-6 text-center">
+                <p className="text-sm text-accent font-semibold uppercase tracking-wide">
+                  Monthly revenue lost
+                </p>
+                <p className="text-4xl sm:text-5xl font-extrabold text-accent mt-2">
+                  ${monthlyRevenueLost.toLocaleString()}
+                </p>
               </div>
             </div>
 
