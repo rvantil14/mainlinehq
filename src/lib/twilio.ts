@@ -30,7 +30,7 @@ export async function sendSMS(to: string, body: string) {
     to,
   });
 
-  console.log(`SMS sent to ${to} | SID: ${message.sid}`);
+  console.log(`SMS sent | SID: ${message.sid}`);
   return { sid: message.sid, status: message.status };
 }
 

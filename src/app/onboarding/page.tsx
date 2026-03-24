@@ -321,7 +321,7 @@ export default function OnboardingPage() {
               {errors.selectedPackage && (
                 <p className="text-sm text-red-500 mb-4">{errors.selectedPackage}</p>
               )}
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <div className="max-w-md mx-auto">
                 {PACKAGES.map((pkg) => {
                   const selected = form.selectedPackage === pkg.id;
                   return (

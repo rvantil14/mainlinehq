@@ -32,23 +32,23 @@ export const mainlineSalesConfig: ClientConfig = {
       name: "Automated Invoicing",
       description:
         "Invoices generated at job completion with text-to-pay links",
-      priceRange: "Growth plan and above",
+      priceRange: "Custom automation",
     },
     {
       name: "Review Automation",
       description: "Automated review requests sent after every job",
-      priceRange: "Included in all plans",
+      priceRange: "Included",
     },
     {
       name: "AI Estimates",
       description:
         "AI-generated rough estimates that you review and approve before sending",
-      priceRange: "Growth plan and above",
+      priceRange: "Custom automation",
     },
     {
       name: "Contract Generation",
       description: "Automated proposals with scope, pricing, and terms",
-      priceRange: "Pro plan",
+      priceRange: "Custom automation",
     },
   ],
   serviceArea: {

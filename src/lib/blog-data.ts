@@ -168,7 +168,7 @@ export const blogArticles: BlogArticle[] = [
 <li>Average answer time: under 5 seconds</li>
 <li>Booked jobs per week: 62 (37% increase)</li>
 <li>Google reviews received per month: 22-28</li>
-<li>AI receptionist cost: $797/month</li>
+<li>AI receptionist cost: $297/month</li>
 </ul>
 
 <p>They didn't fire their office staff. They moved them to dispatch coordination and customer follow-up, which is a better use of their time anyway. But the AI handled the phone volume that two people couldn't keep up with.</p>
@@ -189,7 +189,7 @@ export const blogArticles: BlogArticle[] = [
 
 <p><strong>AI receptionist:</strong></p>
 <ul>
-<li>$297-$797/month depending on features</li>
+<li>$297/month, no setup fee</li>
 <li>Available 24/7/365</li>
 <li>Handles unlimited simultaneous calls</li>
 <li>Never calls in sick, never quits</li>
@@ -269,7 +269,7 @@ export const blogArticles: BlogArticle[] = [
 <tr><th></th><th>DIY Stack</th><th>Mainline (Done-For-You)</th></tr>
 </thead>
 <tbody>
-<tr><td><strong>Monthly cost</strong></td><td>$400-$950</td><td>$297-$1,497</td></tr>
+<tr><td><strong>Monthly cost</strong></td><td>$400-$950</td><td>$297</td></tr>
 <tr><td><strong>Setup time (your time)</strong></td><td>20-40 hours</td><td>30 minutes (one call)</td></tr>
 <tr><td><strong>Monthly maintenance (your time)</strong></td><td>5-10 hours</td><td>0 hours</td></tr>
 <tr><td><strong>AI phone answering</strong></td><td>No (basic call forwarding)</td><td>Yes, 24/7</td></tr>

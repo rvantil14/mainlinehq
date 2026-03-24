@@ -15,7 +15,7 @@ const caseStudies = [
     location: "Riverside, CA",
     size: "8-person team",
     revenue: "$1.2M revenue",
-    package: "Starter",
+    package: "Mainline",
     challenge:
       "Missing 30% of inbound calls while techs are on jobs. Owner spending 2 hours/day on scheduling and invoicing. No follow-up after jobs meant low repeat business and only 14 Google reviews.",
     solution:
@@ -40,11 +40,11 @@ const caseStudies = [
     location: "Dallas, TX",
     size: "15-person team",
     revenue: "$2.1M revenue",
-    package: "Growth",
+    package: "Mainline",
     challenge:
       "Seasonal demand spikes overwhelm the office. Summer means 60+ calls/day, but office staff can only handle 40. Invoices sent 3-5 days after job completion. Payment collection averaging 22 days.",
     solution:
-      "Mainline Growth package: AI receptionist, smart scheduling, automated invoicing with text-to-pay, review automation.",
+      "Mainline: AI receptionist, smart scheduling, automated invoicing with text-to-pay, review automation.",
     results: [
       { label: "Call capacity", before: "40/day max", after: "100% handled", note: "No overflow during peak" },
       { label: "Invoice delivery", before: "3-5 days", after: "Same day", note: "" },
@@ -65,7 +65,7 @@ const caseStudies = [
     location: "Atlanta, GA",
     size: "6-person team",
     revenue: "$800K revenue",
-    package: "Starter",
+    package: "Mainline",
     challenge:
       "Owner spending Sunday nights doing estimates and invoices. No CRM, leads tracked in a notebook. Lost 3 large commercial jobs in one quarter because follow-up was too slow.",
     solution:

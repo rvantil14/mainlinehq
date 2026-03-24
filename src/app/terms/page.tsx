@@ -97,14 +97,14 @@ export default function TermsPage() {
                 </h2>
                 <ul className="list-disc pl-5 space-y-1.5">
                   <li>
-                    <strong className="text-gray-900">Setup fee:</strong> A
-                    one-time setup fee is due before onboarding begins. The
-                    amount depends on your selected plan.
+                    <strong className="text-gray-900">Free trial:</strong> New
+                    clients receive a 14-day free trial. No payment is required
+                    to start. No setup fee.
                   </li>
                   <li>
                     <strong className="text-gray-900">Monthly subscription:</strong>{" "}
-                    Monthly fees are billed on the same date each month, starting
-                    from the date your system goes live.
+                    After the trial, monthly fees are billed on the same date each
+                    month. Current pricing is available at mainlinehq.com/pricing.
                   </li>
                   <li>
                     <strong className="text-gray-900">Payment method:</strong>{" "}
@@ -118,10 +118,10 @@ export default function TermsPage() {
                     outstanding balance is paid.
                   </li>
                   <li>
-                    <strong className="text-gray-900">Refunds:</strong> Setup
-                    fees are non-refundable once onboarding has begun. Monthly
+                    <strong className="text-gray-900">Refunds:</strong> Monthly
                     subscription fees are non-refundable for the current billing
-                    period.
+                    period. Custom automation project fees are non-refundable
+                    once work has begun.
                   </li>
                 </ul>
               </div>

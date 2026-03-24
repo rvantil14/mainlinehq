@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
     const body = params.Body || "";
     const messageSid = params.MessageSid || "";
 
-    console.log(`Inbound SMS | From: ${from} | SID: ${messageSid} | Body: ${body}`);
+    console.log(`Inbound SMS | SID: ${messageSid}`);
 
     // Build TwiML response
     const twiml = new twilio.twiml.MessagingResponse();
