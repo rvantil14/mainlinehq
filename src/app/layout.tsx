@@ -40,6 +40,7 @@ const navLinks = [
   { href: "/pricing", label: "Pricing" },
   { href: "/case-studies", label: "Case Studies" },
   { href: "/demo", label: "Demo" },
+  { href: "/audit", label: "Free Audit" },
   { href: "/contact", label: "Contact" },
 ];
 

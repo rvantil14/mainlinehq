@@ -44,6 +44,15 @@ export type ReviewPlatform = "google" | "yelp";
 
 export type SmsDirection = "inbound" | "outbound";
 
+export type ProspectStatus =
+  | "researched"
+  | "contacted"
+  | "demo_scheduled"
+  | "demo_done"
+  | "negotiating"
+  | "won"
+  | "lost";
+
 // -- AI config stored in clients.ai_config --
 
 export interface AiConfig {
@@ -163,6 +172,27 @@ export interface ReviewRow {
   created_at: string;
 }
 
+export interface ProspectRow {
+  id: string;
+  business_name: string;
+  owner_name: string | null;
+  trade_type: string | null;
+  phone: string | null;
+  email: string | null;
+  website: string | null;
+  city: string | null;
+  state: string | null;
+  google_reviews: number | null;
+  has_chat_widget: boolean;
+  has_website: boolean;
+  status: ProspectStatus;
+  notes: string | null;
+  last_contacted_at: string | null;
+  next_follow_up_at: string | null;
+  created_at: string;
+  updated_at: string;
+}
+
 export interface SmsMessageRow {
   id: string;
   client_id: string;
@@ -215,6 +245,12 @@ export type SmsMessageInsert = Omit<SmsMessageRow, "id" | "created_at"> & {
   created_at?: string;
 };
 
+export type ProspectInsert = Omit<ProspectRow, "id" | "created_at" | "updated_at"> & {
+  id?: string;
+  created_at?: string;
+  updated_at?: string;
+};
+
 // -- Update types (all fields optional except id) --
 
 export type ClientUpdate = Partial<Omit<ClientRow, "id">>;
@@ -224,6 +260,7 @@ export type AppointmentUpdate = Partial<Omit<AppointmentRow, "id">>;
 export type InvoiceUpdate = Partial<Omit<InvoiceRow, "id">>;
 export type ReviewUpdate = Partial<Omit<ReviewRow, "id">>;
 export type SmsMessageUpdate = Partial<Omit<SmsMessageRow, "id">>;
+export type ProspectUpdate = Partial<Omit<ProspectRow, "id">>;
 
 // -- Supabase Database type for createClient<Database> --
 
@@ -272,6 +309,12 @@ export interface Database {
         Update: SmsMessageUpdate;
         Relationships: [];
       };
+      prospects: {
+        Row: ProspectRow;
+        Insert: ProspectInsert;
+        Update: ProspectUpdate;
+        Relationships: [];
+      };
     };
     // eslint-disable-next-line @typescript-eslint/no-empty-object-type
     Views: {};
@@ -288,6 +331,7 @@ export interface Database {
       invoice_status: InvoiceStatus;
       review_platform: ReviewPlatform;
       sms_direction: SmsDirection;
+      prospect_status: ProspectStatus;
     };
   };
 }
