@@ -76,6 +76,11 @@ export const mainlineSalesConfig: ClientConfig = {
       answer:
         "No. All plans are month-to-month. Cancel anytime with 30 days notice. We earn your business every month.",
     },
+    {
+      question: "How do I schedule a call or demo?",
+      answer:
+        "You can book a free 15-minute discovery call here: https://calendly.com/ryan-mainlinehq. No pitch, just a conversation about your business.",
+    },
   ],
   businessHours: {
     monday: { open: "08:00", close: "18:00" },
