@@ -9,7 +9,7 @@ interface Message {
 }
 
 const INITIAL_GREETING =
-  "Hey! I'm the Mainline assistant. I can answer questions about our services, pricing, and how we help trade businesses. What would you like to know?";
+  "Hey! I'm an AI assistant for Mainline. I can answer questions about our services, pricing, and how we help trade businesses. What would you like to know?";
 
 const FALLBACK_MESSAGE =
   "I'm having trouble connecting. Call us at (805) 801-1380 or email ryan@mainlinehq.com";

@@ -5,6 +5,8 @@ import Image from "next/image";
 import MobileNav from "./components/MobileNav";
 import Analytics from "./components/Analytics";
 import SiteChatWrapper from "./components/SiteChatWrapper";
+import CookieConsent from "./components/CookieConsent";
+import ManageCookiesButton from "./components/ManageCookiesButton";
 import "./globals.css";
 
 const inter = Inter({
@@ -180,6 +182,9 @@ export default function RootLayout({
                       Terms
                     </Link>
                   </li>
+                  <li>
+                    <ManageCookiesButton />
+                  </li>
                 </ul>
               </div>
 
@@ -229,6 +234,7 @@ export default function RootLayout({
         </footer>
 
         <SiteChatWrapper />
+        <CookieConsent />
         <Analytics />
       </body>
     </html>

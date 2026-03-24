@@ -414,7 +414,10 @@ export default function Home() {
             ))}
           </div>
 
-          <div className="mt-8 text-center">
+          <p className="mt-6 text-center text-xs text-text-light">
+            Based on projected results from industry benchmarks. Names and businesses are illustrative examples.
+          </p>
+          <div className="mt-3 text-center">
             <Link
               href="/case-studies"
               className="group inline-flex items-center gap-1 text-sm font-semibold text-accent hover:text-accent-hover transition-colors"

@@ -149,6 +149,18 @@ export default function PrivacyPage() {
                     <strong className="text-gray-900">Vercel</strong>: website
                     hosting and infrastructure
                   </li>
+                  <li>
+                    <strong className="text-gray-900">Resend</strong>: transactional
+                    email delivery
+                  </li>
+                  <li>
+                    <strong className="text-gray-900">Supabase</strong>: database
+                    and data storage
+                  </li>
+                  <li>
+                    <strong className="text-gray-900">Google Analytics</strong>: website
+                    usage analytics (with your consent)
+                  </li>
                 </ul>
                 <p className="mt-3">
                   We do not sell your personal information to third parties.

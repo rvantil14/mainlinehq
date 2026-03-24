@@ -7,6 +7,10 @@ const resend = process.env.RESEND_API_KEY
 
 const NOTIFICATION_EMAIL = "ryan@mainlinehq.com";
 
+function esc(str: string): string {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -29,13 +33,13 @@ export async function POST(request: Request) {
         html: `
           <h2>New Onboarding Submission</h2>
           <table style="border-collapse:collapse;width:100%;max-width:600px;">
-            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Owner</td><td style="padding:8px;border:1px solid #ddd;">${ownerName}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Business</td><td style="padding:8px;border:1px solid #ddd;">${businessName}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Trade</td><td style="padding:8px;border:1px solid #ddd;">${businessType}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Package</td><td style="padding:8px;border:1px solid #ddd;font-weight:bold;color:#E8630A;">${selectedPackage}</td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Phone</td><td style="padding:8px;border:1px solid #ddd;"><a href="tel:${phone}">${phone}</a></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #ddd;"><a href="mailto:${email}">${email}</a></td></tr>
-            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">City</td><td style="padding:8px;border:1px solid #ddd;">${city || "Not provided"}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Owner</td><td style="padding:8px;border:1px solid #ddd;">${esc(ownerName)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Business</td><td style="padding:8px;border:1px solid #ddd;">${esc(businessName)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Trade</td><td style="padding:8px;border:1px solid #ddd;">${esc(businessType)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Package</td><td style="padding:8px;border:1px solid #ddd;font-weight:bold;color:#E8630A;">${esc(selectedPackage)}</td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Phone</td><td style="padding:8px;border:1px solid #ddd;"><a href="tel:${esc(phone)}">${esc(phone)}</a></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Email</td><td style="padding:8px;border:1px solid #ddd;"><a href="mailto:${esc(email)}">${esc(email)}</a></td></tr>
+            <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">City</td><td style="padding:8px;border:1px solid #ddd;">${esc(city || "Not provided")}</td></tr>
             <tr><td style="padding:8px;border:1px solid #ddd;font-weight:bold;">Submitted</td><td style="padding:8px;border:1px solid #ddd;">${new Date(timestamp).toLocaleString("en-US", { timeZone: "America/Los_Angeles" })}</td></tr>
           </table>
         `,

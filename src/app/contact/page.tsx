@@ -348,6 +348,9 @@ export default function ContactPage() {
 
                     <p className="text-xs text-gray-400 text-center">
                       We&apos;ll respond within one business day. No spam, ever.
+                      By submitting, you consent to receive calls or texts at the number provided.
+                      Message frequency varies. Msg &amp; data rates may apply. Reply STOP to opt out.{" "}
+                      <a href="/privacy" className="underline">Privacy Policy</a>.
                     </p>
                   </form>
                 )}

@@ -81,6 +81,8 @@ export async function sendReviewRequest(
     "",
     `If you have a moment, a quick review would mean a lot to us:`,
     googleReviewUrl,
+    "",
+    "Reply STOP to opt out of texts.",
   ].join("\n");
 
   return sendSMS(to, body);
@@ -97,7 +99,7 @@ export async function sendInvoiceLink(
     "",
     `Pay securely here: ${paymentUrl}`,
     "",
-    "Reply with any questions.",
+    "Reply with any questions. Reply STOP to opt out.",
   ].join("\n");
 
   return sendSMS(to, body);

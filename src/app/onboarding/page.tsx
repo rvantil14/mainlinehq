@@ -475,17 +475,24 @@ export default function OnboardingPage() {
                 </svg>
               </button>
             ) : (
-              <button
-                type="button"
-                onClick={handleSubmit}
-                disabled={submitting}
-                className="inline-flex items-center gap-1.5 px-8 py-3 text-sm font-semibold text-white bg-accent hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors shadow-sm shadow-accent/25"
-              >
-                {submitting ? "Submitting..." : "Submit"}
-                <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                </svg>
-              </button>
+              <div>
+                <button
+                  type="button"
+                  onClick={handleSubmit}
+                  disabled={submitting}
+                  className="inline-flex items-center gap-1.5 px-8 py-3 text-sm font-semibold text-white bg-accent hover:bg-accent-hover disabled:opacity-50 disabled:cursor-not-allowed rounded-lg transition-colors shadow-sm shadow-accent/25"
+                >
+                  {submitting ? "Submitting..." : "Submit"}
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </button>
+                <p className="text-xs text-gray-400 mt-3 max-w-sm">
+                  By submitting, you consent to receive calls or texts at the number provided.
+                  Msg &amp; data rates may apply. Reply STOP to opt out.{" "}
+                  <a href="/privacy" className="underline">Privacy Policy</a>.
+                </p>
+              </div>
             )}
           </div>
         </div>
