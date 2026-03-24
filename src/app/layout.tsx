@@ -218,9 +218,12 @@ export default function RootLayout({
               <p className="text-sm">
                 &copy; {new Date().getFullYear()} Mainline. All rights reserved.
               </p>
-              <p className="text-xs text-text-light">
-                Powered by Stripe &middot; Encrypted &middot; CCPA Compliant
-              </p>
+              <div className="flex items-center gap-4 text-xs text-text-light">
+                <span>Powered by Stripe &middot; Encrypted &middot; CCPA Compliant</span>
+                <Link href="/admin" className="text-text-light/50 hover:text-gray-300 transition-colors">
+                  Team Login
+                </Link>
+              </div>
             </div>
           </div>
         </footer>
