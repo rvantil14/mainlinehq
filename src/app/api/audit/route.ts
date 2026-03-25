@@ -44,7 +44,23 @@ export async function POST(request: Request) {
 
     if (!name || !email || !phone || !tradeType) {
       return NextResponse.json(
-        { success: false, message: "Missing required fields" },
+        { success: false, message: "All fields are required" },
+        { status: 400 }
+      );
+    }
+
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) {
+      return NextResponse.json(
+        { success: false, message: "Please enter a valid phone number" },
+        { status: 400 }
+      );
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { success: false, message: "Please enter a valid email address" },
         { status: 400 }
       );
     }

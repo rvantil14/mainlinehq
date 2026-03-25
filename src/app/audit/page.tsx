@@ -65,6 +65,13 @@ export default function AuditPage() {
     e.preventDefault();
     setSubmitting(true);
     setError("");
+
+    if (!name.trim() || name.trim().length < 2) { setError("Please enter your name."); setSubmitting(false); return; }
+    const phoneDigits = phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) { setError("Please enter a valid 10-digit phone number."); setSubmitting(false); return; }
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!emailRegex.test(email)) { setError("Please enter a valid email address."); setSubmitting(false); return; }
+
     try {
       const res = await fetch("/api/audit", {
         method: "POST",

@@ -37,10 +37,27 @@ export default function ContactPage() {
     setForm({ ...form, [e.target.name]: e.target.value });
   }
 
+  function validateForm(): string | null {
+    if (!form.name.trim() || form.name.trim().length < 2) return "Please enter your name.";
+    if (!form.business.trim() || form.business.trim().length < 2) return "Please enter your business name.";
+    if (!form.trade) return "Please select your trade type.";
+    const phoneDigits = form.phone.replace(/\D/g, "");
+    if (phoneDigits.length < 10) return "Please enter a valid 10-digit phone number.";
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+    if (!emailRegex.test(form.email)) return "Please enter a valid email address.";
+    return null;
+  }
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setSubmitting(true);
     setError("");
+    const validationError = validateForm();
+    if (validationError) {
+      setError(validationError);
+      setSubmitting(false);
+      return;
+    }
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
@@ -281,6 +298,7 @@ export default function ContactPage() {
                           id="phone"
                           name="phone"
                           required
+                          minLength={10}
                           value={form.phone}
                           onChange={handleChange}
                           className="w-full rounded-md border border-gray-200 bg-light-bg px-4 py-3 text-sm text-gray-900 placeholder-gray-400 focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-white transition-all"
