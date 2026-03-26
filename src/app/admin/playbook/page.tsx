@@ -67,7 +67,7 @@ function Section({
   title,
   children,
 }: {
-  number: number;
+  number: number | string;
   title: string;
   children: React.ReactNode;
 }) {
@@ -378,6 +378,116 @@ export default function PlaybookPage() {
           title="After They Sign Up (welcome)"
           body="Hey [name], welcome to Mainline! I'm building your AI assistant this week. I'll need a few details from you: your services, pricing, hours, and service area. I'll send you a quick form. Once I have that, you'll be live in 3-5 days."
         />
+      </Section>
+
+      {/* ---- Section 6: Industry Stats & Ammo ---- */}
+      <Section number="06" title="Industry Stats (Use on Calls)">
+        <Card title="Missed Call Stats" tag="Data">
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li><strong className="text-gray-900">27%</strong> of calls to contractor businesses go unanswered (industry call tracking data)</li>
+            <li><strong className="text-gray-900">62%</strong> of customers say they won&apos;t leave a voicemail and will call the next business instead</li>
+            <li><strong className="text-gray-900">78%</strong> of customers hire the first company that responds to their inquiry</li>
+            <li><strong className="text-gray-900">85%</strong> of customers who can&apos;t reach a business on the first call won&apos;t call back</li>
+            <li>Average plumber misses <strong className="text-gray-900">5-8 calls per week</strong> while on jobs</li>
+            <li>At $350-500 avg job value, that&apos;s <strong className="text-accent">$3,000-7,000/month</strong> in lost revenue</li>
+          </ul>
+        </Card>
+        <Card title="Review Stats">
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li><strong className="text-gray-900">93%</strong> of consumers say online reviews influence their purchasing decisions</li>
+            <li>Businesses with <strong className="text-gray-900">50+ reviews</strong> earn 4.6x more revenue than those with fewer than 10</li>
+            <li>Only <strong className="text-gray-900">5-10%</strong> of customers leave a review without being asked</li>
+            <li>When asked via text within 1 hour of service, review rates jump to <strong className="text-gray-900">30-40%</strong></li>
+            <li>A half-star increase on Google = <strong className="text-accent">5-9% increase in revenue</strong></li>
+          </ul>
+        </Card>
+        <Card title="Industry Revenue Benchmarks">
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li>Average plumbing service call: <strong className="text-gray-900">$350-500</strong></li>
+            <li>Average HVAC service call: <strong className="text-gray-900">$300-600</strong></li>
+            <li>Average electrical service call: <strong className="text-gray-900">$200-500</strong></li>
+            <li>Water heater replacement: <strong className="text-gray-900">$1,200-2,500</strong></li>
+            <li>AC install: <strong className="text-gray-900">$3,000-7,000</strong></li>
+            <li>Panel upgrade: <strong className="text-gray-900">$1,500-4,000</strong></li>
+            <li>Mainline at $297/mo = <strong className="text-accent">less than one missed job</strong></li>
+          </ul>
+        </Card>
+      </Section>
+
+      {/* ---- Section 7: Pre-Call Checklist ---- */}
+      <Section number="07" title="Pre-Call Checklist">
+        <div className="bg-gray-50 rounded-lg p-5">
+          <p className="text-sm text-gray-500 mb-4">Do this for each prospect before you pick up the phone:</p>
+          <ul className="space-y-3 text-sm text-gray-700">
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 w-5 h-5 rounded border border-gray-300 flex items-center justify-center text-xs shrink-0">1</span>
+              <span><strong>Open their website</strong> in a tab. Know what they offer and what&apos;s missing (chat, booking, reviews).</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 w-5 h-5 rounded border border-gray-300 flex items-center justify-center text-xs shrink-0">2</span>
+              <span><strong>Check their Google reviews</strong>. Note the count and rating. If low, that&apos;s a talking point.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 w-5 h-5 rounded border border-gray-300 flex items-center justify-center text-xs shrink-0">3</span>
+              <span><strong>Read their prospect notes</strong> in your admin panel. Know their pain points.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 w-5 h-5 rounded border border-gray-300 flex items-center justify-center text-xs shrink-0">4</span>
+              <span><strong>Have the demo ready</strong> at mainlinehq.com/demo in another tab.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 w-5 h-5 rounded border border-gray-300 flex items-center justify-center text-xs shrink-0">5</span>
+              <span><strong>Know their name</strong>. Use it. &quot;Hey Mike&quot; is 10x better than &quot;Hey, is this the owner?&quot;</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-0.5 w-5 h-5 rounded border border-gray-300 flex items-center justify-center text-xs shrink-0">6</span>
+              <span><strong>Stand up when you call</strong>. Seriously. Your energy changes when you&apos;re on your feet.</span>
+            </li>
+          </ul>
+        </div>
+      </Section>
+
+      {/* ---- Section 8: Mindset & Psychology ---- */}
+      <Section number="08" title="Sales Mindset">
+        <Card title="Remember This Before Every Call">
+          <div className="space-y-4 text-sm text-gray-700">
+            <p><strong className="text-gray-900">You are not selling.</strong> You are solving a problem they already have. Every plumber knows they miss calls. Every HVAC guy knows his phone goes crazy in summer. You are offering to fix something that&apos;s already costing them money.</p>
+            <p><strong className="text-gray-900">Most will say no.</strong> That&apos;s normal. You need 10 calls to get 2-3 conversations. You need 2-3 conversations to get 1 demo. You need 2-3 demos to get 1 client. That&apos;s a 10% conversion rate from cold call to customer, which is excellent.</p>
+            <p><strong className="text-gray-900">They respect hustle.</strong> Trade guys work hard. They respect someone who picks up the phone and calls them directly instead of sending a mass email. Be real, be direct, don&apos;t waste their time.</p>
+            <p><strong className="text-gray-900">The free trial closes the deal.</strong> When they hesitate, the answer is always: &quot;Try it free for 14 days. If it doesn&apos;t work, walk away. I take the risk.&quot; There is zero downside for them.</p>
+          </div>
+        </Card>
+        <Card title="The Numbers Game">
+          <div className="bg-primary/5 rounded-lg p-4">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
+              <div>
+                <div className="text-2xl font-bold text-gray-900">10</div>
+                <div className="text-xs text-gray-500 mt-1">Calls/day</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gray-900">3</div>
+                <div className="text-xs text-gray-500 mt-1">Conversations</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-gray-900">1</div>
+                <div className="text-xs text-gray-500 mt-1">Demo booked</div>
+              </div>
+              <div>
+                <div className="text-2xl font-bold text-accent">$297</div>
+                <div className="text-xs text-gray-500 mt-1">MRR per close</div>
+              </div>
+            </div>
+            <p className="text-xs text-gray-500 mt-4 text-center">3 demos/week = 1 new client/week = $1,188 MRR in one month</p>
+          </div>
+        </Card>
+        <Card title="What to Do When They Say No">
+          <ul className="space-y-2 text-sm text-gray-700">
+            <li><strong className="text-gray-900">&quot;No thanks&quot;</strong> = &quot;Totally get it. Mind if I send you a link to the demo in case anything changes? No follow-up, just there if you want to look.&quot; Then send the demo link and move on.</li>
+            <li><strong className="text-gray-900">&quot;Not interested&quot;</strong> = &quot;No worries at all. Quick question before I go, just curious: how do you handle calls when you&apos;re on a job?&quot; Sometimes this reopens the conversation.</li>
+            <li><strong className="text-gray-900">&quot;Call back later&quot;</strong> = &quot;When works best? I&apos;ll put it on my calendar.&quot; Set the follow-up date in your prospect tracker.</li>
+            <li><strong className="text-gray-900">Voicemail</strong> = &quot;Hey [name], this is Ryan with Mainline. I work with plumbers in San Diego and help them catch the calls they miss when they&apos;re on jobs. Takes 2 minutes to see how it works. My number is 805-801-1380. No pressure.&quot; Keep it under 20 seconds.</li>
+          </ul>
+        </Card>
       </Section>
 
       {/* Bottom spacer */}
