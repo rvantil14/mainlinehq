@@ -161,3 +161,37 @@ export async function PATCH(
     );
   }
 }
+
+export async function DELETE(
+  _req: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  const authed = await isAdminAuthenticated();
+  if (!authed) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+
+  if (!isSupabaseConfigured()) {
+    return NextResponse.json({ error: "Supabase not configured" }, { status: 500 });
+  }
+
+  const { id } = await params;
+
+  try {
+    const supabase = getSupabase();
+    const { error } = await supabase
+      .from("prospects")
+      .delete()
+      .eq("id", id);
+
+    if (error) throw error;
+
+    return NextResponse.json({ success: true });
+  } catch (err) {
+    console.error("Delete prospect error:", err);
+    return NextResponse.json(
+      { error: "Failed to delete prospect" },
+      { status: 500 }
+    );
+  }
+}
