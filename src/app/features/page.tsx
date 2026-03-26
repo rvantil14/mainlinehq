@@ -4,11 +4,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Features | Mainline",
   description:
-    "Every call answered. Every appointment booked. Every invoice sent. See what your AI front office does for your trade business.",
+    "Every visitor answered. Every appointment booked. Every review requested. See what your AI front office does for your trade business.",
   openGraph: {
     title: "Features | Mainline",
     description:
-      "Every call answered. Every appointment booked. Every invoice sent. See what your AI front office does for your trade business.",
+      "Every visitor answered. Every appointment booked. Every review requested. See what your AI front office does for your trade business.",
     type: "website",
     url: "https://mainlinehq.com/features",
   },
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Features | Mainline",
     description:
-      "Every call answered. Every appointment booked. Every invoice sent. See what your AI front office does for your trade business.",
+      "Every visitor answered. Every appointment booked. Every review requested. See what your AI front office does for your trade business.",
   },
 };
 
@@ -28,60 +28,32 @@ const features: {
   comingSoon?: boolean;
 }[] = [
   {
-    id: "calls",
-    title: "No More Missed Calls. Period.",
+    id: "chatbot",
+    title: "Your Website Answers Every Visitor. 24/7.",
     description:
-      "AI receptionist answers your phone 24/7 with your business name, your services, your pricing. Every lead captured, every customer gets a real conversation.",
+      "An AI chatbot trained on your business sits on your website around the clock. It answers questions about your services, pricing, and availability. Every visitor gets a real conversation, and every lead gets captured and sent to you instantly.",
     mockup: "phone",
   },
   {
     id: "scheduling",
     title: "Jobs on Your Calendar Without Lifting a Finger",
     description:
-      "Customers self-schedule based on your real availability. SMS confirmations and reminders go out automatically. No more phone tag.",
+      "Customers book directly through the chatbot or your online booking page based on your real availability. SMS confirmations and reminders go out automatically. No more back-and-forth.",
     mockup: "calendar",
   },
   {
-    id: "invoicing",
-    title: "Get Paid the Same Day the Job's Done",
-    description:
-      "Invoice generated the second a job is marked complete. Payment link texted to the customer. Most pay within hours, not weeks.",
-    mockup: "invoice",
-  },
-  {
     id: "reviews",
-    title: "Your Google Reviews Go Up on Autopilot",
+    title: "Your Google Reviews Go Up Every Month",
     description:
-      "Review request sent after every job. AI drafts responses to all reviews. Your online reputation grows without you lifting a finger.",
+      "Review request texts go out after every completed job. Your online reputation grows consistently without you remembering to ask.",
     mockup: "review",
-  },
-  {
-    id: "leads",
-    title: "Stop Losing Customers to Faster Competitors",
-    description:
-      "Every inquiry tracked from first contact to closed job. Automated follow-ups for cold leads. Maintenance reminders bring past customers back.",
-    mockup: "pipeline",
   },
   {
     id: "dashboard",
     title: "Know Exactly Where Your Business Stands",
     description:
-      "Leads, appointments, invoices, and revenue, all in one place. Monthly performance reports delivered to your inbox.",
+      "Leads captured, appointments booked, reviews collected. Monthly performance reports delivered to your inbox so you always know what your AI front office is doing for you.",
     mockup: "dashboard",
-  },
-  {
-    id: "estimates",
-    title: "Instant Estimates, Your Way",
-    description:
-      "Customer describes the job through chat or phone. AI generates a rough estimate based on YOUR pricing matrix. You review on your phone, adjust if needed, approve with one tap. Customers get a professional PDF in minutes, not days.",
-    mockup: "estimate",
-  },
-  {
-    id: "contracts",
-    title: "Contracts & Proposals in Seconds",
-    description:
-      "AI drafts a professional proposal from the job details: scope of work, materials, timeline, payment terms. You review and edit before sending. Customer signs digitally. A 45-minute task becomes a 2-minute review.",
-    mockup: "contract",
   },
 ];
 
@@ -120,15 +92,15 @@ function FeatureMockup({ type }: { type: string }) {
         <div className="flex items-center gap-3 mb-4">
           <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
             <svg className="w-5 h-5 text-accent" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+              <path strokeLinecap="round" strokeLinejoin="round" d="M7.5 8.25h9m-9 3H12m-9.75 1.51c0 1.6 1.123 2.994 2.707 3.227 1.129.166 2.27.293 3.423.379.35.026.67.21.865.501L12 21l2.755-4.133a1.14 1.14 0 01.865-.501 48.172 48.172 0 003.423-.379c1.584-.233 2.707-1.626 2.707-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0012 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018z" />
             </svg>
           </div>
           <div>
-            <p className="text-sm font-semibold text-gray-900">Incoming Call</p>
-            <p className="text-xs text-gray-400">(805) 555-0142</p>
+            <p className="text-sm font-semibold text-gray-900">Website Chat</p>
+            <p className="text-xs text-gray-400">aceplumbing.com</p>
           </div>
           <div className="ml-auto">
-            <span className="inline-flex items-center rounded-full bg-success/10 px-2 py-0.5 text-[10px] font-medium text-success">AI Answered</span>
+            <span className="inline-flex items-center rounded-full bg-success/10 px-2 py-0.5 text-[10px] font-medium text-success">AI Online</span>
           </div>
         </div>
         <div className="bg-gray-50 rounded-lg p-3 space-y-2.5">
@@ -452,7 +424,7 @@ export default function FeaturesPage() {
             (But Isn&apos;t)
           </h1>
           <p className="text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Calls answered. Jobs booked. Invoices sent. Estimates drafted.
+            Every visitor answered. Every lead captured. Every customer asked for a review.
             You focus on the work, we handle the rest.
           </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">

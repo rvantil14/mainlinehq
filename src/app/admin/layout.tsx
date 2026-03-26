@@ -12,6 +12,7 @@ const navItems = [
   { href: "/admin/leads", label: "Leads", icon: "inbox" },
   { href: "/admin/conversations", label: "Conversations", icon: "chat" },
   { href: "/admin/playbook", label: "Playbook", icon: "book" },
+  { href: "/admin/tools", label: "Tools", icon: "wrench" },
   { href: "/admin/sms", label: "SMS Log", icon: "message" },
 ];
 
@@ -53,6 +54,12 @@ function NavIcon({ icon }: { icon: string }) {
       return (
         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+        </svg>
+      );
+    case "wrench":
+      return (
+        <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75a4.5 4.5 0 01-4.884 4.484c-1.076-.091-2.264.071-2.95.904l-7.152 8.684a2.548 2.548 0 11-3.586-3.586l8.684-7.152c.833-.686.995-1.874.904-2.95a4.5 4.5 0 016.336-4.486l-3.276 3.276a3.004 3.004 0 002.25 2.25l3.276-3.276c.256.565.398 1.192.398 1.852z" />
         </svg>
       );
     case "message":

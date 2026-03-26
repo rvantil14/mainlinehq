@@ -5,25 +5,25 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Automation for HVAC Companies | Mainline",
   description:
-    "Never miss another HVAC service call. Mainline handles your phones, scheduling, invoicing, and customer follow-up, even during peak season when your office can't keep up.",
+    "Never miss another HVAC lead. Mainline puts an AI chatbot on your website that captures leads, books appointments, and requests reviews, even during peak season.",
 };
 
 const painPoints = [
   {
     icon: "",
-    title: "Summer and Winter Spikes Overwhelm Your Office",
+    title: "Peak Season Overwhelms Your Website Leads",
     description:
-      "June hits and your phone explodes. Your one office person is juggling 40+ calls a day while also dispatching techs and handling walk-ins. Calls go to voicemail. Hold times go through the roof. Customers hang up and call your competitor.",
+      "June hits and your website traffic spikes. Homeowners are searching for AC repair at 10 PM. They land on your site, see no way to get an answer or book, and they bounce to the next company. You're losing leads while you sleep.",
     solution:
-      "Our AI receptionist handles unlimited simultaneous calls. During a heat wave, when 10 people call at the same time, every single one gets answered immediately. No hold times. No voicemail. No lost leads.",
+      "Our AI chatbot handles unlimited conversations on your website simultaneously. During a heat wave, when 20 people visit your site at the same time, every single one gets answered immediately. No lost leads. No missed opportunities.",
   },
   {
     icon: "",
-    title: "Slow Invoicing Kills Your Cash Flow",
+    title: "No Reviews Coming In Despite Great Work",
     description:
-      "Your tech finishes a $1,200 compressor replacement at 3 PM. The invoice doesn't go out until the office gets to it. Maybe tomorrow, maybe the next day. The customer forgets. Now you're chasing a payment that should've been collected on the spot.",
+      "Your techs do excellent work all summer. Customers are happy. But nobody asks for a review. Six months later you've got the same 15 Google reviews while your competitor down the street has 80+.",
     solution:
-      "Invoices go out automatically the moment a job is marked complete. The customer gets a text with a pay-now link. Most pay within hours, not weeks. Your cash flow goes from unpredictable to consistent.",
+      "Review request texts go out after every completed job. Your happy customers get a simple link to leave a Google review right when the experience is fresh. Your reputation grows consistently without anyone on your team remembering to ask.",
   },
   {
     icon: "",
@@ -31,15 +31,15 @@ const painPoints = [
     description:
       "You installed a new system last year. The customer was happy. But nobody followed up about the annual maintenance. They forgot. Now they're calling someone else for their spring tune-up, and you lost a recurring customer for no reason.",
     solution:
-      "Automated maintenance reminders go out at the right time: seasonal tune-ups, filter changes, warranty check-ins. You stay top of mind and keep customers coming back without anyone on your team tracking it manually.",
+      "SMS reminders keep you top of mind for seasonal tune-ups and maintenance. You stay connected to past customers without anyone on your team tracking it manually.",
   },
   {
     icon: "",
-    title: "Scheduling Chaos with Multiple Techs",
+    title: "Booking Is Still Phone Tag",
     description:
-      "You've got 5 techs in the field and your office manager is trying to coordinate their schedules on a whiteboard. Double bookings happen. Drive times aren't optimized. You're sending a tech 30 miles when another tech is around the corner.",
+      "A homeowner wants to schedule a tune-up. They fill out your contact form. You call back 4 hours later. They don't answer. Two days of back-and-forth later, they've already booked with someone who made it easier.",
     solution:
-      "Smart scheduling assigns jobs based on tech availability, location, and skillset. Your AI dispatcher knows which tech is closest and who's qualified for the job. Less windshield time, more billable hours.",
+      "Customers book directly through your chatbot or online booking page. They pick a time, get an SMS confirmation, and show up. Reminders go out automatically. No phone tag, no back-and-forth.",
   },
 ];
 
@@ -74,10 +74,10 @@ export default function HvacPage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
-              Peak season doesn&apos;t have to mean chaos. Our AI front office
-              answers every call, dispatches your techs, sends invoices, and
-              keeps customers coming back for maintenance, even when your phone
-              is ringing off the hook.
+              Peak season doesn&apos;t have to mean lost leads. Our AI chatbot
+              answers every website visitor, captures every lead, books
+              appointments, and requests reviews after every job, even at
+              2 AM when your office is closed.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -100,7 +100,7 @@ export default function HvacPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 text-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">Peak Season Missed Calls</p>
+              <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">Peak Season Missed Leads</p>
               <p className="text-4xl sm:text-5xl font-extrabold text-white mt-1">20+/wk</p>
             </div>
             <div className="hidden sm:block text-3xl text-gray-400">&times;</div>
@@ -177,7 +177,7 @@ export default function HvacPage() {
                 <ul className="space-y-3 text-text-light">
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
-                    20+ missed calls/week in peak season
+                    20+ missed website leads/week in peak season
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
@@ -185,7 +185,7 @@ export default function HvacPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
-                    $7,200/month for 2 office staff
+                    No way for after-hours visitors to book
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
@@ -198,11 +198,11 @@ export default function HvacPage() {
                 <ul className="space-y-3 text-text-light">
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    100% answer rate, even during spikes
+                    Every website visitor answered, even during spikes
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    37% more booked jobs
+                    More booked jobs from existing traffic
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
@@ -210,7 +210,7 @@ export default function HvacPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    22-28 Google reviews per month
+                    Consistent review requests after every job
                   </li>
                 </ul>
               </div>

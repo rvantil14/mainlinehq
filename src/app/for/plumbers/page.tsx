@@ -5,25 +5,25 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Automation for Plumbing Businesses | Mainline",
   description:
-    "Stop losing plumbing jobs to missed calls. Mainline answers your phone 24/7, books appointments, sends invoices, and gets you 5-star reviews, all on autopilot.",
+    "Stop losing plumbing jobs to missed website leads. Mainline puts an AI chatbot on your site 24/7 that captures leads, books appointments, and gets you 5-star reviews.",
 };
 
 const painPoints = [
   {
     icon: "",
-    title: "Emergency Calls Missed While You're on a Job",
+    title: "Customers Visit Your Site After Hours and Leave",
     description:
-      "You're under a house fixing a slab leak and your phone is in the truck. Meanwhile, a homeowner with a burst pipe is calling, and when you don't answer, they call the next plumber on Google. That job is gone in 30 seconds.",
+      "A homeowner with a burst pipe finds your website at 9 PM. There's no one to answer their questions. No way to book. They hit the back button and call the next plumber on Google. That job is gone.",
     solution:
-      "Our AI receptionist answers every call instantly, 24/7, including nights and weekends. It qualifies the emergency, captures the details, and books the appointment. By the time you're back in your truck, the job is on your calendar.",
+      "Our AI chatbot sits on your website 24/7, including nights and weekends. It answers questions about your services, captures the lead details, and helps them book an appointment. By the time you check your phone, the job is on your calendar.",
   },
   {
     icon: "",
-    title: "Estimates Take Days to Send Out",
+    title: "Website Traffic But No Leads",
     description:
-      "You do the walkthrough, take notes on your phone, then get busy with the next three jobs. By the time you sit down to write the estimate, it's been two days. Half the time, the customer already went with someone faster.",
+      "You're paying for Google ads or showing up in search results. People land on your site, look around for 30 seconds, and leave. No contact form filled out, no call made. You're getting traffic but not turning it into jobs.",
     solution:
-      "AI generates a rough estimate based on your pricing and the job details from the call. You review it on your phone, make any adjustments, and send it. Usually within hours, not days.",
+      "The chatbot engages every visitor the moment they land on your site. It asks what they need, answers their questions, and captures their info. More of your existing traffic turns into actual booked jobs.",
   },
   {
     icon: "",
@@ -31,15 +31,15 @@ const painPoints = [
     description:
       "You fixed their water heater. They were happy. Six months later they need a repipe and they can't remember your name, so they're back on Google searching for a new plumber.",
     solution:
-      "Automated follow-up sequences keep you top of mind. Thank you texts, maintenance reminders, seasonal check-in emails. When they need a plumber again, your name is the first one they think of.",
+      "Review request texts go out after every completed job. You stay top of mind, build your Google reputation, and make it easy for happy customers to recommend you.",
   },
   {
     icon: "",
-    title: "Invoices Sent Late, Payments Collected Later",
+    title: "Booking Is a Back-and-Forth Nightmare",
     description:
-      "You finish the job at 4 PM and tell yourself you'll send the invoice tonight. Three days later you still haven't. The customer forgets. Now you're chasing payments instead of doing plumbing.",
+      "A customer wants to schedule a service call. They leave a voicemail. You call back. They don't answer. You play phone tag for two days. By then they've already booked with someone else.",
     solution:
-      "Invoices go out automatically at job completion with a text-to-pay link. Most customers pay the same day. No chasing. No awkward phone calls about money.",
+      "Customers book directly through the chatbot or your online booking link. They pick a time that works for both of you. SMS confirmation and reminders go out automatically. No phone tag.",
   },
 ];
 
@@ -68,16 +68,16 @@ export default function PlumbersPage() {
             <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
               Stop Losing Plumbing Jobs to{" "}
               <span className="relative">
-                <span className="relative z-10 text-accent">Missed Calls</span>
+                <span className="relative z-10 text-accent">Missed Leads</span>
                 <span className="absolute bottom-1 left-0 z-0 h-3 w-full bg-accent/15 sm:bottom-2 sm:h-4" />
               </span>
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
-              Every unanswered call is a customer calling the next plumber on
-              Google. Our AI front office answers every call, books every job,
-              and follows up with every customer, so you never lose work to a
-              ringing phone again.
+              Every website visitor who leaves without reaching out is a
+              customer going to the next plumber on Google. Our AI chatbot
+              answers every visitor, captures every lead, and books
+              appointments, so you never lose work to a silent website again.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -100,7 +100,7 @@ export default function PlumbersPage() {
         <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 text-center">
             <div>
-              <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">Missed Calls/Week</p>
+              <p className="text-sm font-semibold uppercase tracking-wider text-gray-300">Missed Leads/Week</p>
               <p className="text-4xl sm:text-5xl font-extrabold text-white mt-1">5+</p>
             </div>
             <div className="hidden sm:block text-3xl text-gray-400">&times;</div>
@@ -177,7 +177,7 @@ export default function PlumbersPage() {
                 <ul className="space-y-3 text-text-light">
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
-                    5 missed calls/week
+                    5+ website visitors leaving without contacting you
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
@@ -185,7 +185,7 @@ export default function PlumbersPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
-                    Estimates sent 2-3 days late
+                    No way for after-hours visitors to book
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
@@ -198,7 +198,7 @@ export default function PlumbersPage() {
                 <ul className="space-y-3 text-text-light">
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    Every call answered, 24/7
+                    Every website visitor gets answered, 24/7
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
@@ -206,11 +206,11 @@ export default function PlumbersPage() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    Estimates out within hours
+                    Online booking with SMS reminders
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    47 Google reviews in 3 months
+                    Consistent review requests after every job
                   </li>
                 </ul>
               </div>
@@ -246,8 +246,8 @@ export default function PlumbersPage() {
               ))}
             </div>
             <blockquote className="relative text-2xl font-medium leading-relaxed text-dark sm:text-3xl">
-              &ldquo;I was missing 4-5 calls a day on job sites. Now every call gets answered
-              and half of them book before I even get back to the truck.&rdquo;
+              &ldquo;I was losing website visitors left and right. Now the chatbot captures
+              every lead and half of them book before I even get back to the truck.&rdquo;
             </blockquote>
             <div className="mt-8">
               <p className="font-bold text-dark text-lg">Mike T.</p>
@@ -261,11 +261,11 @@ export default function PlumbersPage() {
       <section className="bg-dark py-20">
         <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-            Ready to Stop Losing Jobs to Missed Calls?
+            Ready to Stop Losing Jobs to Missed Leads?
           </h2>
           <p className="mx-auto mt-4 max-w-lg text-lg text-gray-400">
             Schedule a free 15-minute call. We&apos;ll show you exactly how many
-            calls you&apos;re missing and what your AI front office would look like.
+            leads your website is losing and what your AI front office would look like.
           </p>
           <div className="mt-10">
             <Link

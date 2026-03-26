@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "What if I need something beyond the standard plan?",
-    a: "We build custom automation for whatever is eating your time. Phone answering, invoicing, follow-up sequences, CRM setup. Tell us the problem, we scope it and price it. No cookie-cutter packages.",
+    a: "We build custom automation for whatever is eating your time. AI phone answering, invoicing, follow-up sequences, CRM setup. Tell us the problem, we scope it and price it. No cookie-cutter packages.",
   },
   {
     q: "Do I need to be tech-savvy to use this?",
@@ -111,7 +111,7 @@ export default function PricingPage() {
             <div className="p-8 sm:p-10">
               <div className="text-center">
                 <h3 className="text-2xl font-bold text-primary">
-                  Everything You Need to Stop Missing Calls
+                  Everything You Need to Stop Missing Leads
                 </h3>
                 <div className="mt-6">
                   <span className="text-5xl font-bold text-gray-900">$297</span>

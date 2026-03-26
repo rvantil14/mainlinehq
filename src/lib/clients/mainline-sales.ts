@@ -19,36 +19,32 @@ export const mainlineSalesConfig: ClientConfig = {
     {
       name: "AI Chatbot",
       description:
-        "24/7 AI chatbot that answers customer questions, captures leads, and books appointments on your website",
+        "24/7 AI chatbot trained on your business that answers customer questions, captures leads, and helps book appointments on your website",
       priceRange: "Included in all plans",
     },
     {
       name: "Smart Scheduling",
       description:
-        "Automated appointment booking with SMS confirmations and reminders",
+        "Online booking synced to your calendar with automated SMS confirmations and reminders",
       priceRange: "Included in all plans",
     },
     {
-      name: "Automated Invoicing",
-      description:
-        "Invoices generated at job completion with text-to-pay links",
-      priceRange: "Custom automation",
-    },
-    {
       name: "Review Automation",
-      description: "Automated review requests sent after every job",
-      priceRange: "Included",
-    },
-    {
-      name: "AI Estimates",
       description:
-        "AI-generated rough estimates that you review and approve before sending",
-      priceRange: "Custom automation",
+        "Automated review request texts sent after every completed job to build your Google reputation",
+      priceRange: "Included in all plans",
     },
     {
-      name: "Contract Generation",
-      description: "Automated proposals with scope, pricing, and terms",
-      priceRange: "Custom automation",
+      name: "Lead Capture & Notifications",
+      description:
+        "Every website visitor who engages with the chatbot becomes a captured lead with instant notifications to you",
+      priceRange: "Included in all plans",
+    },
+    {
+      name: "Monthly Performance Reporting",
+      description:
+        "Monthly report on leads captured, appointments booked, and reviews collected",
+      priceRange: "Included in all plans",
     },
   ],
   serviceArea: {

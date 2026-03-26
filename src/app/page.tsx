@@ -5,11 +5,11 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Mainline | AI Automation for Trade Businesses",
   description:
-    "We build and run your AI front office. Phone answering, scheduling, invoicing, and reviews, automated for plumbers, HVAC, electricians, and contractors.",
+    "We build and run your AI front office. Website chatbot, scheduling, reviews, and lead capture, automated for plumbers, HVAC, electricians, and contractors.",
   openGraph: {
     title: "Mainline | AI Automation for Trade Businesses",
     description:
-      "We build and run your AI front office. Phone answering, scheduling, invoicing, and reviews, automated for plumbers, HVAC, electricians, and contractors.",
+      "We build and run your AI front office. Website chatbot, scheduling, reviews, and lead capture, automated for plumbers, HVAC, electricians, and contractors.",
     type: "website",
     url: "https://mainlinehq.com",
   },
@@ -17,20 +17,20 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mainline | AI Automation for Trade Businesses",
     description:
-      "We build and run your AI front office. Phone answering, scheduling, invoicing, and reviews, automated for plumbers, HVAC, electricians, and contractors.",
+      "We build and run your AI front office. Website chatbot, scheduling, reviews, and lead capture, automated for plumbers, HVAC, electricians, and contractors.",
   },
 };
 
 const painPoints = [
   {
-    title: "You're under a house fixing a slab leak. Phone rings 3 times. That's $1,000+ walking to your competitor.",
+    title: "A customer visited your website at 9 PM. No one was there to answer. They called your competitor instead.",
     description:
-      "Every unanswered call is a customer calling the next guy on Google. You don't get a second chance at that first impression.",
+      "Your website gets traffic, but without someone there to answer questions and capture leads, most visitors leave without ever reaching out.",
   },
   {
-    title: "Your quote sat in your truck for 2 days. The customer already hired someone else.",
+    title: "You're under a house fixing a slab leak. Three people visited your site. Zero leads captured.",
     description:
-      "The longer you wait to bill, the longer you wait to get paid. And chasing payments is nobody's idea of a good time.",
+      "While you're on the job, potential customers are browsing your website looking for answers. No chat, no way to book, no lead captured.",
   },
   {
     title: "Last job was 3 weeks ago. No review request sent. No follow-up. Customer forgot your name.",
@@ -38,17 +38,17 @@ const painPoints = [
       "You did great work. They were happy. But six months later they can't remember your name, and they're back on Google.",
   },
   {
-    title: "It's Sunday night. You're doing invoices instead of watching the game with your kids.",
+    title: "It's Sunday night. You're returning emails instead of watching the game with your kids.",
     description:
-      "You started your business to do the work you're good at. Not to drown in scheduling, invoicing, and paperwork every weekend.",
+      "You started your business to do the work you're good at. Not to spend your weekends answering the same questions over and over.",
   },
 ];
 
 const services = [
   {
-    title: "We Answer Your Phone 24/7",
+    title: "Your Website Answers Questions 24/7",
     description:
-      "Our AI receptionist picks up every call. Nights, weekends, holidays. Every lead gets captured, every customer gets a real conversation.",
+      "An AI chatbot on your website talks to every visitor. Nights, weekends, holidays. It answers questions about your services, captures leads, and sends them straight to you.",
   },
   {
     title: "We Book Your Appointments",
@@ -56,24 +56,9 @@ const services = [
       "Customers self-schedule based on your real availability. They get instant SMS confirmations. You just show up.",
   },
   {
-    title: "We Send Your Invoices",
+    title: "We Help You Get 5-Star Reviews",
     description:
-      "Invoices go out automatically at job completion with text-to-pay links. Most customers pay the same day.",
-  },
-  {
-    title: "We Get You 5-Star Reviews",
-    description:
-      "Automated review requests go out after every completed job. You build your Google reputation without lifting a finger.",
-  },
-  {
-    title: "We Generate Your Estimates",
-    description:
-      "Customer describes the job, AI creates a rough estimate based on your pricing. You review and approve before it goes out. No more spending an hour on every quote.",
-  },
-  {
-    title: "We Draft Your Contracts",
-    description:
-      "Job details go in, a professional proposal comes out. Service scope, pricing, terms, all formatted and ready for your signature. Edit or approve in one click.",
+      "Review request texts go out after every completed job. You build your Google reputation without lifting a finger.",
   },
 ];
 
@@ -88,7 +73,7 @@ const steps = [
     number: "02",
     title: "We Build Your AI System",
     description:
-      "We configure your AI receptionist, booking flows, invoicing, review automation, and follow-up sequences. Fully customized to your business.",
+      "We configure your AI chatbot, booking flows, review automation, and SMS reminders. Fully customized to your business.",
   },
   {
     number: "03",
@@ -112,7 +97,7 @@ const trades = [
 const testimonials = [
   {
     quote:
-      "I was missing 4-5 calls a day on job sites. Now every call gets answered and half of them book before I even get back to the truck.",
+      "I was losing website visitors left and right. Now the chatbot captures every lead and half of them book before I even get back to the truck.",
     name: "Mike T.",
     business: "Ace Plumbing",
     location: "Riverside",
@@ -128,7 +113,7 @@ const testimonials = [
   },
   {
     quote:
-      "I used to spend my Sunday nights doing invoices. Now they go out automatically when my guys finish a job.",
+      "We had zero way for customers to reach us after hours. Now the chatbot captures leads all night and I wake up to booked appointments.",
     name: "Tom R.",
     business: "Volt Electric",
     location: "Austin",
@@ -166,13 +151,14 @@ export default function Home() {
             </div>
 
             <h1 className="text-5xl font-extrabold leading-[1.1] tracking-tight text-white sm:text-6xl md:text-7xl">
-              Every Missed Call Is a Job{" "}
-              <span className="text-accent">You&apos;ll Never Get Back</span>
+              Every Website Visitor Is a Job{" "}
+              <span className="text-accent">You Could Be Winning</span>
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-300 sm:text-xl">
-              We answer your phone, book your jobs, send your invoices, and
-              follow up with every customer, 24/7. You just do the work.
+              Your website works for you 24/7. Every visitor gets answered,
+              every lead gets captured, every customer gets a review request.
+              You just do the work.
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -244,7 +230,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-3">
             {services.map((service, i) => (
               <div
                 key={i}
@@ -280,7 +266,7 @@ export default function Home() {
                 AI drafts, you approve.
               </h3>
               <p className="mt-2 leading-relaxed text-text-light">
-                Nothing goes to your customers without you seeing it first. Estimates, contracts, follow-ups. You review everything.
+                Nothing goes to your customers without you seeing it first. Chatbot responses, review requests, reminders. You review everything.
               </p>
             </div>
             <div className="rounded-lg border border-gray-200 bg-light-bg p-7">
@@ -438,7 +424,7 @@ export default function Home() {
             </h2>
             <p className="mx-auto mt-4 max-w-lg text-lg text-gray-300">
               Schedule a free 15-minute call. We&apos;ll show you exactly how
-              many calls you&apos;re missing and what we can do about it.
+              many leads your website is losing and what we can do about it.
             </p>
             <div className="mt-8">
               <Link

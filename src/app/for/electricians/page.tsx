@@ -5,41 +5,41 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "AI Automation for Electrical Contractors | Mainline",
   description:
-    "Your electrical business deserves a smarter front office. Mainline answers calls, generates estimates, books appointments, and handles follow-up, so you can focus on the work.",
+    "Your electrical business deserves a smarter front office. Mainline puts an AI chatbot on your website that captures leads, books appointments, and requests reviews, so you can focus on the work.",
 };
 
 const painPoints = [
   {
     icon: "",
-    title: "Complex Estimates Take Forever",
+    title: "Website Visitors Leave Without Reaching Out",
     description:
-      "A commercial client wants a bid on a full panel upgrade with sub-panel work. You need to walk the site, calculate materials, factor in permit costs, and write it all up. That's 2-3 hours per estimate, and you're backed up on six of them.",
+      "A property manager visits your website looking for a commercial electrician. They browse your services page, but there's no one to answer their questions at 7 PM. They leave and contact the next company that makes it easy.",
     solution:
-      "AI generates a draft estimate based on the job details from the initial call and your pricing history. You review it, adjust any specifics, and send it out. Usually the same day instead of next week. Faster estimates mean more closed deals.",
-  },
-  {
-    icon: "",
-    title: "Commercial Leads Lost to Faster Competitors",
-    description:
-      "A property manager emails you about a multi-unit rewiring project. You see it 4 hours later between jobs. By then, two other electricians have already responded. Speed wins in commercial work, and you're always a step behind.",
-    solution:
-      "Our AI captures and responds to every lead (phone, email, web form) within 60 seconds. It qualifies the job, gathers details, and books a site visit. You show up prepared instead of scrambling to return calls at 8 PM.",
+      "Our AI chatbot engages every website visitor instantly, 24/7. It answers questions about your services, qualifies the job, gathers details, and helps them book a consultation. You wake up to leads instead of missed opportunities.",
   },
   {
     icon: "",
     title: "Permit and Code Questions Pile Up",
     description:
-      "Customers call asking about permit requirements, code compliance for their renovation, or whether their panel can handle a new EV charger. Good questions, but answering them all day eats into your billable hours.",
+      "Customers reach out asking about permit requirements, code compliance for their renovation, or whether their panel can handle a new EV charger. Good questions, but answering them all day eats into your billable hours.",
     solution:
-      "The AI handles common pre-qualification questions based on your service area's code requirements and your expertise. It gives customers accurate preliminary answers and books a consultation when the job needs your personal assessment.",
+      "The chatbot handles common pre-qualification questions based on your service area and your expertise. It gives customers accurate preliminary answers and books a consultation when the job needs your personal assessment.",
   },
   {
     icon: "",
-    title: "Owner Does Admin on Weekends",
+    title: "Great Work But No Google Reviews",
     description:
-      "You spent all week on job sites. Now it's Sunday night and you're doing invoices, updating the schedule, following up with leads from Tuesday, and prepping quotes for Monday. This is not what you started your business to do.",
+      "You've done 200+ jobs this year. Your customers were happy. But you've got 18 Google reviews because nobody remembers to ask. Meanwhile, a less experienced competitor with 95 reviews is outranking you.",
     solution:
-      "Invoices go out automatically. Appointments get booked without your input. Follow-ups happen on schedule. You get your weekends back because the AI front office handles the admin that was eating your nights and weekends.",
+      "Review request texts go out after every completed job. Your happy customers get a direct link to leave a Google review while the experience is still fresh. Your reputation catches up to the quality of your work.",
+  },
+  {
+    icon: "",
+    title: "Booking Is a Back-and-Forth Process",
+    description:
+      "A homeowner wants an EV charger installed. They fill out your contact form on Monday. You call back Tuesday. They miss it. You trade voicemails until Thursday. By then they've already booked with someone who made it simpler.",
+    solution:
+      "Customers book directly through the chatbot or your online booking page. SMS confirmations and reminders go out automatically. No phone tag, no lost leads, no back-and-forth.",
   },
 ];
 
@@ -74,10 +74,10 @@ export default function ElectriciansPage() {
             </h1>
 
             <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-400 sm:text-xl">
-              Electrical work is complex enough without drowning in admin. Our AI
-              front office handles your calls, estimates, scheduling, and
-              follow-up, so you can focus on the work that actually requires
-              your expertise.
+              Electrical work is complex enough without losing leads to a
+              silent website. Our AI chatbot answers every visitor, captures
+              every lead, books appointments, and requests reviews, so you
+              can focus on the work that actually requires your expertise.
             </p>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -177,19 +177,19 @@ export default function ElectriciansPage() {
                 <ul className="space-y-3 text-text-light">
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
-                    Leads get 4+ hour response time
+                    Website visitors leave with no response
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
-                    Estimates take 3-5 business days
+                    No after-hours lead capture
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
-                    10+ hours/week on admin
+                    Booking requires phone tag
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-red-500 mt-0.5">&#10005;</span>
-                    No follow-up on old leads
+                    Few Google reviews despite great work
                   </li>
                 </ul>
               </div>
@@ -198,19 +198,19 @@ export default function ElectriciansPage() {
                 <ul className="space-y-3 text-text-light">
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    Under 60-second response time
+                    Every visitor answered instantly, 24/7
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    Draft estimates same day
+                    Leads captured even at 2 AM
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    Weekends back, admin handled
+                    Online booking with SMS reminders
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-success mt-0.5">&#10003;</span>
-                    Automated lead nurturing sequences
+                    Review requests after every job
                   </li>
                 </ul>
               </div>
@@ -246,8 +246,8 @@ export default function ElectriciansPage() {
               ))}
             </div>
             <blockquote className="relative text-2xl font-medium leading-relaxed text-dark sm:text-3xl">
-              &ldquo;I used to spend my Sunday nights doing invoices. Now they go
-              out automatically when my guys finish a job.&rdquo;
+              &ldquo;We had zero way for customers to reach us after hours. Now
+              the chatbot captures leads all night and I wake up to booked appointments.&rdquo;
             </blockquote>
             <div className="mt-8">
               <p className="font-bold text-dark text-lg">Tom R.</p>
